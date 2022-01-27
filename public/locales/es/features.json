@@ -1,0 +1,21 @@
+{
+  "EPIGRAPH": "Soluciones",
+  "TITLE": "Características de la Plataforma",
+  "SUBTITLE": "Nuestra plataforma posee todo lo necesario para que empiezes el camino hacia el cumplimiento de las leyes de privacidad",
+  "BULLET_POINTS.THIRD_PARTY_BLOCKING.TITLE": "Bloqueo de Cookies de terceros",
+  "BULLET_POINTS.MULTILANGUAGE.TITLE": "Multilenguaje",
+  "BULLET_POINTS.MULTILANGUAGE.DESCRIPTION": "Nuestro banner exhibe las opciones de consentimiento en Inglés, Portugués, y Español. Si tus usuarios no pueden entender el banner, el consentimiento no es válido.",
+  "BULLET_POINTS.DATA_RIGHTS.TITLE": "Derechos del Titular de los Datos",
+  "BULLET_POINTS.DATA_RIGHTS.DESCRIPTION": "Otorge a sus visitantes y usuarios la capacidad de solicitar el borrado o el tratamiento de sus datos personales almacenados por su empresa.",
+  "BULLET_POINTS.CUSTOMIZATION.TITLE": "Personalización",
+  "BULLET_POINTS.CUSTOMIZATION.DESCRIPTION": "Modifique los colores y opciones de display del banner para que combine con su página web.",
+  "BULLET_POINTS.CONSENT_OPTIMIZATION.TITLE": "Optimización del consentimiento",
+  "BULLET_POINTS.CONSENT_OPTIMIZATION.DESCRIPTION": "Nuestra plataforma exhibe y ejecuta los protocolos correctos según la jurisdicción de cada usuario que visita su web.",
+  "BULLET_POINTS.MULTISITES.TITLE": "Multisitios",
+  "BULLET_POINTS.MULTISITES.DESCRIPTION": "Puede agregar el banner en todos los sitios que usted quiera (¡ideal para agencias de marketing!)",
+  "BULLET_POINTS.POLICY_CREATOR.TITLE": "Creador de política de privacidad y cookies",
+  "BULLET_POINTS.POLICY_CREATOR.DESCRIPTION": "Ahórrese el costo de trabajar con abogados caros. Obtenga sus propias políticas con nuestra plataforma.",
+  "BULLET_POINTS.CONSENT_LOGS.TITLE": "Consent Logs",
+  "BULLET_POINTS.CONSENT_LOGS.DESCIPTION": "Wibson allows companies to track and store every consent made through our banner. We store consent logs in an encrypted database and these records can be used as proof of consent in case of legal action.",
+  "BULLET_POINTS.ADMIN_PANEL.TITLE": "Panel de Administración"
+}

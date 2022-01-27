@@ -1,0 +1,13 @@
+{
+  "HERO_ANCHOR": "Home",
+  "STEPS_ANCHOR": "Getting started",
+  "FEATURES_ANCHOR": "Features",
+  "PRICING_ANCHOR": "Pricing",
+  "FAQ_ANCHOR": "FAQ",
+  "BLOG_ANCHOR": "Blog",
+  "JOBS_ANCHOR": "Jobs",
+  "CONTACT_ANCHOR": "Contact",
+  "SIGNIN_LINK": "Sign in",
+  "SIGNUP_LINK": "Sign up",
+  "EXISTING_CUSTOMER_TEXT": "Already have an account?"
+}

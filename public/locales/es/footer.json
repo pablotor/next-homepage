@@ -1,0 +1,10 @@
+{
+  "SUBSCRIBE.TITLE": "Suscribite a nuestro Newsletter",
+  "SUBSCRIBE.TEXT": "Obtenga acceso a las últimas noticias y todas las funcionalidades de nuestra plataforma suscribiéndose aquí.",
+  "SUBSCRIBE.PLACEHOLDER": "Ingrese su email",
+  "SUBSCRIBE.BUTTON": "Suscribirse",
+  "SUBSCRIBE.NOTIFICATION.SUCCESS": "Fuiste correctamente subscripto a nuestro newsletter!",
+  "SUBSCRIBE.NOTIFICATION.FAILURE": "No pudimos suscribirte a nuestro newsletter. Comprobá que tu correo esté escrito correctamente y tratá de nuevo.",
+  "COPYRIGHT": "© 2021 Wibson, Inc. Todos los derechos reservados.",
+  "TERMS": "Términos de servicio"
+}

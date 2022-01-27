@@ -1,0 +1,14 @@
+{
+  "TITLE": "Contact",
+  "SUBTITLE": "Send us a message and our team will contact you ASAP",
+  "INPUTS.NAME.LABEL": "First name",
+  "INPUTS.LAST_NAME.LABEL": "Last name",
+  "INPUTS.EMAIL.LABEL": "Email",
+  "INPUTS.PHONE.LABEL": "Phone number",
+  "INPUTS.PHONE.PLACEHOLDER": "+1 (555) 987-6543",
+  "INPUTS.PHONE.COUNTRY.LABEL": "Country",
+  "INPUTS.TERMS.LABEL": "I accept the <0>Privacy Policy</0> and the <1>Cookie Policy</1>.",
+  "NOTIFICATIONS.SUBMIT.SUCCESS": "We received your information. We will get in touch with you soon!",
+  "NOTIFICATIONS.SUBMIT.FAILURE": "We couldn't process your request. Check your information and try again.",
+  "BUTTON": "Contact Us!"
+}

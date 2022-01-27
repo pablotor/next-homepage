@@ -1,0 +1,14 @@
+{
+  "TITLE": "Contacto",
+  "SUBTITLE": "Envíanos un mensaje y nuestro equipo te contactará de inmediato",
+  "INPUTS.NAME.LABEL": "Nombre",
+  "INPUTS.LAST_NAME.LABEL": "Apellido",
+  "INPUTS.EMAIL.LABEL": "Email",
+  "INPUTS.PHONE.LABEL": "Teléfono",
+  "INPUTS.PHONE.PLACEHOLDER": "+54 (911) 4567-0123",
+  "INPUTS.PHONE.COUNTRY.LABEL": "País",
+  "INPUTS.TERMS.LABEL": "Acepto las <0>Políticas de privacidad</0> y las <1>Políticas de Cookies</1>.",
+  "NOTIFICATIONS.SUBMIT.SUCCESS": "Recibimos tu información. Nos pondremos en contacto pronto!",
+  "NOTIFICATIONS.SUBMIT.FAILURE": "No pudimos procesar tu solicitud. Chequeá tu información e intentá nuevamente.",
+  "BUTTON": "Quiero que me contacten"
+}

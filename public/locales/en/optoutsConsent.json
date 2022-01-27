@@ -1,0 +1,10 @@
+{
+  "OPTOUT.TITLE":"Manage Opt-outs efficiently",
+  "OPTOUT.SUBTITLE":"Opt-out Management",
+  "OPTOUT.TEXT":"An Opt-out is a removal request from someone you store data on to your organization. The person in charge of responding to these requests will receive alerts and be given monthly reports about their performance.",
+  "OPTOUT.BUTTON.TEXT":"Get started",
+  "CONSENT.TITLE":"Store every consent",
+  "CONSENT.SUBTITLE":"Cookie Consent Management",
+  "CONSENT.TEXT":"Consent logs are stored in an encrypted database and can be used as proof of consent in case of an audit.",
+  "CONSENT.BUTTON.TEXT":"Get started"
+}

@@ -1,0 +1,10 @@
+{
+  "OPTOUT.TITLE":"Administre sus Opt-outs eficientemente",
+  "OPTOUT.SUBTITLE":"Gestión de Opt-outs",
+  "OPTOUT.TEXT":"Un Opt-out es una solicitud de alguien que posee datos guardados dentro de su organización para su borrado. La persona a cargo de responder estas solicitudes recibirá alertas y reportes mensuales de su rendimiento.",
+  "OPTOUT.BUTTON.TEXT":"Comenzar",
+  "CONSENT.TITLE":"Guarde todos los consentimientos",
+  "CONSENT.SUBTITLE":"Gestión de Consentimientos de Cookies",
+  "CONSENT.TEXT":"Los registros de consentimiento son guardados en una base de datos encriptada y pueden ser utilizados como prueba de consentimiento en caso de una auditoría legal.",
+  "CONSENT.BUTTON.TEXT":"Comenzar"
+}
