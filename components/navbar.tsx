@@ -42,10 +42,10 @@ const Navbar = () => (
 
           <Transition
             as={Fragment}
-            enter="transition ease-out duration-200"
+            enter="ease-out duration-200"
             enterFrom="opacity-0 -translate-y-1"
             enterTo="opacity-100 translate-y-0"
-            leave="transition ease-in duration-150"
+            leave="ease-in duration-150"
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 -translate-y-1"
           >
@@ -78,13 +78,13 @@ const Navbar = () => (
         </>
       )}
     </Popover>
-    <div id="navbar-desktop" className='hidden lg:flex h-screen'>
+    <div id="navbar-desktop" className='hidden lg:flex flex-col justify-center px-8 mr-16 h-screen'>
       <ul role="list" className="mt-5 space-y-6">
         {sections.map((item) => (
           <li key={item.name} className="flow-root">
             <a
               href={item.href}
-              className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md transition duration-150 ease-in-out"
+              className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md duration-150 ease-in-out"
             >
               <span className="ml-4">{item.name}</span>
             </a>

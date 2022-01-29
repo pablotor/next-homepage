@@ -1,0 +1,18 @@
+{
+  "container": {
+    "section": "px-8 py-8 min-h-section-mobile lg:min-h-screen flex flex-col justify-center"
+  },
+  "text": {
+    "primary": "whitespace-pre-line text-xl mb-2",
+    "gradient-a": "bg-gradient-to-r from-blue-500 to-indigo-700",
+    "gradient-b": "bg-gradient-to-r from-purple-500 to-pink-700",
+    "highlight-a": "text-blue-700",
+    "highlight-b": "text-pink-700",
+    "section-title": "",
+    "nav-link": "",
+    "header-title": "",
+    "job-title": "",
+    "job-subtitle": "",
+    "date": ""
+  }
+}

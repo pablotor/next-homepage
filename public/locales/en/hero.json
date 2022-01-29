@@ -1,8 +1,4 @@
 {
-  "TITLE_NORMAL": "Your cookie banner.",
-  "TITLE_HIGHLIGHTED": "Smart and customizable.",
-  "SUBTITLE": "Make your website compliant with GDPR regulations in just 5 minutes.",
-  "INPUT_LABEL": "Get a detailed report of your website in 24 hours.",
-  "INPUT_PLACEHOLDER": "Website's URL",
-  "INPUT_BUTTON_TEXT": "Deliver report"
+  "CONTACT": "me@pablotor.dev",
+  "PROFILE": "<primary>Hi! I'm Pablo from Buenos Aires, Argentina.</primary><primary>I'm a <highlightA>fullstack developer</highlightA> and <highlightA>project manager</highlightA>, experienced in <highlightB>web/mobile development</highlightB> and <highlightB>payment systems.</highlightB></primary><primary>But that's only the tip of the iceberg. I've work in many different companies doing many different things. Just to name some of them: I've managed an analog telephone central, created the digital marketing for my e-commerce, and even written data types in COBOL for the biggest bank in Colombia.</primary><primary>My motto: <highlightA>If I don't know how to do it,</highlighta><highlightB> it's just gonna take a little longer.</highlightB></primary>"
 }
