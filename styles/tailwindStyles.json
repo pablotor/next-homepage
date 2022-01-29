@@ -6,7 +6,7 @@
     "primary": "whitespace-pre-line text-xl mb-2",
     "gradient-a": "bg-gradient-to-r from-blue-500 to-indigo-700",
     "gradient-b": "bg-gradient-to-r from-purple-500 to-pink-700",
-    "highlight-a": "text-blue-700",
+    "highlight-a": "text-blue-500",
     "highlight-b": "text-pink-700",
     "section-title": "",
     "nav-link": "",

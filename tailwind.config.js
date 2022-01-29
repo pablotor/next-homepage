@@ -14,10 +14,10 @@ module.exports = {
       },
       keyframes: {
         'vercel-text': {
-          '0%, 50%': {
+          '0%, 55%': {
             color: '#000',
           },
-          '5%, 45%': {
+          '5%, 50%': {
             color: 'transparent',
           },
         },
