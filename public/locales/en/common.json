@@ -3,6 +3,7 @@
   "PAGE.DESCRIPTION": "Online Resume and Portfolio",
   "FIRSTNAME": "Pablo",
   "LASTNAME": "Torrubiano",
+  "EMAIL": "me@pablotor.dev",
   "SECTIONS.PROFILE": "Profile",
   "SECTIONS.EXPERIENCE": "Experience",
   "SECTIONS.PROJECTS": "Projects",

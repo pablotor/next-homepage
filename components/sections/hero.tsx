@@ -30,7 +30,7 @@ const Hero = () => {
             {t('LASTNAME')}
           </span>
         </h1>
-        <h3 className='mb-6 text-2xl text-gray-600'>{t('CONTACT')}</h3>
+        <h3 className='mb-6 text-2xl text-gray-600'>{t('EMAIL')}</h3>
       </div>
       <div>
         <Trans
