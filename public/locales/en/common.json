@@ -1,4 +1,13 @@
 {
-  "TITLE": "Wibson: Your site compliant with GDPR in 5 minutes",
-  "DESCRIPTION": "Wibson helps your company build a more transparent and trustworthy brand with our consent options"
+  "PAGE.TITLE": "Pablo Tor | Developer",
+  "PAGE.DESCRIPTION": "Online Resume and Portfolio",
+  "FIRSTNAME": "Pablo",
+  "LASTNAME": "Torrubiano",
+  "SECTIONS.PROFILE": "Profile",
+  "SECTIONS.EXPERIENCE": "Experience",
+  "SECTIONS.PROJECTS": "Projects",
+  "SECTIONS.DEVELOPMENT": "Development",
+  "SECTIONS.PORTFOLIO": "Portfolio",
+  "SECTIONS.EDUCATION": "Education",
+  "SECTIONS.ABOUT": "About me"
 }

@@ -1,9 +1,0 @@
-{
-  "TITLE": "FAQ",
-  "FAQ_POINTS.BANNER.TITLE": "Does my website need a privacy banner?",
-  "FAQ_POINTS.BANNER.DESCRIPTION": "If your website collects information from third parties or uses cookies, the banner is essential to ensure the privacy and consent of your users' personal data. GDPR requires that users get notified with information regarding the data that your company / business collects. The use (or treatment) that your company gives to this data will only be valid if you have the explicit consent of the user. Our privacy banner ensures that this process is adhered to.",
-  "FAQ_POINTS.COVERAGE.TITLE": "Does Wibson provide me with full coverage against GDPR penalties?",
-  "FAQ_POINTS.COVERAGE.DESCRIPTION": "No, Wibson is only responsible for the creation of a privacy policy and guarantees the user's consent on the use of their data. The flow of data within each company (among other obligations), must be managed by the company itself and must meet various requirements established by GDPR.",
-  "FAQ_POINTS.DIFFICULTY.TITLE": "Is it difficult to implement Wibson on my website?",
-  "FAQ_POINTS.DIFFICULTY.DESCRIPTION": "Implementing Wibson on your website is very easy. You may need help from a developer to copy and paste a simple line of code into it. However, we do have a technical support team that can help you resolve any issues that may appear along the way."
-}

@@ -1,9 +1,0 @@
-{
-  "TITLE": "Preguntas Frecuentes",
-  "FAQ_POINTS.BANNER.TITLE": "¿Mi sitio web necesita un banner de privacidad?",
-  "FAQ_POINTS.BANNER.DESCRIPTION": "Si tu página web recopila información de terceros o utiliza cookies, el banner es fundamental para asegurar la privacidad y consentimiento de los datos personales de tus usuarios. Las leyes de privacidad de datos exigen que sus usuarios sean notificados con un detalle de los datos que tu empresa / negocio recopila. El uso (o tratamiento) que tu empresa dé a estos datos sólo será válido si se tiene el consentimiento explícito por parte del usuario. El banner de privacidad de Wibson asegura que este proceso se cumpla.",
-  "FAQ_POINTS.COVERAGE.TITLE": "¿Wibson me brinda cobertura completa frente a las sanciones de las leyes de privacidad de datos (CCPA, LGPD, Y GDPR)?",
-  "FAQ_POINTS.COVERAGE.DESCRIPTION": "No, Wibson únicamente se encarga de la creación de una banner de privacidad y garantiza el consentimiento del usuario sobre el uso de sus datos. El flujo de datos dentro de cada empresa (entre otras obligaciones), debe ser administrado por la compañía misma y debe cumplir con varios requisitos establecidos por la ley.",
-  "FAQ_POINTS.DIFFICULTY.TITLE": "¿Es difícil implementar Wibson en mi página web?",
-  "FAQ_POINTS.DIFFICULTY.DESCRIPTION": "Implementar Wibson en tu sitio web es muy fácil. Tal véz necesites ayuda de un desarrollador para pegar una simple linea de código en la mísma. Sin embargo, poseemos un equipo de soporte técnico que puede ayudarte a resolver cualquier problema que pueda surgir."
-}

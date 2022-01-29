@@ -1,4 +1,13 @@
 {
-  "TITLE": "Wibson: Su sitio adaptado a las normas de privacidad en 5 minutos",
-  "DESCRIPTION": "Wibson ayuda a su empresa a construir una marca más transparente y confiable con nuestras opciones de consentimiento."
+  "PAGE.TITLE": "Pablo Tor | Developer",
+  "PAGE.DESCRIPTION": "Online Resume and Portfolio",
+  "FIRSTNAME": "Pablo",
+  "LASTNAME": "Torrubiano",
+  "SECTIONS.PROFILE": "Profile",
+  "SECTIONS.EXPERIENCE": "Experience",
+  "SECTIONS.PROJECTS": "Projects",
+  "SECTIONS.DEVELOPMENT": "Development",
+  "SECTIONS.PORTFOLIO": "Portfolio",
+  "SECTIONS.EDUCATION": "Education",
+  "SECTIONS.ABOUT": "About me"
 }
