@@ -1,14 +1,16 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { Popover, Transition } from '@headlessui/react';
 
-import classNames from '../utils/tailwindClassNamesHelper';
 import ChevronDownIcon from './icons/chevronDown';
+import classNames from '../utils/tailwindClassNamesHelper';
+
+import styles from '../styles/tailwindStyles.json';
 
 const sections = [
-  { i18nKey: 'profile', href: '#' },
-  { i18nKey: 'experience', href: '#' },
+  { i18nKey: 'profile', href: '#profile' },
+  { i18nKey: 'experience', href: '#experience' },
   { i18nKey: 'projects', href: '#' },
   { i18nKey: 'development', href: '#' },
   { i18nKey: 'portfolio', href: '#' },
@@ -17,6 +19,7 @@ const sections = [
 ];
 
 const Navbar = () => {
+  const [selected, setSelected] = useState(0);
   const { t } = useTranslation('common');
   return (
     <nav>
@@ -67,7 +70,12 @@ const Navbar = () => {
                         <li key={index} className="flow-root">
                           <a
                             href={item.href}
-                            className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md transition duration-150 ease-in-out"
+                            className={classNames(
+                              'flex items-center p-3 -m-3 text-base font-medium rounded-md text-transparent bg-clip-text duration-150 ease-in-out',
+                              selected === index
+                                ? styles.text['gradient-a']
+                                : 'bg-gray-900 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
+                            )}
                           >
                             <span className="ml-4">{t(item.i18nKey)}</span>
                           </a>
@@ -87,7 +95,12 @@ const Navbar = () => {
             <li key={index} className="flow-root">
               <a
                 href={item.href}
-                className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 hover:bg-gray-50 rounded-md duration-150 ease-in-out"
+                className={classNames(
+                  'flex items-center p-3 -m-3 text-base font-medium rounded-md duration-150 ease-in-out',
+                  selected === index
+                    ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
+                    : 'text-gray-900 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
+                )}
               >
                 <span className="ml-4">{t(item.i18nKey)}</span>
               </a>
