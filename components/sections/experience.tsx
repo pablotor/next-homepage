@@ -11,13 +11,26 @@ const jobs = [
   'conexia',
 ];
 
+const sections = [
+  {
+    id: 'responsibilities',
+    contentType: 'single',
+    showTitle: true,
+  },
+  {
+    id: 'projects',
+    contentType: 'multiple',
+    showTitle: true,
+  },
+];
+
 const Experience = () => {
   const { t } = useTranslation('common');
   return (
     <div id="experience" className={styles.container.section}>
       <h2 className={styles.text['section-title']}>{t('SECTIONS.EXPERIENCE')}</h2>
       {jobs.map((job) => (
-        <Position i18nKey={job} namespace='experience' key={job}/>
+        <Position i18nKey={job} namespace='experience' key={job} sections={sections}/>
       ))}
     </div>
   );
