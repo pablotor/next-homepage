@@ -21,10 +21,19 @@ module.exports = {
             color: 'transparent',
           },
         },
+        'section-title': {
+          '0%, 100%': {
+            color: '#000',
+          },
+          '25%, 75%': {
+            color: 'transparent',
+          },
+        },
       },
       animation: {
         'vercel-text-a': 'vercel-text 8s infinite',
         'vercel-text-b': 'vercel-text 8s infinite 4s',
+        'section-title': 'section-title 4s infinite',
       },
     },
   },

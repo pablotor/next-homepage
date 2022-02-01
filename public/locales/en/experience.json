@@ -1,3 +1,22 @@
 {
-  "": ""
+  "SUBTITLES.RESPONSIBILITIES": "Responsibilities",
+  "SUBTITLES.PROJECTS": "Main projects",
+  "WIBSON.TITLE": "Sr FullStack Dev",
+  "WIBSON.PLACE": "Wibson",
+  "WIBSON.DATE": "Aug 2020 - Nov 2021",
+  "WIBSON.TECHNOLOGIES": "React Native, React & NodeJS | JavaScript & TypeScript",
+  "WIBSON.RESPONSIBILITIES": "Design, development and maintenance of Wibson products.",
+  "WIBSON.PROJECTS": ["Wibson Privacy Platform - wibson.io", "Wibson App (deprecated)"],
+  "FIRST_DATA.TITLE": "Sr BASE24 System Analyst",
+  "FIRST_DATA.PLACE": "First Data",
+  "FIRST_DATA.DATE": "Aug 2014 - Nov 2018 ",
+  "FIRST_DATA.TECHNOLOGIES": "BASE24 Classic - First Vision Platform | TACL, TAL & COBOL",
+  "FIRST_DATA.RESPONSIBILITIES": "e2e solution cycle (design, develop, test, certificate, deploy and monitor), client contact point and platform project leader for Colombia.",
+  "FIRST_DATA.PROJECTS": ["TUYA credit portfolio migration as Project Leader", "Bancolombia prepaid as Project Leader", "Bancolombia credit portfolio migration as System Analyst"],
+  "CONEXIA.TITLE": "IT Analyst",
+  "CONEXIA.PLACE": "Conexia",
+  "CONEXIA.DATE": "Sep 2012 - Dec 2013",
+  "CONEXIA.TECHNOLOGIES": "Ubuntu Server, Windows Server, Networking & Telecommunications",
+  "CONEXIA.RESPONSIBILITIES": "Level I and II IT support, VM management and networking.",
+  "CONEXIA.PROJECTS": ["Desktop system installation standardization"]
 }

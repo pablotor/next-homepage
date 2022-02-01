@@ -19,7 +19,7 @@ const socialMedia = [
 const Hero = () => {
   const { t } = useTranslation(['common', 'hero']);
   return (
-    <div id="hero" className={styles.container.section}>
+    <div id="profile" className={styles.container.section}>
       <div>
         <h1 className='mb-2 text-7xl sm:text-8xl font-black'>
           <span className={classNames(styles.text['gradient-a'], 'bg-clip-text animate-vercel-text-a')}>
@@ -49,7 +49,7 @@ const Hero = () => {
           <a key={index} target='_blank' rel='noreferrer' href={element.link} className='mr-6 '>
             <div className={classNames(
               'p-3 bg-gray-600 rounded-full hover:bg-gradient-to-r transition-all',
-              'from-blue-500 to-indigo-700',
+              'from-purple-500 to-pink-700',
               // index % 2 ? 'from-purple-500 to-pink-700' : 'from-blue-500 to-indigo-700',
             )}>
               <element.icon className='w-6 h-6 text-white'/>
