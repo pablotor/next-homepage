@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { useTranslation } from 'next-i18next';
 import { Popover, Transition } from '@headlessui/react';
 
@@ -18,9 +18,9 @@ const sections = [
   { i18nKey: 'about', href: '#' },
 ];
 
-const Navbar = () => {
-  const [selected, setSelected] = useState(0);
+const Navbar = ({ selectedSection }: { selectedSection: number }) => {
   const { t } = useTranslation('common');
+
   return (
     <nav>
       <Popover id="navbar-mobile" className="lg:hidden relative z-0">
@@ -72,7 +72,7 @@ const Navbar = () => {
                             href={item.href}
                             className={classNames(
                               'flex items-center p-3 -m-3 text-base font-medium rounded-md text-transparent bg-clip-text duration-150 ease-in-out',
-                              selected === index
+                              selectedSection === index
                                 ? styles.text['gradient-a']
                                 : 'bg-gray-900 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
                             )}
@@ -97,7 +97,7 @@ const Navbar = () => {
                 href={item.href}
                 className={classNames(
                   'flex items-center p-3 -m-3 text-base font-medium rounded-md duration-150 ease-in-out',
-                  selected === index
+                  selectedSection === index
                     ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
                     : 'text-gray-900 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
                 )}

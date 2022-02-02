@@ -1,10 +1,13 @@
+import { LegacyRef } from 'react';
 import { Trans, useTranslation } from 'next-i18next';
 
 import classNames from '../../utils/tailwindClassNamesHelper';
-
-import styles from '../../styles/tailwindStyles.json';
 import LinkedIn from '../icons/linkedIn';
 import Github from '../icons/github';
+
+import Section from './genericSection';
+
+import styles from '../../styles/tailwindStyles.json';
 
 const socialMedia = [
   {
@@ -16,10 +19,10 @@ const socialMedia = [
   },
 ];
 
-const Hero = () => {
+const Hero = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
   const { t } = useTranslation(['common', 'hero']);
   return (
-    <div id="profile" className={styles.container.section}>
+    <Section id="profile" innerRef={innerRef}>
       <div>
         <h1 className='mb-2 text-7xl sm:text-8xl font-black'>
           <span className={classNames(styles.text['gradient-a'], 'bg-clip-text animate-vercel-text-a')}>
@@ -57,7 +60,7 @@ const Hero = () => {
           </a>
         ))}
       </div>
-    </div>
+    </Section>
   );
 };
 
