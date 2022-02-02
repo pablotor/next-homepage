@@ -9,16 +9,22 @@ interface Props {
   sections: {
     id: string;
     contentType: string;
-    showTitle: boolean;
+    showTitle?: boolean;
   }[];
+  highlight?: 'a' | 'b';
 }
 
-const Position = ({ i18nKey, namespace, sections }: Props) => {
+const Position = ({
+  i18nKey, namespace, sections, highlight,
+}: Props) => {
   const { t } = useTranslation(namespace);
   const formatKey = (key: string) => `${i18nKey.toLocaleUpperCase()}.${key}`;
   return (
     <div className={styles.container.position}>
-      <h5 className={classNames(styles.text['position-highlighted'], styles.text['highlight-a'])}>
+      <h5 className={classNames(
+        styles.text['position-highlighted'],
+        styles.text[`highlight-${highlight || 'a'}`],
+      )}>
         {t(formatKey('HIGHLIGHTED'))}
       </h5>
       <div className='flex flex-col sm:flex-row sm:justify-between sm:w-full'>

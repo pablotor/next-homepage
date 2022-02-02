@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Navbar from '../components/navbar';
 import Hero from '../components/sections/hero';
 import Experience from '../components/sections/experience';
+import Projects from '../components/sections/projects';
 
 const Home: NextPage = () => {
   const { t } = useTranslation('common');
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
         <div id='content' className='overflow-scroll max-h-screen-mobile lg:max-h-screen'>
           <Hero />
           <Experience />
+          <Projects />
         </div>
       </main>
     </div>
@@ -35,6 +37,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
       'common',
       'hero',
       'experience',
+      'projects',
     ])),
   },
 });

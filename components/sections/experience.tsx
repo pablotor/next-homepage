@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 
 import Position from '../position';
-// import classNames from '../../utils/tailwindClassNamesHelper';
+import classNames from '../../utils/tailwindClassNamesHelper';
 
 import styles from '../../styles/tailwindStyles.json';
 
@@ -28,7 +28,9 @@ const Experience = () => {
   const { t } = useTranslation('common');
   return (
     <div id="experience" className={styles.container.section}>
-      <h2 className={styles.text['section-title']}>{t('SECTIONS.EXPERIENCE')}</h2>
+      <h2 className={classNames(styles.text['section-title'], styles.text['gradient-a'])}>
+        {t('SECTIONS.EXPERIENCE')}
+      </h2>
       {jobs.map((job) => (
         <Position i18nKey={job} namespace='experience' key={job} sections={sections}/>
       ))}
