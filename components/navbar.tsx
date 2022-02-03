@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react';
 import { useTranslation } from 'next-i18next';
 import { Popover, Transition } from '@headlessui/react';
@@ -12,10 +11,10 @@ const sections = [
   { i18nKey: 'profile', href: '#profile' },
   { i18nKey: 'experience', href: '#experience' },
   { i18nKey: 'projects', href: '#projects' },
-  { i18nKey: 'development', href: '#' },
-  { i18nKey: 'portfolio', href: '#' },
-  { i18nKey: 'education', href: '#' },
-  { i18nKey: 'about', href: '#' },
+  // { i18nKey: 'development', href: '#' },
+  // { i18nKey: 'portfolio', href: '#' },
+  { i18nKey: 'education', href: '#education' },
+  { i18nKey: 'about', href: '#about' },
 ];
 
 const Navbar = ({ selectedSection }: { selectedSection: number }) => {
@@ -23,25 +22,36 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
 
   return (
     <nav>
-      <Popover id="navbar-mobile" className="lg:hidden relative z-0">
+      <Popover id="navbar-mobile" className="lg:hidden relative z-10">
         {({ open }) => (
           <>
-            <div className="relative z-10 bg-white shadow">
-              <div className="flex py-6 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+            <div className="relative z-20 bg-white shadow">
+              <div className="flex py-2 px-4 sm:px-8 mx-auto">
                 <Popover.Button
                   className={classNames(
                     open ? 'text-gray-900' : 'text-gray-500',
-                    'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                    'py-3 group bg-white rounded-md w-full inline-flex items-center justify-between text-lg font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
                   )}
                 >
-                  <span>Solutions</span>
-                  <ChevronDownIcon
-                    className={classNames(
-                      open ? 'text-gray-600' : 'text-gray-400',
-                      'ml-2 h-5 w-5 group-hover:text-gray-500',
-                    )}
-                    aria-hidden="true"
-                  />
+                  <span className='w-1/3 text-left'>{t(sections[selectedSection].i18nKey)}</span>
+                  <span className={selectedSection === 0 ? 'hidden' : 'hidden sm:block sm:w-1/3 sm:font-black sm:mx-auto'}>
+                    <span className={classNames(styles.text['gradient-a'], 'bg-clip-text animate-vercel-text-a')}>
+                      {t('FIRSTNAME')}
+                    </span>
+                    {' '}
+                    <span className={classNames(styles.text['gradient-b'], 'bg-clip-text animate-vercel-text-b')}>
+                      {t('LASTNAME')}
+                    </span>
+                  </span>
+                  <div className='flex justify-end w-1/3'>
+                    <ChevronDownIcon
+                      className={classNames(
+                        open ? 'text-gray-600' : 'text-gray-400',
+                        'ml-2 h-5 w-5 group-hover:text-gray-500',
+                      )}
+                      aria-hidden="true"
+                    />
+                  </div>
                 </Popover.Button>
               </div>
             </div>
@@ -55,7 +65,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 -translate-y-1"
             >
-              <Popover.Panel className="absolute inset-x-0 z-10 shadow-lg transform">
+              <Popover.Panel className="absolute inset-x-0 z-20 shadow-lg transform">
                 <div className="flex absolute inset-0" aria-hidden="true">
                   <div className="w-1/2 bg-white" />
                   <div className="w-1/2 bg-gray-50" />
