@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import classNames from '../../utils/tailwindClassNamesHelper';
 import Position from '../position';
 
-import Section from './genericSection';
+import SectionContainer from './sectionContainer';
 
 import styles from '../../styles/tailwindStyles.json';
 
@@ -30,14 +30,14 @@ const sections = [
 const Experience = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
   const { t } = useTranslation('common');
   return (
-    <Section id="experience" innerRef={innerRef}>
+    <SectionContainer id="experience" innerRef={innerRef}>
       <h2 className={classNames(styles.text['section-title'], styles.text['gradient-a'])}>
         {t('SECTIONS.EXPERIENCE')}
       </h2>
       {jobs.map((job) => (
         <Position i18nKey={job} namespace='experience' key={job} sections={sections}/>
       ))}
-    </Section>
+    </SectionContainer>
   );
 };
 

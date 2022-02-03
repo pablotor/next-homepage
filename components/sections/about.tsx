@@ -3,14 +3,14 @@ import { LegacyRef } from 'react';
 import { Trans, useTranslation } from 'next-i18next';
 
 import classNames from '../../utils/tailwindClassNamesHelper';
-import Section from './genericSection';
+import SectionContainer from './sectionContainer';
 
 import styles from '../../styles/tailwindStyles.json';
 
 const About = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
   const { t } = useTranslation(['common', 'about']);
   return (
-    <Section id="about" innerRef={innerRef}>
+    <SectionContainer id="about" innerRef={innerRef}>
       <div className="relative">
         <div className="lg:absolute lg:inset-0">
           <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
@@ -52,7 +52,7 @@ const About = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
           </div>
         </div>
       </div>
-    </Section>
+    </SectionContainer>
   );
 };
 

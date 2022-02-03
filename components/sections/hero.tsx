@@ -7,7 +7,7 @@ import classNames from '../../utils/tailwindClassNamesHelper';
 import LinkedIn from '../icons/linkedIn';
 import Github from '../icons/github';
 
-import Section from './genericSection';
+import SectionContainer from './sectionContainer';
 
 import styles from '../../styles/tailwindStyles.json';
 
@@ -24,7 +24,7 @@ const socialMedia = [
 const Hero = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
   const { t } = useTranslation(['common', 'hero']);
   return (
-    <Section id="profile" innerRef={innerRef}>
+    <SectionContainer id="profile" innerRef={innerRef}>
       <div>
         <h1 className='mb-2 text-[3.5rem] sm:text-8xl font-black leading-[1.1] sm:leading-normal'>
           <span className={classNames(styles.text['gradient-a'], 'bg-clip-text animate-vercel-text-a')}>
@@ -62,7 +62,7 @@ const Hero = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
           </a>
         ))}
       </div>
-    </Section>
+    </SectionContainer>
   );
 };
 
