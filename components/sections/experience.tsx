@@ -35,7 +35,7 @@ const Experience = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => 
         {t('SECTIONS.EXPERIENCE')}
       </h2>
       {jobs.map((job) => (
-        <Position i18nKey={job} namespace='experience' key={job} sections={sections}/>
+        <Position i18nKey={job} namespace='experience' key={job} sections={sections} includeSecondary/>
       ))}
     </SectionContainer>
   );

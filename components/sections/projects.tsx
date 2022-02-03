@@ -31,7 +31,7 @@ const Projects = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
         {t('SECTIONS.PROJECTS')}
       </h2>
       {projects.map((project) => (
-        <Position i18nKey={project} namespace='projects' key={project} sections={sections} highlight='a'/>
+        <Position i18nKey={project} namespace='projects' key={project} sections={sections} highlight='a' includeSecondary/>
       ))}
     </SectionContainer>
   );

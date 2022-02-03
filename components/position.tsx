@@ -11,11 +11,12 @@ interface Props {
     contentType: string;
     showTitle?: boolean;
   }[];
+  includeSecondary?: boolean;
   highlight?: 'a' | 'b';
 }
 
 const Position = ({
-  i18nKey, namespace, sections, highlight,
+  i18nKey, namespace, sections, includeSecondary, highlight = 'a',
 }: Props) => {
   const { t } = useTranslation(namespace);
   const formatKey = (key: string) => `${i18nKey.toLocaleUpperCase()}.${key}`;
@@ -23,7 +24,7 @@ const Position = ({
     <div className={styles.container.position}>
       <h5 className={classNames(
         styles.text['position-highlighted'],
-        styles.text[`highlight-${highlight || 'a'}`],
+        styles.text[`highlight-${highlight}`],
       )}>
         {t(formatKey('HIGHLIGHTED'))}
       </h5>
@@ -31,9 +32,11 @@ const Position = ({
         <h4 className={styles.text['position-title']}>{t(formatKey('TITLE'))}</h4>
         <p className={styles.text['position-date']}>{t(formatKey('DATE'))}</p>
       </div>
-      <h5 className={styles.text['position-secondary']}>
-        {t(formatKey('SECONDARY'))}
-      </h5>
+      {includeSecondary && (
+        <h5 className={styles.text['position-secondary']}>
+          {t(formatKey('SECONDARY'))}
+        </h5>
+      )}
       {sections.map((section) => {
         const sectionI18nKey = section.id.toLocaleUpperCase();
         return (
