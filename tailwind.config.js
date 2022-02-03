@@ -15,7 +15,7 @@ module.exports = {
       keyframes: {
         'vercel-text': {
           '0%, 55%': {
-            color: '#000',
+            color: 'inherit',
           },
           '5%, 50%': {
             color: 'transparent',
