@@ -13,7 +13,7 @@
     "position-highlighted": "font-medium text-xl bg-clip-text",
     "position-title": "text-xl",
     "position-secondary": "text-lg text-gray-700",
-    "position-date": "font-light text-xl text-gray-700",
+    "position-date": "font-light text-lg sm:text-xl text-gray-700",
     "position-section": "font-medium",
     "nav-link": "",
     "header-title": "",
