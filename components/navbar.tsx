@@ -11,7 +11,7 @@ const sections = [
   { i18nKey: 'profile', href: '#profile' },
   { i18nKey: 'experience', href: '#experience' },
   { i18nKey: 'projects', href: '#projects' },
-  // { i18nKey: 'development', href: '#' },
+  { i18nKey: 'skills', href: '#skills' },
   // { i18nKey: 'portfolio', href: '#' },
   { i18nKey: 'education', href: '#education' },
   { i18nKey: 'about', href: '#about' },

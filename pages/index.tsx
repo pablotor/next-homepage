@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
@@ -9,6 +10,7 @@ import Navbar from '../components/navbar';
 import Hero from '../components/sections/hero';
 import Experience from '../components/sections/experience';
 import Projects from '../components/sections/projects';
+import Skills from '../components/sections/skills';
 import Education from '../components/sections/education';
 import About from '../components/sections/about';
 
@@ -17,6 +19,7 @@ const Home: NextPage = () => {
   const [profileRef, profileInView] = useInView({ threshold: 0.51 });
   const [experienceRef, experienceInView] = useInView({ threshold: 0.51 });
   const [projectsRef, projectsInView] = useInView({ threshold: 0.51 });
+  const [skillsRef, skillsInView] = useInView({ threshold: 0.51 });
   const [educationRef, educationInView] = useInView({ threshold: 0.51 });
   const [aboutRef, aboutInView] = useInView({ threshold: 0.40 });
 
@@ -27,13 +30,21 @@ const Home: NextPage = () => {
       profileInView,
       experienceInView,
       projectsInView,
+      skillsInView,
       educationInView,
       aboutInView,
     ];
     if (sections.indexOf(true) !== -1) {
       setInViewSection(sections.indexOf(true));
     }
-  }, [profileInView, experienceInView, projectsInView, educationInView, aboutInView]);
+  }, [
+    profileInView,
+    experienceInView,
+    projectsInView,
+    skillsInView,
+    educationInView,
+    aboutInView,
+  ]);
 
   return (
     <div className='lg:flex mx-auto max-w-screen-xl'>
@@ -49,6 +60,7 @@ const Home: NextPage = () => {
           <Hero innerRef={profileRef}/>
           <Experience innerRef={experienceRef}/>
           <Projects innerRef={projectsRef}/>
+          <Skills innerRef={skillsRef}/>
           <Education innerRef={educationRef}/>
           <About innerRef={aboutRef}/>
         </div>
@@ -64,6 +76,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
       'hero',
       'experience',
       'projects',
+      'skills',
       'education',
       'about',
     ])),
