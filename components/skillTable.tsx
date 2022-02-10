@@ -27,11 +27,11 @@ const SkillItem = ({
       </p>
     </div>
     <div>
-      <p className='tracking-widest'>
+      <p className='tracking-widest leading-8'>
         {skillArray?.flatMap(
           (id, index) => ([
             <span key={id} className={classNames(
-              'hover:text-xl leading-8 hover:leading-4 tracking-normal whitespace-nowrap hover:text-transparent bg-clip-text transition-all ease-in-out cursor-default',
+              'hover:text-xl tracking-normal leading-8 hover:leading-4 whitespace-nowrap hover:text-transparent bg-clip-text transition-all ease-in-out cursor-default',
               styles.text['gradient-a'],
             )}>
               {t(`SKILLS.${id?.toLocaleUpperCase()}.LABEL`)}
