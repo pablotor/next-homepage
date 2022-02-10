@@ -28,12 +28,15 @@ const sections = [
 ];
 
 const Experience = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['common', 'experience']);
   return (
     <SectionContainer id="experience" innerRef={innerRef}>
       <h2 className={classNames(styles.text['section-title'], styles.text['gradient-a'])}>
         {t('SECTIONS.EXPERIENCE')}
       </h2>
+      <p className={styles.text.secondary}>
+        {t('COMMENT', { ns: 'experience' })}
+      </p>
       {jobs.map((job) => (
         <Position i18nKey={job} namespace='experience' key={job} sections={sections} includeSecondary/>
       ))}

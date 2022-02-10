@@ -24,12 +24,15 @@ const sections = [
 ];
 
 const Projects = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['common', 'projects']);
   return (
     <SectionContainer id="projects" innerRef={innerRef}>
       <h2 className={classNames(styles.text['section-title'], styles.text['gradient-b'])}>
         {t('SECTIONS.PROJECTS')}
       </h2>
+      <p className={styles.text.secondary}>
+        {t('COMMENT', { ns: 'projects' })}
+      </p>
       {projects.map((project) => (
         <Position i18nKey={project} namespace='projects' key={project} sections={sections} highlight='a' includeSecondary/>
       ))}
