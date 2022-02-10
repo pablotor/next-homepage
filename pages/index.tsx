@@ -11,6 +11,7 @@ import Hero from '../components/sections/hero';
 import Experience from '../components/sections/experience';
 import Projects from '../components/sections/projects';
 import Skills from '../components/sections/skills';
+import Portfolio from '../components/sections/portfolio';
 import Education from '../components/sections/education';
 import About from '../components/sections/about';
 
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
   const [experienceRef, experienceInView] = useInView({ threshold: 0.51 });
   const [projectsRef, projectsInView] = useInView({ threshold: 0.51 });
   const [skillsRef, skillsInView] = useInView({ threshold: 0.51 });
+  const [portfolioRef, portfolioInView] = useInView({ threshold: 0.51 });
   const [educationRef, educationInView] = useInView({ threshold: 0.51 });
   const [aboutRef, aboutInView] = useInView({ threshold: 0.40 });
 
@@ -31,6 +33,7 @@ const Home: NextPage = () => {
       experienceInView,
       projectsInView,
       skillsInView,
+      portfolioInView,
       educationInView,
       aboutInView,
     ];
@@ -42,6 +45,7 @@ const Home: NextPage = () => {
     experienceInView,
     projectsInView,
     skillsInView,
+    portfolioInView,
     educationInView,
     aboutInView,
   ]);
@@ -61,6 +65,7 @@ const Home: NextPage = () => {
           <Experience innerRef={experienceRef}/>
           <Projects innerRef={projectsRef}/>
           <Skills innerRef={skillsRef}/>
+          <Portfolio innerRef={portfolioRef}/>
           <Education innerRef={educationRef}/>
           <About innerRef={aboutRef}/>
         </div>
@@ -77,6 +82,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
       'experience',
       'projects',
       'skills',
+      'portfolio',
       'education',
       'about',
     ])),
