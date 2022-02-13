@@ -31,7 +31,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
                   open
                     ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
                     : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
-                  'group inline-flex justify-center py-4 px-10 text-sm font-medium text-center border-b-2',
+                  'group inline-flex justify-center py-4 px-10 text-sm font-medium text-center border-b-2 transition-all',
                 )}>
                 {t(tabArray[selected]?.i18nKey || 'TABS.LABEL')}
                 <ChevronDownIcon
@@ -86,25 +86,6 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
             </>
           )}
         </Menu>
-        {/* <label htmlFor={`${namespace}-tabs`} className="sr-only">
-          {t('TABS.LABEL')}
-        </label>
-        <select
-          id={`${namespace}-tabs`}
-          name={`${namespace}-tabs`}
-          className="block w-full rounded-md border-gray-300
-            focus:border-indigo-500 focus:ring-indigo-500"
-          onChange={
-            (event) => tabArray.find((el) => el.id === event.target.value)?.onSelect()
-          }
-          value={`${t(tabArray[selected].id)}`}
-        >
-          {tabArray.map((tab) => (
-            <option key={tab.id} value={tab.id}>
-              {t(tab.i18nKey)}
-            </option>
-          ))}
-        </select> */}
       </div>
       <div className="hidden md:block border-b border-gray-200">
         <nav className="flex -mb-px" aria-label="Tabs">
@@ -113,10 +94,9 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
               key={tab.id}
               className={classNames(
                 selected === index
-
                   ? classNames('text-transparent bg-clip-text border-indigo-500', styles.text['gradient-a'])
-                  : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700 hover:border-purple-500',
-                'w-1/4 py-4 px-8 xl:px-10 text-center border-b-2 font-medium text-sm cursor-pointer',
+                  : 'text-gray-500 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700 hover:border-purple-500',
+                'w-1/4 py-4 px-8 xl:px-10 text-center border-b-2 font-medium text-sm cursor-pointer transition-all',
               )}
               onClick={tab.onSelect}
               aria-current={selected === index ? 'page' : undefined}

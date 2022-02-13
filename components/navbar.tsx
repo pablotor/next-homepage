@@ -30,7 +30,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                 <Popover.Button
                   className={classNames(
                     open ? 'text-gray-900' : 'text-gray-500',
-                    'py-3 group bg-white rounded-md w-full inline-flex items-center justify-between text-lg font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                    'py-3 group bg-white rounded-md w-full inline-flex items-center justify-between text-lg font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all',
                   )}
                 >
                   <span className='w-1/3 text-left'>{t(sections[selectedSection].i18nKey)}</span>
@@ -66,13 +66,9 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
               leaveTo="opacity-0 -translate-y-1"
             >
               <Popover.Panel className="absolute inset-x-0 z-20 shadow-lg transform">
-                <div className="flex absolute inset-0" aria-hidden="true">
-                  <div className="w-1/2 bg-white" />
-                  <div className="w-1/2 bg-gray-50" />
-                </div>
-                <div className="grid relative grid-cols-1 lg:grid-cols-2 mx-auto max-w-7xl">
+                <div className="mx-auto">
                   <div
-                    className="grid sm:grid-cols-2 sm:gap-x-8 gap-y-10 py-8 sm:py-12 px-4 sm:px-6 lg:px-8 xl:pr-12 bg-white"
+                    className="py-8 sm:py-12 px-4 sm:px-6 bg-white"
                     aria-labelledby="solutions-heading"
                   >
                     <ul role="list" className="mt-5 space-y-6">
@@ -81,13 +77,13 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                           <a
                             href={item.href}
                             className={classNames(
-                              'flex items-center p-3 -m-3 text-base font-medium rounded-md text-transparent bg-clip-text duration-150 ease-in-out',
+                              'flex justify-center p-3 text-base font-medium rounded-md transition-all',
                               selectedSection === index
-                                ? styles.text['gradient-a']
-                                : 'bg-gray-900 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
+                                ? classNames(styles.text['gradient-a'], 'text-transparent bg-clip-text')
+                                : 'text-gray-900 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700',
                             )}
                           >
-                            <span className="ml-4">{t(item.i18nKey)}</span>
+                            <span className="mx-4">{t(item.i18nKey)}</span>
                           </a>
                         </li>
                       ))}
@@ -106,10 +102,10 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
               <a
                 href={item.href}
                 className={classNames(
-                  'flex items-center p-3 -m-3 text-base font-medium rounded-md duration-150 ease-in-out',
+                  'flex items-center p-3 -m-3 text-base font-medium rounded-md transition-all',
                   selectedSection === index
                     ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
-                    : 'text-gray-900 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
+                    : 'text-gray-900 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700',
                 )}
               >
                 <span className="ml-4">{t(item.i18nKey)}</span>
