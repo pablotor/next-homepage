@@ -26,7 +26,7 @@ const Education = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
   const { t } = useTranslation(['common', 'education']);
   return (
     <Section id="education" innerRef={innerRef}>
-      <h2 className={classNames(styles.text['section-title'], styles.text['gradient-b'])}>
+      <h2 className={classNames(styles.text['section-title'], styles.text['gradient-a'])}>
         {t('SECTIONS.EDUCATION')}
       </h2>
       {studies.map((study) => (

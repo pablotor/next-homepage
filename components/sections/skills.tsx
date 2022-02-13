@@ -100,7 +100,7 @@ const Skills = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
 
   return (
     <Section id="skills" innerRef={innerRef}>
-      <h2 className={classNames(styles.text['section-title'], styles.text['gradient-b'])}>
+      <h2 className={classNames(styles.text['section-title'], styles.text['gradient-a'])}>
         {t('SECTIONS.SKILLS')}
       </h2>
       <p className={styles.text.secondary}>
