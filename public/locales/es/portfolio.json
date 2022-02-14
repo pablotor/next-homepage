@@ -1,3 +1,18 @@
 {
-  "COMMENT": ""
+  "COMMENT": "Here you will find some products and code samples I've worked in. Check them out or write me to have access to the GitHub repos (when available).",
+  "TABLE.TYPE.FRONTEND": "FrontEnd",
+  "TABLE.TYPE.BACKEND": "BackEnd",
+  "TABLE.TYPE.FULLSTACK": "FullStack",
+  "ITEMS.HOMESITE.TITLE": "Homesite",
+  "ITEMS.HOMESITE.DESCRIPTION.BRIEF": "This very website. A minimalist one-pager with a touch of color.",
+  "ITEMS.HOMESITE.DESCRIPTION.FULL": "Inspired by the Vercel website.",
+  "ITEMS.WIBSON.TITLE": "Wibson Privacy Platform",
+  "ITEMS.WIBSON.DESCRIPTION.BRIEF": "A simple platform to solve a complicated issue: Privacy.",
+  "ITEMS.WIBSON.DESCRIPTION.FULL": "",
+  "ITEMS.LINBOT.TITLE": "LinkedIn bot",
+  "ITEMS.LINBOT.DESCRIPTION.BRIEF": "A proof of concept on LinkedIn automatization. Say hi to your contacts from the command-line!",
+  "ITEMS.LINBOT.DESCRIPTION.FULL": "",
+  "ITEMS.APPOINTER.TITLE": "Appointer",
+  "ITEMS.APPOINTER.DESCRIPTION.BRIEF": "A BackEnd app that handles appointments.",
+  "ITEMS.APPOINTER.DESCRIPTION.FULL": ""
 }
