@@ -34,7 +34,10 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                   )}
                 >
                   <span className='w-1/3 text-left'>{t(sections[selectedSection].i18nKey)}</span>
-                  <span className={selectedSection === 0 ? 'hidden' : 'hidden sm:block sm:w-1/3 sm:font-black sm:mx-auto'}>
+                  <span className={classNames(
+                    selectedSection === 0 ? '' : 'sm:block sm:w-1/3 sm:font-black sm:mx-auto',
+                    'hidden transition-all',
+                  )}>
                     <span className={classNames(styles.text['gradient-a'], 'bg-clip-text animate-vercel-text-a')}>
                       {t('FIRSTNAME')}
                     </span>
