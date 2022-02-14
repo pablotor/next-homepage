@@ -26,7 +26,7 @@ const Hero = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
   return (
     <SectionContainer id="profile" innerRef={innerRef}>
       <div>
-        <h1 className='mb-2 text-[3.5rem] sm:text-8xl font-black leading-[1.1] sm:leading-normal'>
+        <h1 className='mb-2 text-[3.5rem] sm:text-8xl font-black leading-[1.1] sm:leading-snug'>
           <span className={classNames(styles.text['gradient-a'], 'bg-clip-text animate-vercel-text-a')}>
             {t('FIRSTNAME')}
           </span>
