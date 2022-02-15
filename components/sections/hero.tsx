@@ -35,7 +35,9 @@ const Hero = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
             {t('LASTNAME')}
           </span>
         </h1>
-        <h3 className='mb-6 text-2xl text-gray-600'>{t('EMAIL')}</h3>
+        <a href={`mailto:${t('EMAIL')}`}>
+          <h3 className='mb-6 text-2xl text-gray-600'>{t('EMAIL')}</h3>
+        </a>
       </div>
       <div>
         <Trans
