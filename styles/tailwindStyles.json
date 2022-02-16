@@ -15,10 +15,6 @@
     "position-title": "text-xl",
     "position-secondary": "text-lg text-gray-700",
     "position-date": "font-light text-lg sm:text-xl text-gray-700",
-    "position-section": "font-medium",
-    "nav-link": "",
-    "header-title": "",
-    "job-subtitle": "",
-    "date": ""
+    "position-section": "font-medium"
   }
 }
