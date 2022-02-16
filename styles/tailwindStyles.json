@@ -1,6 +1,6 @@
 {
   "container": {
-    "section": "px-8 py-16 min-h-section-mobile lg:min-h-screen flex flex-col justify-center",
+    "section": "px-8 py-16 min-h-screen flex flex-col justify-center",
     "position": "py-4"
   },
   "text": {

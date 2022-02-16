@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import { Fragment } from 'react';
 import { useTranslation } from 'next-i18next';
 import { Popover, Transition } from '@headlessui/react';
@@ -21,7 +22,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
   const { t } = useTranslation('common');
 
   return (
-    <nav>
+    <nav className='fixed w-full lg:w-fit'>
       <Popover id="navbar-mobile" className="lg:hidden relative z-10">
         {({ open }) => (
           <>

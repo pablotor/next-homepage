@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/classnames-order */
 /* eslint-disable tailwindcss/no-custom-classname */
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -60,7 +61,7 @@ const Home: NextPage = () => {
 
       <Navbar selectedSection={inViewSection}/>
       <main>
-        <div id='content' className='overflow-scroll max-h-screen-mobile lg:max-h-screen'>
+        <div id='content' className='lg:ml-56 max-h-screen-mobile'>
           <Hero innerRef={profileRef}/>
           <Experience innerRef={experienceRef}/>
           <Projects innerRef={projectsRef}/>
