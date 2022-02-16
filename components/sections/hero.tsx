@@ -14,7 +14,7 @@ import styles from '../../styles/tailwindStyles.json';
 const socialMedia = [
   {
     icon: LinkedIn,
-    link: 'https://www.linkedin.com/in/pablo-javier-torrubiano-7907b395/',
+    link: 'https://www.linkedin.com/in/pablotor',
   }, {
     icon: Github,
     link: 'https://github.com/pablotor',
