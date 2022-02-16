@@ -1,6 +1,6 @@
 {
   "container": {
-    "section": "px-8 py-16 min-h-screen flex flex-col justify-center",
+    "section": "px-8 py-16 min-h-section-mobile lg:min-h-screen flex flex-col justify-center",
     "position": "py-4"
   },
   "text": {
@@ -15,10 +15,6 @@
     "position-title": "text-xl",
     "position-secondary": "text-lg text-gray-700",
     "position-date": "font-light text-lg sm:text-xl text-gray-700",
-    "position-section": "font-medium",
-    "nav-link": "",
-    "header-title": "",
-    "job-subtitle": "",
-    "date": ""
+    "position-section": "font-medium"
   }
 }

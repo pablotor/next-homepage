@@ -22,7 +22,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
   const { t } = useTranslation('common');
 
   return (
-    <nav className='fixed w-full lg:w-fit'>
+    <nav className='lg:fixed'>
       <Popover id="navbar-mobile" className="lg:hidden relative z-10">
         {({ open }) => (
           <>
