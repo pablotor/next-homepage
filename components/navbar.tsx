@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import { Fragment } from 'react';
 import { useTranslation } from 'next-i18next';
 import { Popover, Transition } from '@headlessui/react';
@@ -23,11 +22,11 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
 
   return (
     <nav className='lg:fixed'>
-      <Popover id="navbar-mobile" className="lg:hidden relative z-10">
+      <Popover id="navbar-mobile" className="relative z-10 lg:hidden">
         {({ open }) => (
           <>
             <div className="relative z-20 bg-white shadow">
-              <div className="flex py-2 px-4 sm:px-8 mx-auto">
+              <div className="flex py-2 px-4 mx-auto sm:px-8">
                 <Popover.Button
                   className={classNames(
                     open ? 'text-gray-900' : 'text-gray-500',
@@ -69,10 +68,10 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 -translate-y-1"
             >
-              <Popover.Panel className="absolute inset-x-0 z-20 shadow-lg transform">
+              <Popover.Panel className="absolute inset-x-0 z-20 shadow-lg">
                 <div className="mx-auto">
                   <div
-                    className="py-8 sm:py-12 px-4 sm:px-6 bg-white"
+                    className="py-8 px-4 bg-white sm:py-12 sm:px-6"
                     aria-labelledby="solutions-heading"
                   >
                     <ul role="list" className="mt-5 space-y-6">
@@ -99,7 +98,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
           </>
         )}
       </Popover>
-      <div id="navbar-desktop" className='hidden lg:flex flex-col justify-center px-8 mr-16 h-screen'>
+      <div id="navbar-desktop" className='hidden flex-col justify-center px-8 mr-16 h-screen lg:flex'>
         <ul role="list" className="mt-5 space-y-6">
           {sections.map((item, index) => (
             <li key={index} className="flow-root">

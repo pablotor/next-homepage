@@ -14,7 +14,7 @@ const About = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
       <div className="relative">
         <div className="lg:absolute lg:inset-0">
           <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
-            <div className="lg:hidden relative w-full h-36 sm:h-72">
+            <div className="relative w-full h-36 sm:h-72 lg:hidden">
               <Image
                 className="object-cover object-top "
                 src="/img/about-mobile.jpg"
@@ -23,7 +23,7 @@ const About = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
                 objectFit='cover'
               />
             </div >
-            <div className="hidden lg:block lg:absolute w-full lg:h-full">
+            <div className="hidden w-full lg:block lg:absolute lg:h-full">
               <Image
                 className="object-cover"
                 src="/img/about-desktop.jpg"
@@ -33,9 +33,9 @@ const About = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
             </div>
           </div>
         </div>
-        <div className="lg:grid relative lg:grid-cols-2 sm:px-6 pt-12 sm:pt-16 pb-16 lg:pl-8 lg:mx-auto">
+        <div className="relative pt-12 pb-16 sm:px-6 sm:pt-16 lg:grid lg:grid-cols-2 lg:pl-8 lg:mx-auto">
           <div className="lg:col-start-2 lg:pl-8">
-            <div className="mx-auto lg:mr-0 lg:ml-auto max-w-prose lg:max-w-lg text-base">
+            <div className="mx-auto max-w-prose text-base lg:mr-0 lg:ml-auto lg:max-w-lg">
               <h2 className={classNames(styles.text['section-title'], styles.text['gradient-b'])}>
                 {t('SECTIONS.ABOUT')}
               </h2>

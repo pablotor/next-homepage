@@ -22,7 +22,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
   const { t } = useTranslation(namespace);
   return (
     <div>
-      <div className="inline-block md:hidden relative text-left">
+      <div className="inline-block relative text-left md:hidden">
         <Menu>
           {({ open }) => (
             <>
@@ -35,7 +35,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
                 )}>
                 {t(tabArray[selected]?.i18nKey || 'TABS.LABEL')}
                 <ChevronDownIcon
-                  className="flex-shrink-0 -mr-1 ml-3 w-5 h-5 text-gray-400 group-hover:text-gray-500"
+                  className="shrink-0 -mr-1 ml-3 w-5 h-5 text-gray-400 group-hover:text-gray-500"
                   aria-hidden="true"
                 />
               </Menu.Button>
@@ -50,7 +50,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
               >
                 <Menu.Items
                   static
-                  className="absolute left-0 p-4 mt-2 bg-white rounded-md ring-1 ring-black ring-opacity-5 shadow-2xl origin-top-right focus:outline-none"
+                  className="absolute left-0 p-4 mt-2 bg-white rounded-md focus:outline-none ring-1 ring-black shadow-2xl origin-top-right ring-opacity-5"
                 >
                   {tabArray.map((option, index) => (
                   <Menu.Item key={option.id} onClick={option.onSelect}>
@@ -87,7 +87,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
           )}
         </Menu>
       </div>
-      <div className="hidden md:block border-b border-gray-200">
+      <div className="hidden border-b border-gray-200 md:block">
         <nav className="flex -mb-px" aria-label="Tabs">
           {tabArray.map((tab, index) => (
             <span

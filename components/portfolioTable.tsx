@@ -26,20 +26,20 @@ interface Props {
 const PortfolioTable = ({ portfolio, namespace }: Props) => {
   const { t } = useTranslation(namespace);
   return (
-    <div className='overflow-hidden sm:p-6 mt-10 rounded-md'>
+    <div className='overflow-hidden mt-10 rounded-md sm:p-6'>
       <ul role="list" className="grid gap-4">
         {portfolio.map((item) => (
           <li
             key={item.id}
-            className="block hover:bg-blue-50 sm:rounded-md border border-blue-200 shadow transition-all"
+            className="block hover:bg-blue-50 border border-blue-200 shadow transition-all sm:rounded-md"
           >
-            <div className="sm:flex flex-1 sm:justify-between sm:items-center py-4 px-4 sm:px-6 min-w-0">
+            <div className="flex-1 p-4 min-w-0 sm:flex sm:justify-between sm:items-center sm:px-6">
               <div>
                 <div className="flex text-sm">
                   <p className={classNames('font-medium truncate', styles.text['highlight-a'])}>
                     {t(`ITEMS.${item.id.toLocaleUpperCase()}.TITLE`)}
                   </p>
-                  <p className="flex-shrink-0 ml-1 font-normal text-gray-500">
+                  <p className="shrink-0 ml-1 font-normal text-gray-500">
                     {t(`TABLE.TYPE.${item.type.toLocaleUpperCase()}`)}
                   </p>
                 </div>
@@ -49,7 +49,7 @@ const PortfolioTable = ({ portfolio, namespace }: Props) => {
                   </p>
                 </div>
               </div>
-              <div className="flex-shrink-0 mt-4 sm:mt-0 sm:ml-5">
+              <div className="shrink-0 mt-4 sm:mt-0 sm:ml-5">
                 <div className="flex overflow-hidden -space-x-1">
                   {item.techs.map((tech) => (
                     <img

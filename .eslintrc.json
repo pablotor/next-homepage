@@ -25,6 +25,7 @@
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "tailwindcss/classnames-order": "warn",
+    "tailwindcss/no-arbitrary-value": "off",
     "tailwindcss/no-custom-classname": "warn",
     "tailwindcss/no-contradicting-classname": "error"
   }

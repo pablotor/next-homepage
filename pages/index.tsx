@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
@@ -51,7 +50,7 @@ const Home: NextPage = () => {
   ]);
 
   return (
-    <div className='lg:flex mx-auto max-w-screen-xl'>
+    <div className='mx-auto max-w-screen-xl lg:flex'>
       <Head>
         <title>{t('PAGE.TITLE')}</title>
         <meta name="description" content={t('PAGE.DESCRIPTION')} />
@@ -60,7 +59,7 @@ const Home: NextPage = () => {
 
       <Navbar selectedSection={inViewSection}/>
       <main>
-        <div id='content' className='overflow-scroll lg:overflow-auto lg:ml-56 max-h-screen-mobile lg:max-h-fit'>
+        <div id='content' className='overflow-scroll max-h-screen-mobile lg:overflow-auto lg:ml-56 lg:max-h-fit'>
           <Hero innerRef={profileRef}/>
           <Experience innerRef={experienceRef}/>
           <Projects innerRef={projectsRef}/>
