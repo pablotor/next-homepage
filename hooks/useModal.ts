@@ -2,12 +2,12 @@ import { createContext, ReactElement, useContext } from 'react';
 
 export const SetModalContext = createContext<(
   // eslint-disable-next-line no-unused-vars
-  content: ReactElement,
+  modalContent: ReactElement,
 ) => void>(
   () => { },
   );
 
-export const useNotification = () => {
+export const useModal = () => {
   const context = useContext(SetModalContext);
   if (!context) {
     throw new Error('useSetModal must be used within the SetModalContext');

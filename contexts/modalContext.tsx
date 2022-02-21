@@ -18,8 +18,7 @@ const ModalContext = ({ children }: { children: ReactElement | ReactElement[] })
       <Modal
         content={content}
         isOpen={open}
-        close={() => setOpen(false)}
-        className='mt-16'
+        onClose={() => setOpen(false)}
       />
       {children}
     </SetModalContext.Provider>
