@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTranslation } from 'next-i18next';
 
+import { useModal } from '../hooks/useModal';
 import classNames from '../utils/tailwindClassNamesHelper';
 import styles from '../styles/tailwindStyles.json';
+import PortfolioModal from './portfolioModal';
 
 interface Tech {
   id: string;
@@ -25,6 +27,7 @@ interface Props {
 
 const PortfolioTable = ({ portfolio, namespace }: Props) => {
   const { t } = useTranslation(namespace);
+  const openModal = useModal();
   return (
     <div className='overflow-hidden mt-10 rounded-md sm:p-6'>
       <ul role="list" className="grid gap-4">
@@ -32,6 +35,9 @@ const PortfolioTable = ({ portfolio, namespace }: Props) => {
           <li
             key={item.id}
             className="block hover:bg-blue-50 border border-blue-200 shadow transition-all sm:rounded-md"
+            onClick={() => openModal(
+              <PortfolioModal i18nKey={item.id.toLocaleUpperCase()} onClose={() => {}}/>,
+            )}
           >
             <div className="flex-1 p-4 min-w-0 sm:flex sm:justify-between sm:items-center sm:px-6">
               <div>
