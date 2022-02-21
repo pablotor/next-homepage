@@ -57,7 +57,7 @@ const Home: NextPage = () => {
         <meta name="description" content={t('PAGE.DESCRIPTION')} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ModalContext >
+      <ModalContext>
         <Navbar selectedSection={inViewSection}/>
         <main>
           <div id='content' className='overflow-scroll max-h-screen-mobile lg:overflow-auto lg:ml-56 lg:max-h-fit'>
