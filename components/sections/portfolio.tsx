@@ -1,18 +1,20 @@
 import { LegacyRef } from 'react';
 import { useTranslation } from 'next-i18next';
 
+import { PortfolioItem } from '../../types/portfolio';
+
 import classNames from '../../utils/tailwindClassNamesHelper';
 import PortfolioTable from '../portfolioTable';
 import Section from './sectionContainer';
 
 import styles from '../../styles/tailwindStyles.json';
 
-const portfolio = [
+const portfolio: PortfolioItem[] = [
   {
     id: 'homesite',
     type: 'frontend',
-    lastUpdated: '2020-01-07',
-    openSource: true,
+    codeAvailable: true,
+    deployed: false,
     techs: [
       {
         id: 'tailwind',
@@ -34,14 +36,14 @@ const portfolio = [
   }, {
     id: 'wibson',
     type: 'fullstack',
-    lastUpdated: '2020-01-07',
-    openSource: false,
+    codeAvailable: false,
+    deployed: true,
     techs: [],
   }, {
     id: 'linbot',
     type: 'backend',
-    lastUpdated: '2020-01-07',
-    openSource: true,
+    codeAvailable: true,
+    deployed: false,
     techs: [
       {
         id: 'puppeteer',
@@ -60,8 +62,8 @@ const portfolio = [
   }, {
     id: 'appointer',
     type: 'backend',
-    lastUpdated: '2020-01-07',
-    openSource: true,
+    codeAvailable: true,
+    deployed: false,
     techs: [
       {
         id: 'node',

@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
@@ -14,6 +13,7 @@ import Skills from '../components/sections/skills';
 import Portfolio from '../components/sections/portfolio';
 import Education from '../components/sections/education';
 import About from '../components/sections/about';
+import ModalContext from '../contexts/modalContext';
 
 const Home: NextPage = () => {
   const { t } = useTranslation('common');
@@ -51,25 +51,26 @@ const Home: NextPage = () => {
   ]);
 
   return (
-    <div className='lg:flex mx-auto max-w-screen-xl'>
+    <div className='mx-auto max-w-screen-xl lg:flex'>
       <Head>
         <title>{t('PAGE.TITLE')}</title>
         <meta name="description" content={t('PAGE.DESCRIPTION')} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Navbar selectedSection={inViewSection}/>
-      <main>
-        <div id='content' className='overflow-scroll lg:overflow-auto lg:ml-56 max-h-screen-mobile lg:max-h-fit'>
-          <Hero innerRef={profileRef}/>
-          <Experience innerRef={experienceRef}/>
-          <Projects innerRef={projectsRef}/>
-          <Skills innerRef={skillsRef}/>
-          <Portfolio innerRef={portfolioRef}/>
-          <Education innerRef={educationRef}/>
-          <About innerRef={aboutRef}/>
-        </div>
-      </main>
+      <ModalContext>
+        <Navbar selectedSection={inViewSection}/>
+        <main>
+          <div id='content' className='overflow-scroll max-h-screen-mobile lg:overflow-auto lg:ml-56 lg:max-h-fit'>
+            <Hero innerRef={profileRef}/>
+            <Experience innerRef={experienceRef}/>
+            <Projects innerRef={projectsRef}/>
+            <Skills innerRef={skillsRef}/>
+            <Portfolio innerRef={portfolioRef}/>
+            <Education innerRef={educationRef}/>
+            <About innerRef={aboutRef}/>
+          </div>
+        </main>
+      </ModalContext>
     </div>
   );
 };

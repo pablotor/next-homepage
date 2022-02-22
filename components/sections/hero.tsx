@@ -1,5 +1,3 @@
-/* eslint-disable tailwindcss/classnames-order */
-/* eslint-disable tailwindcss/no-custom-classname */
 import { LegacyRef } from 'react';
 import { Trans, useTranslation } from 'next-i18next';
 
@@ -26,7 +24,7 @@ const Hero = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
   return (
     <SectionContainer id="profile" innerRef={innerRef}>
       <div>
-        <h1 className='mb-2 text-[3.5rem] sm:text-8xl font-black leading-[1.1] sm:leading-snug'>
+        <h1 className='mb-2 text-[3.5rem] font-black leading-[1.1] sm:text-8xl sm:leading-snug'>
           <span className={classNames(styles.text['gradient-a'], 'bg-clip-text animate-vercel-text-a')}>
             {t('FIRSTNAME')}
           </span>
