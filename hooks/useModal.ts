@@ -15,7 +15,7 @@ export const ModalContext = createContext<ModalContextProps>({
 export const useModal = () => {
   const context = useContext(ModalContext);
   if (!context) {
-    throw new Error('useSetModal must be used within the SetModalContext');
+    throw new Error('useModal must be used within the ModalContext');
   }
   return context;
 };
