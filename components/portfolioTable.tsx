@@ -1,24 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTranslation } from 'next-i18next';
 
+import { PortfolioItem } from '../types/portfolio';
+
 import { useModal } from '../hooks/useModal';
 import classNames from '../utils/tailwindClassNamesHelper';
 import styles from '../styles/tailwindStyles.json';
 import PortfolioModal from './portfolioModal';
-
-interface Tech {
-  id: string;
-  src: string;
-  style?: string;
-}
-
-interface PortfolioItem {
-  id: string;
-  type: string;
-  openSource: boolean;
-  lastUpdated: string;
-  techs: Tech[];
-}
 
 interface Props {
   portfolio: PortfolioItem[];
@@ -34,10 +22,8 @@ const PortfolioTable = ({ portfolio, namespace }: Props) => {
         {portfolio.map((item) => (
           <li
             key={item.id}
-            className="block hover:bg-blue-50 border border-blue-200 shadow transition-all sm:rounded-md"
-            onClick={() => setModal(
-              <PortfolioModal i18nKey={item.id.toLocaleUpperCase()} onClose={onClose}/>,
-            )}
+            className="block hover:bg-blue-50 border border-blue-200 shadow transition-all cursor-pointer sm:rounded-md"
+            onClick={() => setModal(<PortfolioModal onClose={onClose} {...item}/>)}
           >
             <div className="flex-1 p-4 min-w-0 sm:flex sm:justify-between sm:items-center sm:px-6">
               <div>
