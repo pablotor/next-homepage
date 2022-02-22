@@ -1,28 +1,31 @@
 import { ReactElement, useState } from 'react';
-import { SetModalContext } from '../hooks/useModal';
+import { ModalContext } from '../hooks/useModal';
 import Modal from '../components/modal';
 
-const ModalContext = ({ children }: { children: ReactElement | ReactElement[] }) => {
+// This is clearly overkill. It aims to show a nice way to handle app modals
+const ModalContextContainer = ({ children }: { children: ReactElement | ReactElement[] }) => {
   const [content, setContent] = useState<ReactElement | null>(null);
   const [open, setOpen] = useState(false);
 
-  const onSetModal = (
+  const setModal = (
     modalContent: ReactElement,
   ) => {
     setContent(modalContent);
     setOpen(true);
   };
 
+  const onClose = () => setOpen(false);
+
   return (
-    <SetModalContext.Provider value={onSetModal}>
+    <ModalContext.Provider value={{ setModal, onClose }}>
       <Modal
         content={content}
         isOpen={open}
-        onClose={() => setOpen(false)}
+        onClose={onClose}
       />
       {children}
-    </SetModalContext.Provider>
+    </ModalContext.Provider>
   );
 };
 
-export default ModalContext;
+export default ModalContextContainer;

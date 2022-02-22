@@ -1,14 +1,19 @@
 import { createContext, ReactElement, useContext } from 'react';
 
-export const SetModalContext = createContext<(
+// This is clearly overkill. It aims to show a nice way to handle app modals
+interface ModalContextProps {
   // eslint-disable-next-line no-unused-vars
-  modalContent: ReactElement,
-) => void>(
-  () => { },
-  );
+  setModal: (modalContent: ReactElement) => void;
+  onClose: () => void;
+}
+
+export const ModalContext = createContext<ModalContextProps>({
+  setModal: () => {},
+  onClose: () => {},
+});
 
 export const useModal = () => {
-  const context = useContext(SetModalContext);
+  const context = useContext(ModalContext);
   if (!context) {
     throw new Error('useSetModal must be used within the SetModalContext');
   }

@@ -27,7 +27,7 @@ interface Props {
 
 const PortfolioTable = ({ portfolio, namespace }: Props) => {
   const { t } = useTranslation(namespace);
-  const openModal = useModal();
+  const { setModal, onClose } = useModal();
   return (
     <div className='overflow-hidden mt-10 rounded-md sm:p-6'>
       <ul role="list" className="grid gap-4">
@@ -35,8 +35,8 @@ const PortfolioTable = ({ portfolio, namespace }: Props) => {
           <li
             key={item.id}
             className="block hover:bg-blue-50 border border-blue-200 shadow transition-all sm:rounded-md"
-            onClick={() => openModal(
-              <PortfolioModal i18nKey={item.id.toLocaleUpperCase()} onClose={() => {}}/>,
+            onClick={() => setModal(
+              <PortfolioModal i18nKey={item.id.toLocaleUpperCase()} onClose={onClose}/>,
             )}
           >
             <div className="flex-1 p-4 min-w-0 sm:flex sm:justify-between sm:items-center sm:px-6">
