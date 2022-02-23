@@ -55,6 +55,9 @@ const PortfolioModal = ({
         </div>
       )}
       <div className='flex justify-between mt-10 sm:justify-evenly'>
+        <button onClick={onClose} className={altButtonStyle}>
+          {t('MODAL.BUTTONS.CLOSE')}
+        </button>
         {codeAvailable && (
           <a
             href={`mailto:${t('EMAIL', { ns: 'common' })}`}
@@ -75,9 +78,6 @@ const PortfolioModal = ({
             {t('MODAL.BUTTONS.GOTO')}
           </a>
         )}
-        <button onClick={onClose} className={altButtonStyle}>
-          {t('MODAL.BUTTONS.CLOSE')}
-        </button>
       </div>
     </div>
   );
