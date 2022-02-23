@@ -51,7 +51,11 @@ const PortfolioTable = ({ portfolio, namespace }: Props) => {
                         tech.style || '',
                       )}
                       src={tech.src}
-                      alt={t(`TABLE.TECH.${tech.id.toLocaleUpperCase()}`)}
+                      alt={
+                        t(
+                          'TABLE.TECH.ICON_LABEL',
+                          { techname: t(`TABLE.TECH.${tech.id.toLocaleUpperCase()}`) },
+                        )}
                     />
                   ))}
                 </div>

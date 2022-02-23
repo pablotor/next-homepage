@@ -40,7 +40,11 @@ const PortfolioModal = ({
                 <img
                   className='mr-2 w-5 h-5 rounded-sm'
                   src={tech.src}
-                  alt={t(`TABLE.TECH.${tech.id.toLocaleUpperCase()}`)}
+                  alt={
+                    t(
+                      'TABLE.TECH.ICON_LABEL',
+                      { techname: t(`TABLE.TECH.${tech.id.toLocaleUpperCase()}`) },
+                    )}
                 />
                 <span className='text-gray-700'>
                   {t(`TABLE.TECH.${tech.id.toLocaleUpperCase()}`)}

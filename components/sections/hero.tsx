@@ -12,9 +12,11 @@ import styles from '../../styles/tailwindStyles.json';
 const socialMedia = [
   {
     icon: LinkedIn,
+    label: 'LinkedIn',
     link: 'https://www.linkedin.com/in/pablo-javier-torrubiano-7907b395/',
   }, {
     icon: Github,
+    label: 'Github',
     link: 'https://github.com/pablotor',
   },
 ];
@@ -51,7 +53,14 @@ const Hero = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
       </div>
       <div className='flex mt-6'>
         {socialMedia.map((element, index) => (
-          <a key={index} target='_blank' rel='noreferrer' href={element.link} className='mr-6 '>
+          <a
+            key={index}
+            href={element.link}
+            className='mr-6 '
+            aria-label={element.label}
+            target='_blank'
+            rel='noreferrer'
+          >
             <div className={classNames(
               'p-3 bg-gray-600 rounded-full hover:bg-gradient-to-r transition-all',
               'from-purple-500 to-pink-700',

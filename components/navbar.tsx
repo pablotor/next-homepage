@@ -32,6 +32,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                     open ? 'text-gray-900' : 'text-gray-500',
                     'py-3 group bg-white rounded-md w-full inline-flex items-center justify-between text-lg font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all',
                   )}
+                  aria-label={t(open ? 'NAVBAR.MENU.CLOSE' : 'NAVBAR.MENU.OPEN')}
                 >
                   <span className='w-1/3 text-left'>{t(sections[selectedSection].i18nKey)}</span>
                   <span className={classNames(

@@ -18,7 +18,7 @@ const About = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
               <Image
                 className="object-cover object-top "
                 src="/img/about-mobile.jpg"
-                alt=""
+                alt={t('IMAGE_ALT', { ns: 'about' })}
                 layout='fill'
                 objectFit='cover'
               />
@@ -27,7 +27,7 @@ const About = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
               <Image
                 className="object-cover"
                 src="/img/about-desktop.jpg"
-                alt=""
+                alt={t('IMAGE_ALT', { ns: 'about' })}
                 layout='fill'
               />
             </div>
