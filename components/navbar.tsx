@@ -77,11 +77,11 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                   >
                     <ul role="list" className="mt-5 space-y-6">
                       {sections.map((item, index) => (
-                        <li key={index} className="flow-root">
+                        <Popover.Button as='li' key={index} className="flow-root">
                           <a
                             href={item.href}
                             className={classNames(
-                              'flex justify-center p-3 text-base font-medium rounded-md transition-all',
+                              'flex justify-center p-3 text-base font-medium transition-all',
                               selectedSection === index
                                 ? classNames(styles.text['gradient-a'], 'text-transparent bg-clip-text')
                                 : 'text-gray-900 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700',
@@ -89,7 +89,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                           >
                             <span className="mx-4">{t(item.i18nKey)}</span>
                           </a>
-                        </li>
+                        </Popover.Button>
                       ))}
                     </ul>
                   </div>
@@ -106,7 +106,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
               <a
                 href={item.href}
                 className={classNames(
-                  'flex items-center p-3 -m-3 text-base font-medium rounded-md transition-all',
+                  'flex items-center p-3 -m-3 text-base font-mediumtransition-all',
                   selectedSection === index
                     ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
                     : 'text-gray-900 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700',
