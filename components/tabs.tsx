@@ -50,7 +50,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
               >
                 <Menu.Items
                   static
-                  className="absolute left-0 p-4 mt-2 bg-white rounded-md focus:outline-none ring-1 ring-black shadow-2xl origin-top-right ring-opacity-5"
+                  className="absolute left-0 p-4 mt-2 bg-white rounded-md focus:outline-none ring-1 ring-black/5 shadow-2xl origin-top-right"
                 >
                   {tabArray.map((option, index) => (
                   <Menu.Item key={option.id} onClick={option.onSelect}>
