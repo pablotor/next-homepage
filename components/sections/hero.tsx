@@ -13,7 +13,7 @@ const socialMedia = [
   {
     icon: LinkedIn,
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/pablo-javier-torrubiano-7907b395/',
+    link: 'https://www.linkedin.com/in/pablotor',
   }, {
     icon: Github,
     label: 'Github',
