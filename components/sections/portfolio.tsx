@@ -78,7 +78,7 @@ const portfolio: PortfolioItem[] = [
   },
 ];
 
-const Portfolio = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
+const Portfolio = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
   const { t } = useTranslation(['common', 'portfolio']);
   return (
     <Section id="portfolio" innerRef={innerRef}>
@@ -88,7 +88,7 @@ const Portfolio = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
       <p className={styles.text.secondary}>
         {t('COMMENT', { ns: 'portfolio' })}
       </p>
-      <PortfolioTable portfolio={portfolio} namespace='portfolio' />
+      <PortfolioTable portfolio={portfolio} namespace="portfolio" />
     </Section>
   );
 };

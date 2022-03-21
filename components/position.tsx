@@ -22,13 +22,15 @@ const Position = ({
   const formatKey = (key: string) => `${i18nKey.toLocaleUpperCase()}.${key}`;
   return (
     <div className={styles.container.position}>
-      <h5 className={classNames(
-        styles.text['position-highlighted'],
-        styles.text[`highlight-${highlight}`],
-      )}>
+      <h5
+        className={classNames(
+          styles.text['position-highlighted'],
+          styles.text[`highlight-${highlight}`],
+        )}
+      >
         {t(formatKey('HIGHLIGHTED'))}
       </h5>
-      <div className='flex flex-col-reverse sm:flex-row sm:justify-between sm:w-full'>
+      <div className="flex flex-col-reverse sm:flex-row sm:justify-between sm:w-full">
         <h4 className={styles.text['position-title']}>{t(formatKey('TITLE'))}</h4>
         <p className={styles.text['position-date']}>{t(formatKey('DATE'))}</p>
       </div>
@@ -40,7 +42,7 @@ const Position = ({
       {sections.map((section) => {
         const sectionI18nKey = section.id.toLocaleUpperCase();
         return (
-          <div key={section.id} >
+          <div key={section.id}>
             {section.showTitle && (
               <h6 className={styles.text['position-section']}>
                 {t(`SUBTITLES.${sectionI18nKey}`)}
@@ -50,7 +52,7 @@ const Position = ({
             {section.contentType === 'multiple' && (
               <ul>
                 {(t(formatKey(sectionI18nKey), { returnObjects: true }) as string[]).map(
-                  (element, index) => <li key={index}>{element}</li>,
+                  (element) => <li key={element}>{element}</li>,
                 )}
               </ul>
             )}

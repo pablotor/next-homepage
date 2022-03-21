@@ -22,7 +22,7 @@ const sections = [
   },
 ];
 
-const Education = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
+const Education = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
   const { t } = useTranslation(['common', 'education']);
   return (
     <Section id="education" innerRef={innerRef}>
@@ -30,7 +30,7 @@ const Education = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
         {t('SECTIONS.EDUCATION')}
       </h2>
       {studies.map((study) => (
-        <Position i18nKey={study} namespace='education' key={study} sections={sections} highlight='a'/>
+        <Position i18nKey={study} namespace="education" key={study} sections={sections} highlight="a" />
       ))}
     </Section>
   );

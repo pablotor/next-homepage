@@ -21,7 +21,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
   const { t } = useTranslation('common');
 
   return (
-    <nav className='lg:fixed'>
+    <nav className="lg:fixed">
       <Popover id="navbar-mobile" className="relative z-10 lg:hidden">
         {({ open }) => (
           <>
@@ -32,12 +32,15 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                     open ? 'text-gray-900' : 'text-gray-500',
                     'py-3 group bg-white rounded-md w-full inline-flex items-center justify-between text-lg font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all',
                   )}
+                  aria-label={t(open ? 'NAVBAR.MENU.CLOSE' : 'NAVBAR.MENU.OPEN')}
                 >
-                  <span className='w-1/3 text-left'>{t(sections[selectedSection].i18nKey)}</span>
-                  <span className={classNames(
-                    selectedSection === 0 ? '' : 'sm:block sm:w-1/3 sm:font-black sm:mx-auto',
-                    'hidden transition-all',
-                  )}>
+                  <span className="w-1/3 text-left">{t(sections[selectedSection].i18nKey)}</span>
+                  <span
+                    className={classNames(
+                      selectedSection === 0 ? '' : 'sm:block sm:w-1/3 sm:font-black sm:mx-auto',
+                      'hidden transition-all',
+                    )}
+                  >
                     <span className={classNames(styles.text['gradient-a'], 'bg-clip-text animate-vercel-text-a')}>
                       {t('FIRSTNAME')}
                     </span>
@@ -46,7 +49,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                       {t('LASTNAME')}
                     </span>
                   </span>
-                  <div className='flex justify-end w-1/3'>
+                  <div className="flex justify-end w-1/3">
                     <ChevronDownIcon
                       className={classNames(
                         open ? 'text-gray-600' : 'text-gray-400',
@@ -74,13 +77,13 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                     className="py-8 px-4 bg-white sm:py-12 sm:px-6"
                     aria-labelledby="solutions-heading"
                   >
-                    <ul role="list" className="mt-5 space-y-6">
+                    <ul className="mt-5 space-y-6">
                       {sections.map((item, index) => (
-                        <li key={index} className="flow-root">
+                        <Popover.Button as="li" key={item.i18nKey} className="flow-root">
                           <a
                             href={item.href}
                             className={classNames(
-                              'flex justify-center p-3 text-base font-medium rounded-md transition-all',
+                              'flex justify-center p-3 text-base font-medium transition-all',
                               selectedSection === index
                                 ? classNames(styles.text['gradient-a'], 'text-transparent bg-clip-text')
                                 : 'text-gray-900 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700',
@@ -88,7 +91,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                           >
                             <span className="mx-4">{t(item.i18nKey)}</span>
                           </a>
-                        </li>
+                        </Popover.Button>
                       ))}
                     </ul>
                   </div>
@@ -98,14 +101,14 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
           </>
         )}
       </Popover>
-      <div id="navbar-desktop" className='hidden flex-col justify-center px-8 mr-16 h-screen lg:flex'>
-        <ul role="list" className="mt-5 space-y-6">
+      <div id="navbar-desktop" className="hidden flex-col justify-center px-8 mr-16 h-screen lg:flex">
+        <ul className="mt-5 space-y-6">
           {sections.map((item, index) => (
-            <li key={index} className="flow-root">
+            <li key={item.i18nKey} className="flow-root">
               <a
                 href={item.href}
                 className={classNames(
-                  'flex items-center p-3 -m-3 text-base font-medium rounded-md transition-all',
+                  'flex items-center p-3 -m-3 text-base font-mediumtransition-all',
                   selectedSection === index
                     ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
                     : 'text-gray-900 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700',

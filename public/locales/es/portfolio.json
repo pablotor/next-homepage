@@ -3,6 +3,7 @@
   "TABLE.TYPE.FRONTEND": "FrontEnd",
   "TABLE.TYPE.BACKEND": "BackEnd",
   "TABLE.TYPE.FULLSTACK": "FullStack",
+  "TABLE.TECH.ICON_LABEL": "{{techname}} icon",
   "TABLE.TECH.JS": "JavaScript",
   "TABLE.TECH.NODE": "NodeJS",
   "TABLE.TECH.NEXT": "NextJS",

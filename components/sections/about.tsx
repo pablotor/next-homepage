@@ -7,7 +7,7 @@ import SectionContainer from './sectionContainer';
 
 import styles from '../../styles/tailwindStyles.json';
 
-const About = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
+const About = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
   const { t } = useTranslation(['common', 'about']);
   return (
     <SectionContainer id="about" innerRef={innerRef}>
@@ -18,17 +18,17 @@ const About = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
               <Image
                 className="object-cover object-top "
                 src="/img/about-mobile.jpg"
-                alt=""
-                layout='fill'
-                objectFit='cover'
+                alt={t('IMAGE_ALT', { ns: 'about' })}
+                layout="fill"
+                objectFit="cover"
               />
-            </div >
+            </div>
             <div className="hidden w-full lg:block lg:absolute lg:h-full">
               <Image
                 className="object-cover"
                 src="/img/about-desktop.jpg"
-                alt=""
-                layout='fill'
+                alt={t('IMAGE_ALT', { ns: 'about' })}
+                layout="fill"
               />
             </div>
           </div>
@@ -41,8 +41,8 @@ const About = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
               </h2>
               <div className={classNames(styles.text.primary, 'mt-5 prose prose-indigo')}>
                 <Trans
-                  i18nKey='CONTENT'
-                  ns='about'
+                  i18nKey="CONTENT"
+                  ns="about"
                   components={{
                     highlighted: <span className={styles.text['highlight-a']} />,
                   }}

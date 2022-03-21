@@ -5,7 +5,7 @@ interface Props {
   content: ReactElement | null;
   isOpen: boolean;
   onClose: () => void;
-  className?: string;
+  // className?: string;
 }
 
 const Modal = ({

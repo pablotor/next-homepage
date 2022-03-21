@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement, useMemo, useState } from 'react';
 import { ModalContext } from '../hooks/useModal';
 import Modal from '../components/modal';
 
@@ -16,8 +16,10 @@ const ModalContextContainer = ({ children }: { children: ReactElement | ReactEle
 
   const onClose = () => setOpen(false);
 
+  const value = useMemo(() => ({ setModal, onClose }), []);
+
   return (
-    <ModalContext.Provider value={{ setModal, onClose }}>
+    <ModalContext.Provider value={value}>
       <Modal
         content={content}
         isOpen={open}

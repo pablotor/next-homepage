@@ -27,7 +27,7 @@ const sections = [
   },
 ];
 
-const Experience = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
+const Experience = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
   const { t } = useTranslation(['common', 'experience']);
   return (
     <SectionContainer id="experience" innerRef={innerRef}>
@@ -38,7 +38,7 @@ const Experience = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => 
         {t('COMMENT', { ns: 'experience' })}
       </p>
       {jobs.map((job) => (
-        <Position i18nKey={job} namespace='experience' key={job} sections={sections} includeSecondary/>
+        <Position i18nKey={job} namespace="experience" key={job} sections={sections} includeSecondary />
       ))}
     </SectionContainer>
   );
