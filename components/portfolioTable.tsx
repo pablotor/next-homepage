@@ -40,7 +40,7 @@ const PortfolioTable = ({ portfolio, namespace }: Props) => {
                     </p>
                   </div>
                   <div className="flex mt-2">
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-left text-gray-500">
                       {t(`ITEMS.${item.id.toLocaleUpperCase()}.DESCRIPTION.BRIEF`)}
                     </p>
                   </div>
