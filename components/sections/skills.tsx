@@ -82,7 +82,7 @@ const skills: SkillSet[] = [
   },
 ];
 
-const Skills = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
+const Skills = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
   const [selected, setSelected] = useState(0);
   const { t } = useTranslation(['common', 'skills']);
   const enrichedSkills = [{
@@ -108,7 +108,7 @@ const Skills = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
       </p>
       <div className="flex justify-between items-baseline mt-8">
         <div className="flex items-center">
-          <Tabs selected={selected} namespace='skills' tabArray={enrichedSkills}/>
+          <Tabs selected={selected} namespace="skills" tabArray={enrichedSkills} />
         </div>
       </div>
       <SkillTable skills={enrichedSkills} selected={selected} />

@@ -51,23 +51,23 @@ const Home: NextPage = () => {
   ]);
 
   return (
-    <div className='mx-auto max-w-screen-xl lg:flex'>
+    <div className="mx-auto max-w-screen-xl lg:flex">
       <Head>
         <title>{t('PAGE.TITLE')}</title>
         <meta name="description" content={t('PAGE.DESCRIPTION')} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ModalContext>
-        <Navbar selectedSection={inViewSection}/>
+        <Navbar selectedSection={inViewSection} />
         <main>
-          <div id='content' className='overflow-scroll max-h-screen-mobile lg:overflow-auto lg:ml-56 lg:max-h-fit'>
-            <Hero innerRef={profileRef}/>
-            <Experience innerRef={experienceRef}/>
-            <Projects innerRef={projectsRef}/>
-            <Skills innerRef={skillsRef}/>
-            <Portfolio innerRef={portfolioRef}/>
-            <Education innerRef={educationRef}/>
-            <About innerRef={aboutRef}/>
+          <div id="content" className="overflow-scroll max-h-screen-mobile lg:overflow-auto lg:ml-56 lg:max-h-fit">
+            <Hero innerRef={profileRef} />
+            <Experience innerRef={experienceRef} />
+            <Projects innerRef={projectsRef} />
+            <Skills innerRef={skillsRef} />
+            <Portfolio innerRef={portfolioRef} />
+            <Education innerRef={educationRef} />
+            <About innerRef={aboutRef} />
           </div>
         </main>
       </ModalContext>

@@ -32,7 +32,8 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
                     ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
                     : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
                   'group inline-flex justify-center py-4 px-10 text-sm font-medium text-center border-b-2 transition-all',
-                )}>
+                )}
+              >
                 {t(tabArray[selected]?.i18nKey || 'TABS.LABEL')}
                 <ChevronDownIcon
                   className="shrink-0 -mr-1 ml-3 w-5 h-5 text-gray-400 group-hover:text-gray-500"
@@ -53,33 +54,34 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
                   className="absolute left-0 p-4 mt-2 bg-white rounded-md focus:outline-none ring-1 ring-black/5 shadow-2xl origin-top-right"
                 >
                   {tabArray.map((option, index) => (
-                  <Menu.Item key={option.id} onClick={option.onSelect}>
-                    <div className='flex relative items-start py-2 pr-4 pl-2 cursor-pointer'>
-                      <div className="flex items-center h-5">
-                        <input
-                          id={option.id}
-                          aria-describedby={t(`${option.i18nKey}.ARIA_DESCRIPTION`)}
-                          name={option.id}
-                          type="radio"
-                          checked={selected === index}
-                          onChange={() => option.onSelect}
-                          className="w-4 h-4 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 cursor-pointer"
-                        />
+                    <Menu.Item key={option.id} onClick={option.onSelect}>
+                      <div className="flex relative items-start py-2 pr-4 pl-2 cursor-pointer">
+                        <div className="flex items-center h-5">
+                          <input
+                            id={option.id}
+                            aria-describedby={t(`${option.i18nKey}.ARIA_DESCRIPTION`)}
+                            name={option.id}
+                            type="radio"
+                            checked={selected === index}
+                            onChange={() => option.onSelect}
+                            className="w-4 h-4 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 cursor-pointer"
+                          />
+                        </div>
+                        <div className="ml-3 text-sm">
+                          <label
+                            htmlFor={option.id}
+                            className={classNames(
+                              selected === index
+                                ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
+                                : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
+                              'font-medium cursor-pointer',
+                            )}
+                          >
+                            {t(`${option.i18nKey}.LABEL`)}
+                          </label>
+                        </div>
                       </div>
-                      <div className="ml-3 text-sm">
-                        <label
-                          htmlFor={option.id}
-                          className={classNames(
-                            selected === index
-                              ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
-                              : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
-                            'font-medium cursor-pointer',
-                          )}>
-                          {t(`${option.i18nKey}.LABEL`)}
-                        </label>
-                      </div>
-                    </div>
-                  </Menu.Item>
+                    </Menu.Item>
                   ))}
                 </Menu.Items>
               </Transition>
@@ -90,8 +92,10 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
       <div className="hidden border-b border-gray-200 md:block">
         <nav className="flex -mb-px" aria-label="Tabs">
           {tabArray.map((tab, index) => (
-            <span
+            <button
               key={tab.id}
+              type="button"
+              role="tab"
               className={classNames(
                 selected === index
                   ? classNames('text-transparent bg-clip-text border-indigo-500', styles.text['gradient-a'])
@@ -102,7 +106,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
               aria-current={selected === index ? 'page' : undefined}
             >
               {t(tab.i18nKey)}
-            </span>
+            </button>
           ))}
         </nav>
       </div>

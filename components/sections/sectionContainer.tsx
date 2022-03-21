@@ -5,7 +5,7 @@ import styles from '../../styles/tailwindStyles.json';
 interface Props {
   id: string;
   children: ReactNode | ReactNode[];
-  innerRef?: LegacyRef<HTMLDivElement>;
+  innerRef: LegacyRef<HTMLElement>;
 }
 
 const Section = ({ id, children, innerRef }: Props) => (

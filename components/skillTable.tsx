@@ -14,10 +14,12 @@ interface SkillItemProps {
 const SkillItem = ({
   expertise, skillArray, t,
 }: SkillItemProps) => (
-  <div className={classNames(
-    !skillArray || skillArray.length === 0 ? 'hidden' : '',
-    'mb-8',
-  )}>
+  <div
+    className={classNames(
+      !skillArray || skillArray.length === 0 ? 'hidden' : '',
+      'mb-8',
+    )}
+  >
     <div>
       <h5 className={classNames(styles.text.primary, 'text-gray-700')}>
         {t(`SKILLTABLE.${expertise.toLocaleUpperCase()}.TITLE`)}
@@ -27,13 +29,16 @@ const SkillItem = ({
       </p>
     </div>
     <div>
-      <p className='tracking-widest leading-8'>
+      <p className="tracking-widest leading-8">
         {skillArray?.flatMap(
           (id, index) => ([
-            <span key={id} className={classNames(
-              'hover:text-xl tracking-normal leading-8 hover:leading-4 whitespace-nowrap hover:text-transparent bg-clip-text transition-all ease-in-out cursor-default',
-              styles.text['gradient-a'],
-            )}>
+            <span
+              key={id}
+              className={classNames(
+                'hover:text-xl tracking-normal leading-8 hover:leading-4 whitespace-nowrap hover:text-transparent bg-clip-text transition-all ease-in-out cursor-default',
+                styles.text['gradient-a'],
+              )}
+            >
               {t(`SKILLS.${id?.toLocaleUpperCase()}.LABEL`)}
             </span>,
             index === skillArray.length - 1 ? '.' : ',  ',
@@ -58,7 +63,7 @@ const SkillTable = ({ skills, selected }: Props) => {
   const { t } = useTranslation('skills');
   const expertiseArray: Expertise[] = ['high', 'medium', 'low'];
   return (
-    <div className='mt-8'>
+    <div className="mt-8">
       {expertiseArray.map((expertise) => (
         <SkillItem
           key={expertise}

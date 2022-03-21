@@ -23,7 +23,7 @@ const sections = [
   },
 ];
 
-const Projects = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
+const Projects = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
   const { t } = useTranslation(['common', 'projects']);
   return (
     <SectionContainer id="projects" innerRef={innerRef}>
@@ -34,7 +34,14 @@ const Projects = ({ innerRef }: { innerRef?: LegacyRef<HTMLDivElement>; }) => {
         {t('COMMENT', { ns: 'projects' })}
       </p>
       {projects.map((project) => (
-        <Position i18nKey={project} namespace='projects' key={project} sections={sections} highlight='a' includeSecondary/>
+        <Position
+          i18nKey={project}
+          namespace="projects"
+          key={project}
+          sections={sections}
+          highlight="a"
+          includeSecondary
+        />
       ))}
     </SectionContainer>
   );
