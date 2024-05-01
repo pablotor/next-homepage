@@ -30,7 +30,7 @@ const Position = ({
       >
         {t(formatKey('HIGHLIGHTED'))}
       </h5>
-      <div className="flex flex-col-reverse sm:flex-row sm:justify-between sm:w-full">
+      <div className="flex flex-col-reverse sm:w-full sm:flex-row sm:justify-between">
         <h4 className={styles.text['position-title']}>{t(formatKey('TITLE'))}</h4>
         <p className={styles.text['position-date']}>{t(formatKey('DATE'))}</p>
       </div>

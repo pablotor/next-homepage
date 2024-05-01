@@ -51,7 +51,7 @@ const Hero = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
           }}
         />
       </div>
-      <div className="flex mt-6">
+      <div className="mt-6 flex">
         {socialMedia.map((element) => (
           <a
             key={element.label}
@@ -68,7 +68,7 @@ const Hero = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
                 // index % 2 ? 'from-purple-500 to-pink-700' : 'from-blue-500 to-indigo-700',
               )}
             >
-              <element.icon className="w-6 h-6 text-white" />
+              <element.icon className="size-6 text-white" />
             </div>
           </a>
         ))}

@@ -22,7 +22,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
   const { t } = useTranslation(namespace);
   return (
     <div>
-      <div className="inline-block relative text-left md:hidden">
+      <div className="relative inline-block text-left md:hidden">
         <Menu>
           {({ open }) => (
             <>
@@ -36,7 +36,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
               >
                 {t(tabArray[selected]?.i18nKey || 'TABS.LABEL')}
                 <ChevronDownIcon
-                  className="shrink-0 -mr-1 ml-3 w-5 h-5 text-gray-400 group-hover:text-gray-500"
+                  className="-mr-1 ml-3 size-5 shrink-0 text-gray-400 group-hover:text-gray-500"
                   aria-hidden="true"
                 />
               </Menu.Button>
@@ -51,7 +51,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
               >
                 <Menu.Items
                   static
-                  className="absolute left-0 p-4 mt-2 bg-white rounded-md focus:outline-none ring-1 ring-black/5 shadow-2xl origin-top-right"
+                  className="absolute left-0 mt-2 origin-top-right rounded-md bg-white p-4 shadow-2xl ring-1 ring-black/5 focus:outline-none"
                 >
                   {tabArray.map((option, index) => (
                     <Menu.Item key={option.id}>
@@ -65,14 +65,14 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
                         )}
                         onClick={option.onSelect}
                       >
-                        <div className="flex items-center h-5">
+                        <div className="flex h-5 items-center">
                           <input
                             id={option.id}
                             aria-describedby={t(`${option.i18nKey}.ARIA_DESCRIPTION`)}
                             name={option.id}
                             type="radio"
                             checked={selected === index}
-                            className="w-4 h-4 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 cursor-pointer"
+                            className="size-4 cursor-pointer rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                           />
                         </div>
                         <div className="ml-3 text-sm">
@@ -90,7 +90,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
         </Menu>
       </div>
       <div className="hidden border-b border-gray-200 md:block">
-        <nav className="flex -mb-px" aria-label="Tabs">
+        <nav className="-mb-px flex" aria-label="Tabs">
           {tabArray.map((tab, index) => (
             <button
               key={tab.id}

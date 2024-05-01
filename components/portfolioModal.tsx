@@ -28,17 +28,17 @@ const PortfolioModal = ({
       >
         {t(`ITEMS.${i18nKey}.TITLE`)}
       </h4>
-      <p className="text-justify whitespace-pre-line">{t(`ITEMS.${i18nKey}.DESCRIPTION.FULL`)}</p>
+      <p className="whitespace-pre-line text-justify">{t(`ITEMS.${i18nKey}.DESCRIPTION.FULL`)}</p>
       {techs.length !== 0 && (
         <div>
-          <h6 className="mt-8 font-medium text-gray-500 uppercase">
+          <h6 className="mt-8 font-medium uppercase text-gray-500">
             {t('MODAL.TECHS')}
           </h6>
           <ul className="mt-2">
             {techs.map((tech) => (
-              <li key={tech.id} className="flex items-baseline mt-1 ml-2">
+              <li key={tech.id} className="ml-2 mt-1 flex items-baseline">
                 <img
-                  className="mr-2 w-5 h-5 rounded-sm"
+                  className="mr-2 size-5 rounded-sm"
                   src={tech.src}
                   alt={t(
                     'TABLE.TECH.ICON_LABEL',
@@ -53,7 +53,7 @@ const PortfolioModal = ({
           </ul>
         </div>
       )}
-      <div className="flex justify-between mt-10 sm:justify-evenly">
+      <div className="mt-10 flex justify-between sm:justify-evenly">
         <button type="button" onClick={onClose} className={altButtonStyle}>
           {t('MODAL.BUTTONS.CLOSE')}
         </button>

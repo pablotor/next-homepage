@@ -26,7 +26,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
         {({ open }) => (
           <>
             <div className="relative z-20 bg-white shadow">
-              <div className="flex py-2 px-4 mx-auto sm:px-8">
+              <div className="mx-auto flex px-4 py-2 sm:px-8">
                 <Popover.Button
                   className={classNames(
                     open ? 'text-gray-900' : 'text-gray-500',
@@ -49,7 +49,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                       {t('LASTNAME')}
                     </span>
                   </span>
-                  <div className="flex justify-end w-1/3">
+                  <div className="flex w-1/3 justify-end">
                     <ChevronDownIcon
                       className={classNames(
                         open ? 'text-gray-600' : 'text-gray-400',
@@ -74,7 +74,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
               <Popover.Panel className="absolute inset-x-0 z-20 shadow-lg">
                 <div className="mx-auto">
                   <div
-                    className="py-8 px-4 bg-white sm:py-12 sm:px-6"
+                    className="bg-white px-4 py-8 sm:px-6 sm:py-12"
                     aria-labelledby="solutions-heading"
                   >
                     <ul className="mt-5 space-y-6">
@@ -101,7 +101,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
           </>
         )}
       </Popover>
-      <div id="navbar-desktop" className="hidden flex-col justify-center px-8 mr-16 h-screen lg:flex">
+      <div id="navbar-desktop" className="mr-16 hidden h-screen flex-col justify-center px-8 lg:flex">
         <ul className="mt-5 space-y-6">
           {sections.map((item, index) => (
             <li key={item.i18nKey} className="flow-root">
