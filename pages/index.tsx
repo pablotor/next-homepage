@@ -60,7 +60,7 @@ const Home: NextPage = () => {
       <ModalContext>
         <Navbar selectedSection={inViewSection} />
         <main>
-          <div id="content" className="overflow-scroll max-h-screen-mobile lg:overflow-auto lg:ml-56 lg:max-h-fit">
+          <div id="content" className="max-h-screen-mobile overflow-scroll lg:ml-56 lg:max-h-fit lg:overflow-auto">
             <Hero innerRef={profileRef} />
             <Experience innerRef={experienceRef} />
             <Projects innerRef={projectsRef} />
