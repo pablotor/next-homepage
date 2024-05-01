@@ -106,7 +106,7 @@ const Skills = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
       <p className={styles.text.secondary}>
         {t('COMMENT', { ns: 'skills' })}
       </p>
-      <div className="flex justify-between items-baseline mt-8">
+      <div className="mt-8 flex items-baseline justify-between">
         <div className="flex items-center">
           <Tabs selected={selected} namespace="skills" tabArray={enrichedSkills} />
         </div>

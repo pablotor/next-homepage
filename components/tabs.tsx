@@ -22,7 +22,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
   const { t } = useTranslation(namespace);
   return (
     <div>
-      <div className="inline-block relative text-left md:hidden">
+      <div className="relative inline-block text-left md:hidden">
         <Menu>
           {({ open }) => (
             <>
@@ -36,7 +36,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
               >
                 {t(tabArray[selected]?.i18nKey || 'TABS.LABEL')}
                 <ChevronDownIcon
-                  className="shrink-0 -mr-1 ml-3 w-5 h-5 text-gray-400 group-hover:text-gray-500"
+                  className="-mr-1 ml-3 size-5 shrink-0 text-gray-400 group-hover:text-gray-500"
                   aria-hidden="true"
                 />
               </Menu.Button>
@@ -51,36 +51,36 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
               >
                 <Menu.Items
                   static
-                  className="absolute left-0 p-4 mt-2 bg-white rounded-md focus:outline-none ring-1 ring-black/5 shadow-2xl origin-top-right"
+                  className="absolute left-0 mt-2 origin-top-right rounded-md bg-white p-4 shadow-2xl ring-1 ring-black/5 focus:outline-none"
                 >
                   {tabArray.map((option, index) => (
-                    <Menu.Item key={option.id} onClick={option.onSelect}>
-                      <div className="flex relative items-start py-2 pr-4 pl-2 cursor-pointer">
-                        <div className="flex items-center h-5">
+                    <Menu.Item key={option.id}>
+                      <button
+                        type="button"
+                        className={classNames(
+                          selected === index
+                            ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
+                            : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
+                          'flex w-full relative items-start py-2 pr-4 pl-2 font-medium cursor-pointer',
+                        )}
+                        onClick={option.onSelect}
+                      >
+                        <div className="flex h-5 items-center">
                           <input
                             id={option.id}
                             aria-describedby={t(`${option.i18nKey}.ARIA_DESCRIPTION`)}
                             name={option.id}
                             type="radio"
                             checked={selected === index}
-                            onChange={() => option.onSelect}
-                            className="w-4 h-4 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 cursor-pointer"
+                            className="size-4 cursor-pointer rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                           />
                         </div>
                         <div className="ml-3 text-sm">
-                          <label
-                            htmlFor={option.id}
-                            className={classNames(
-                              selected === index
-                                ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
-                                : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
-                              'font-medium cursor-pointer',
-                            )}
-                          >
-                            {t(`${option.i18nKey}.LABEL`)}
+                          <label htmlFor={option.id}>
+                            {t(option.i18nKey)}
                           </label>
                         </div>
-                      </div>
+                      </button>
                     </Menu.Item>
                   ))}
                 </Menu.Items>
@@ -90,7 +90,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
         </Menu>
       </div>
       <div className="hidden border-b border-gray-200 md:block">
-        <nav className="flex -mb-px" aria-label="Tabs">
+        <nav className="-mb-px flex" aria-label="Tabs">
           {tabArray.map((tab, index) => (
             <button
               key={tab.id}
@@ -105,7 +105,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
               onClick={tab.onSelect}
               aria-current={selected === index ? 'page' : undefined}
             >
-              {t(tab.i18nKey)}
+              {(t(tab.i18nKey))}
             </button>
           ))}
         </nav>

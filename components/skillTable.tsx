@@ -29,7 +29,7 @@ const SkillItem = ({
       </p>
     </div>
     <div>
-      <p className="tracking-widest leading-8">
+      <p className="leading-8 tracking-widest">
         {skillArray?.flatMap(
           (id, index) => ([
             <span
