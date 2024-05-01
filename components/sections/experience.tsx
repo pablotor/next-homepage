@@ -9,6 +9,7 @@ import SectionContainer from './sectionContainer';
 import styles from '../../styles/tailwindStyles.json';
 
 const jobs = [
+  'wye',
   'wibson',
   'first_data',
   'conexia',
