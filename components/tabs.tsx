@@ -54,8 +54,17 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
                   className="absolute left-0 p-4 mt-2 bg-white rounded-md focus:outline-none ring-1 ring-black/5 shadow-2xl origin-top-right"
                 >
                   {tabArray.map((option, index) => (
-                    <Menu.Item key={option.id} onClick={option.onSelect}>
-                      <div className="flex relative items-start py-2 pr-4 pl-2 cursor-pointer">
+                    <Menu.Item key={option.id}>
+                      <button
+                        type="button"
+                        className={classNames(
+                          selected === index
+                            ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
+                            : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
+                          'flex w-full relative items-start py-2 pr-4 pl-2 font-medium cursor-pointer',
+                        )}
+                        onClick={option.onSelect}
+                      >
                         <div className="flex items-center h-5">
                           <input
                             id={option.id}
@@ -63,24 +72,15 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
                             name={option.id}
                             type="radio"
                             checked={selected === index}
-                            onChange={() => option.onSelect}
                             className="w-4 h-4 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 cursor-pointer"
                           />
                         </div>
                         <div className="ml-3 text-sm">
-                          <label
-                            htmlFor={option.id}
-                            className={classNames(
-                              selected === index
-                                ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
-                                : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
-                              'font-medium cursor-pointer',
-                            )}
-                          >
-                            {t(`${option.i18nKey}.LABEL`)}
+                          <label htmlFor={option.id}>
+                            {t(option.i18nKey)}
                           </label>
                         </div>
-                      </div>
+                      </button>
                     </Menu.Item>
                   ))}
                 </Menu.Items>
@@ -105,7 +105,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
               onClick={tab.onSelect}
               aria-current={selected === index ? 'page' : undefined}
             >
-              {t(tab.i18nKey)}
+              {(t(tab.i18nKey))}
             </button>
           ))}
         </nav>
