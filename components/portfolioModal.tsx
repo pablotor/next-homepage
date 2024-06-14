@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTranslation } from 'next-i18next';
 
+import { DialogTitle } from '@headlessui/react';
 import { PortfolioItem } from '../types/portfolio';
 import classNames from '../utils/tailwindClassNamesHelper';
 
@@ -31,9 +32,9 @@ const PortfolioModal = ({
       <p className="whitespace-pre-line text-justify">{t(`ITEMS.${i18nKey}.DESCRIPTION.FULL`)}</p>
       {techs.length !== 0 && (
         <div>
-          <h6 className="mt-8 font-medium uppercase text-gray-500">
+          <DialogTitle className="mt-8 font-medium uppercase text-gray-500">
             {t('MODAL.TECHS')}
-          </h6>
+          </DialogTitle>
           <ul className="mt-2">
             {techs.map((tech) => (
               <li key={tech.id} className="ml-2 mt-1 flex items-baseline">
