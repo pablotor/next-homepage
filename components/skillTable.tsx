@@ -60,7 +60,6 @@ interface Props {
 }
 
 const SkillTable = ({ skills, selected }: Props) => {
-  const { t } = useTranslation('skills');
   const expertiseArray: Expertise[] = ['high', 'medium', 'low'];
   return (
     <div className="mt-8">
