@@ -1,4 +1,6 @@
-import { Menu, Transition } from '@headlessui/react';
+import {
+  Menu, MenuButton, MenuItems, Transition,
+} from '@headlessui/react';
 import { useTranslation } from 'next-i18next';
 
 import classNames from '../utils/tailwindClassNamesHelper';
@@ -26,7 +28,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
         <Menu>
           {({ open }) => (
             <>
-              <Menu.Button
+              <MenuButton
                 className={classNames(
                   open
                     ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
@@ -34,12 +36,12 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
                   'group inline-flex justify-center py-4 px-10 text-sm font-medium text-center border-b-2 transition-all',
                 )}
               >
-                {t(tabArray[selected]?.i18nKey || 'TABS.LABEL')}
+                {/* {t(tabArray[selected]?.i18nKey || 'TABS.LABEL')} */}
                 <ChevronDownIcon
                   className="-mr-1 ml-3 size-5 shrink-0 text-gray-400 group-hover:text-gray-500"
                   aria-hidden="true"
                 />
-              </Menu.Button>
+              </MenuButton>
               <Transition
                 show={open}
                 enter="transition duration-100 ease-out"
@@ -49,7 +51,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Menu.Items
+                <MenuItems
                   static
                   className="absolute left-0 mt-2 origin-top-right rounded-md bg-white p-4 shadow-2xl ring-1 ring-black/5 focus:outline-none"
                 >
@@ -83,7 +85,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
                       </button>
                     </Menu.Item>
                   ))}
-                </Menu.Items>
+                </MenuItems>
               </Transition>
             </>
           )}

@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next/types';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
