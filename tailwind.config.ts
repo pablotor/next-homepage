@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      maxHeight: {
+        'screen-mobile': 'calc(100vh - 4.5rem)',
+      },
+      minHeight: {
+        'section-mobile': 'calc(100vh - 5.5rem)',
+      },
       keyframes: {
         'vercel-text': {
           '0%, 55%': {
