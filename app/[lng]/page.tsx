@@ -1,7 +1,6 @@
 'use client'
 
 import type { NextPage } from 'next/types';
-import Head from 'next/head';
 import { useInView } from 'react-intersection-observer';
 
 import Navbar from '../../components/navbar';
@@ -34,8 +33,8 @@ const Home: NextPage<{ params: { lng: string } }> = ({ params: { lng } }) => {
   ];
 
   return (
-    <>
-      {/* <ModalContext> */}
+    <div className="mx-auto max-w-screen-xl lg:flex">
+      <ModalContext>
         <Navbar sectionInViewWatchers={sectionInViewWatchers} />
         <main id="content" className="max-h-screen-mobile overflow-scroll lg:ml-56 lg:max-h-fit lg:overflow-auto">
           <Hero ref={profileRef}/>
@@ -46,8 +45,8 @@ const Home: NextPage<{ params: { lng: string } }> = ({ params: { lng } }) => {
           <Education ref={educationRef}/>
           <About ref={aboutRef}/>
         </main>
-      {/* </ModalContext> */}
-    </>
+      </ModalContext>
+    </div>
   );
 };
 

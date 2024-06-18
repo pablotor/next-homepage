@@ -1,21 +1,97 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { PortfolioItem } from '../types/portfolio';
-
 import { useTranslation } from '../app/i18n/client';
 import { useModal } from '../hooks/useModal';
-import classNames from '../utils/tailwindClassNamesHelper';
+import classNames from '../utils/classNames';
 
 import PortfolioModal from './portfolioModal';
 
-interface Props {
-  portfolio: PortfolioItem[];
-  namespace: string;
+type Tech = {
+  id: string;
+  src: string;
+  style?: string;
 }
 
-const PortfolioTable = ({ portfolio, namespace }: Props) => {
-  const { t } = useTranslation('en', namespace);
-  // const { setModal, onClose } = useModal();
+export type PortfolioItem = {
+  id: string;
+  type: string;
+  codeAvailable: boolean;
+  deployed: boolean;
+  techs: Tech[];
+}
+
+const portfolio: PortfolioItem[] = [
+  {
+    id: 'homesite',
+    type: 'frontend',
+    codeAvailable: true,
+    deployed: false,
+    techs: [
+      {
+        id: 'tailwind',
+        src: '/img/tailwind.svg',
+        style: 'bg-[#1C5C78] p-1',
+      }, {
+        id: 'react',
+        src: '/img/react.svg',
+        style: 'bg-[#17333B] p-1',
+      }, {
+        id: 'next',
+        src: '/img/next.svg',
+      }, {
+        id: 'ts',
+        src: '/img/typescript.svg',
+        style: 'bg-[#3178C6] pb-0.5',
+      },
+    ],
+  }, {
+    id: 'wibson',
+    type: 'fullstack',
+    codeAvailable: false,
+    deployed: true,
+    techs: [],
+  }, {
+    id: 'linbot',
+    type: 'backend',
+    codeAvailable: true,
+    deployed: false,
+    techs: [
+      {
+        id: 'puppeteer',
+        src: '/img/puppeteer.svg',
+        style: 'bg-[#17333B] p-1',
+      }, {
+        id: 'node',
+        src: '/img/node.svg',
+        style: 'bg-white',
+      }, {
+        id: 'ts',
+        src: '/img/typescript.svg',
+        style: 'bg-[#3178C6] pb-0.5',
+      },
+    ],
+  }, {
+    id: 'appointer',
+    type: 'backend',
+    codeAvailable: true,
+    deployed: false,
+    techs: [
+      {
+        id: 'node',
+        src: '/img/node.svg',
+        style: 'bg-white',
+      }, {
+        id: 'js',
+        src: '/img/javascript.svg',
+        style: 'bg-[#f7df1e] pb-0.5',
+      },
+    ],
+  },
+];
+
+const PortfolioTable = () => {
+  const { t } = useTranslation('en', 'portfolio');
+  const { setModal, onClose } = useModal();
   return (
     <div className="mt-10 overflow-hidden rounded-md sm:p-6">
       <ul className="grid gap-4">
@@ -27,7 +103,7 @@ const PortfolioTable = ({ portfolio, namespace }: Props) => {
             <button
               type="button"
               className="size-full"
-              // onClick={() => setModal(<PortfolioModal onClose={onClose} {...item} />)}
+              onClick={() => setModal(<PortfolioModal onClose={onClose} item={item} />)}
             >
               <div className="min-w-0 flex-1 p-4 sm:flex sm:items-center sm:justify-between sm:px-6">
                 <div>

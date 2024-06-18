@@ -26,9 +26,7 @@ export default function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)}>
       <body>
-        <div className="mx-auto max-w-screen-xl lg:flex">
           {children}
-        </div>
       </body>
     </html>
   );

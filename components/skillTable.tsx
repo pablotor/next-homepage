@@ -1,5 +1,5 @@
 import { useTranslation } from '../app/i18n/client';
-import classNames from '../utils/tailwindClassNamesHelper';
+import classNames from '../utils/classNames';
 
 type Expertise = 'high' | 'medium' | 'low';
 

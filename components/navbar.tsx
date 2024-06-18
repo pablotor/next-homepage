@@ -4,7 +4,7 @@ import { Fragment, useEffect, useState } from 'react';
 import { Popover, PopoverButton, PopoverPanel, Transition } from '@headlessui/react';
 
 import { useTranslation } from '../app/i18n/client';
-import classNames from '../utils/tailwindClassNamesHelper';
+import classNames from '../utils/classNames';
 import ChevronDownIcon from './icons/chevronDown';
 
 const sections = [
@@ -49,11 +49,11 @@ const Navbar = ({ sectionInViewWatchers }: { sectionInViewWatchers: boolean[] })
                       'hidden transition-all',
                     )}
                   >
-                    <span className={classNames('gradient-a', 'bg-clip-text animate-vercel-text-a')}>
+                    <span className="gradient-a bg-clip-text animate-vercel-text-a">
                       {t('FIRSTNAME')}
                     </span>
                     {' '}
-                    <span className={classNames('gradient-b', 'bg-clip-text animate-vercel-text-b')}>
+                    <span className="gradient-b bg-clip-text animate-vercel-text-b">
                       {t('LASTNAME')}
                     </span>
                   </span>

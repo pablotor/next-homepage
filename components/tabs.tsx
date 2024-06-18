@@ -3,7 +3,7 @@ import {
 } from '@headlessui/react';
 
 import { useTranslation } from '../app/i18n/client';
-import classNames from '../utils/tailwindClassNamesHelper';
+import classNames from '../utils/classNames';
 import ChevronDownIcon from './icons/chevronDown';
 
 interface Tab {

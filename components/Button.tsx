@@ -1,5 +1,5 @@
-import classNames from '@/utils/tailwindClassNamesHelper';
 import { FC, MouseEventHandler, ReactNode } from 'react';
+import classNames from '..//utils/classNames';
 
 type ButtonProps = {
   children: ReactNode;

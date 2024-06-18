@@ -1,4 +1,4 @@
-import classNames from '../../utils/tailwindClassNamesHelper';
+import classNames from '../../utils/classNames';
 
 const ChevronDownIcon = ({ className }: { className: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={classNames('w-5 h-5', className)} viewBox="0 0 20 20" fill="currentColor">
