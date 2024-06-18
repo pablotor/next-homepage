@@ -1,11 +1,11 @@
-import { Fragment } from 'react';
-import { useTranslation } from 'next-i18next';
-import { Popover, Transition } from '@headlessui/react';
+'use client'
 
-import ChevronDownIcon from './icons/chevronDown';
+import { Fragment, useEffect, useState } from 'react';
+import { Popover, PopoverButton, PopoverPanel, Transition } from '@headlessui/react';
+
+import { useTranslation } from '../app/i18n/client';
 import classNames from '../utils/tailwindClassNamesHelper';
-
-import styles from '../styles/tailwindStyles.json';
+import ChevronDownIcon from './icons/chevronDown';
 
 const sections = [
   { i18nKey: 'profile', href: '#profile' },
@@ -17,8 +17,16 @@ const sections = [
   { i18nKey: 'about', href: '#about' },
 ];
 
-const Navbar = ({ selectedSection }: { selectedSection: number }) => {
-  const { t } = useTranslation('common');
+const Navbar = ({ sectionInViewWatchers }: { sectionInViewWatchers: boolean[] }) => {
+  const { t } = useTranslation('en', 'common');
+
+  const [inViewSection, setInViewSection] = useState(sectionInViewWatchers.indexOf(true));
+
+  useEffect(() => {
+    if (sectionInViewWatchers.indexOf(true) !== -1) {
+      setInViewSection(sectionInViewWatchers.indexOf(true));
+    }
+  }, sectionInViewWatchers);
 
   return (
     <nav className="lg:fixed">
@@ -27,25 +35,25 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
           <>
             <div className="relative z-20 bg-white shadow">
               <div className="mx-auto flex px-4 py-2 sm:px-8">
-                <Popover.Button
+                <PopoverButton
                   className={classNames(
                     open ? 'text-gray-900' : 'text-gray-500',
                     'py-3 group bg-white rounded-md w-full inline-flex items-center justify-between text-lg font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all',
                   )}
                   aria-label={t(open ? 'NAVBAR.MENU.CLOSE' : 'NAVBAR.MENU.OPEN')}
                 >
-                  <span className="w-1/3 text-left">{t(sections[selectedSection].i18nKey)}</span>
+                  <span className="w-1/3 text-left">{t(sections[inViewSection]?.i18nKey)}</span>
                   <span
                     className={classNames(
-                      selectedSection === 0 ? '' : 'sm:block sm:w-1/3 sm:font-black sm:mx-auto',
+                      inViewSection === 0 ? '' : 'sm:block sm:w-1/3 sm:font-black sm:mx-auto',
                       'hidden transition-all',
                     )}
                   >
-                    <span className={classNames(styles.text['gradient-a'], 'bg-clip-text animate-vercel-text-a')}>
+                    <span className={classNames('gradient-a', 'bg-clip-text animate-vercel-text-a')}>
                       {t('FIRSTNAME')}
                     </span>
                     {' '}
-                    <span className={classNames(styles.text['gradient-b'], 'bg-clip-text animate-vercel-text-b')}>
+                    <span className={classNames('gradient-b', 'bg-clip-text animate-vercel-text-b')}>
                       {t('LASTNAME')}
                     </span>
                   </span>
@@ -58,7 +66,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                       aria-hidden="true"
                     />
                   </div>
-                </Popover.Button>
+                </PopoverButton>
               </div>
             </div>
 
@@ -71,7 +79,7 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 -translate-y-1"
             >
-              <Popover.Panel className="absolute inset-x-0 z-20 shadow-lg">
+              <PopoverPanel className="absolute inset-x-0 z-20 shadow-lg">
                 <div className="mx-auto">
                   <div
                     className="bg-white px-4 py-8 sm:px-6 sm:py-12"
@@ -79,24 +87,24 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
                   >
                     <ul className="mt-5 space-y-6">
                       {sections.map((item, index) => (
-                        <Popover.Button as="li" key={item.i18nKey} className="flow-root">
+                        <PopoverButton as="li" key={item.i18nKey} className="flow-root">
                           <a
                             href={item.href}
                             className={classNames(
-                              'flex justify-center p-3 text-base font-medium transition-all',
-                              selectedSection === index
-                                ? classNames(styles.text['gradient-a'], 'text-transparent bg-clip-text')
+                              'flex justify-center p-3 title font-medium transition-all',
+                              inViewSection === index
+                                ? classNames('gradient-a', 'text-transparent bg-clip-text')
                                 : 'text-gray-900 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700',
                             )}
                           >
                             <span className="mx-4">{t(item.i18nKey)}</span>
                           </a>
-                        </Popover.Button>
+                        </PopoverButton>
                       ))}
                     </ul>
                   </div>
                 </div>
-              </Popover.Panel>
+              </PopoverPanel>
             </Transition>
           </>
         )}
@@ -108,9 +116,9 @@ const Navbar = ({ selectedSection }: { selectedSection: number }) => {
               <a
                 href={item.href}
                 className={classNames(
-                  'flex items-center p-3 -m-3 text-base font-mediumtransition-all',
-                  selectedSection === index
-                    ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
+                  'flex items-center p-3 -m-3 title font-mediumtransition-all',
+                  inViewSection === index
+                    ? classNames('text-transparent bg-clip-text', 'gradient-a')
                     : 'text-gray-900 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700',
                 )}
               >

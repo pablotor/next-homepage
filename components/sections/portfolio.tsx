@@ -1,13 +1,9 @@
-import { LegacyRef } from 'react';
-import { useTranslation } from 'next-i18next';
+import { forwardRef } from 'react';
 
+import { useTranslation } from '../../app/i18n/client';
 import { PortfolioItem } from '../../types/portfolio';
-
-import classNames from '../../utils/tailwindClassNamesHelper';
 import PortfolioTable from '../portfolioTable';
-import Section from './sectionContainer';
-
-import styles from '../../styles/tailwindStyles.json';
+import Section from '../sectionContainer';
 
 const portfolio: PortfolioItem[] = [
   {
@@ -78,19 +74,19 @@ const portfolio: PortfolioItem[] = [
   },
 ];
 
-const Portfolio = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
-  const { t } = useTranslation(['common', 'portfolio']);
+const Portfolio = forwardRef<HTMLElement>(({} ,ref) => {
+  const { t } = useTranslation('en', ['common', 'portfolio']);
   return (
-    <Section id="portfolio" innerRef={innerRef}>
-      <h2 className={classNames(styles.text['section-title'], styles.text['gradient-b'])}>
+    <Section id="portfolio" ref={ref}>
+      <h2 className="section-title gradient-b">
         {t('SECTIONS.PORTFOLIO')}
       </h2>
-      <p className={styles.text.secondary}>
+      <p className="subtitle">
         {t('COMMENT', { ns: 'portfolio' })}
       </p>
       <PortfolioTable portfolio={portfolio} namespace="portfolio" />
     </Section>
   );
-};
+});
 
 export default Portfolio;

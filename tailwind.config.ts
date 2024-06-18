@@ -1,17 +1,13 @@
-module.exports = {
+import type { Config } from "tailwindcss";
+
+const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './styles/tailwindStyles.json',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      maxHeight: {
-        'screen-mobile': 'calc(100vh - 4.5rem)',
-      },
-      minHeight: {
-        'section-mobile': 'calc(100vh - 5.5rem)',
-      },
       keyframes: {
         'vercel-text': {
           '0%, 55%': {
@@ -46,3 +42,4 @@ module.exports = {
     require('@tailwindcss/forms'),
   ],
 };
+export default config;

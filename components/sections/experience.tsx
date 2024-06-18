@@ -1,12 +1,11 @@
-import { LegacyRef } from 'react';
-import { useTranslation } from 'next-i18next';
+'use client'
 
-import classNames from '../../utils/tailwindClassNamesHelper';
+import { forwardRef } from 'react';
+
+import { useTranslation } from '../../app/i18n/client';
 import Position from '../position';
 
-import SectionContainer from './sectionContainer';
-
-import styles from '../../styles/tailwindStyles.json';
+import SectionContainer from '../sectionContainer';
 
 const jobs = [
   'wye',
@@ -28,14 +27,14 @@ const sections = [
   },
 ];
 
-const Experience = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
-  const { t } = useTranslation(['common', 'experience']);
+const Experience = forwardRef<HTMLElement>(({} ,ref) => {
+  const { t } = useTranslation('en', ['common', 'experience']);
   return (
-    <SectionContainer id="experience" innerRef={innerRef}>
-      <h2 className={classNames(styles.text['section-title'], styles.text['gradient-a'])}>
+    <SectionContainer id="experience" ref={ref}>
+      <h2 className="section-title gradient-a">
         {t('SECTIONS.EXPERIENCE')}
       </h2>
-      <p className={styles.text.secondary}>
+      <p className="subtitle">
         {t('COMMENT', { ns: 'experience' })}
       </p>
       {jobs.map((job) => (
@@ -43,6 +42,6 @@ const Experience = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
       ))}
     </SectionContainer>
   );
-};
+});
 
 export default Experience;

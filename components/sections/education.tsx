@@ -1,11 +1,10 @@
-import { LegacyRef } from 'react';
-import { useTranslation } from 'next-i18next';
+'use client'
 
-import classNames from '../../utils/tailwindClassNamesHelper';
+import { forwardRef } from 'react';
+
+import { useTranslation } from '../../app/i18n/client';
 import Position from '../position';
-import Section from './sectionContainer';
-
-import styles from '../../styles/tailwindStyles.json';
+import Section from '../sectionContainer';
 
 const studies = [
   'fiuba',
@@ -22,11 +21,11 @@ const sections = [
   },
 ];
 
-const Education = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
-  const { t } = useTranslation(['common', 'education']);
+const Education = forwardRef<HTMLElement>(({} ,ref)  => {
+  const { t } = useTranslation('en', ['common', 'education']);
   return (
-    <Section id="education" innerRef={innerRef}>
-      <h2 className={classNames(styles.text['section-title'], styles.text['gradient-a'])}>
+    <Section id="education" ref={ref}>
+      <h2 className="section-title gradient-a">
         {t('SECTIONS.EDUCATION')}
       </h2>
       {studies.map((study) => (
@@ -34,6 +33,6 @@ const Education = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
       ))}
     </Section>
   );
-};
+});
 
 export default Education;

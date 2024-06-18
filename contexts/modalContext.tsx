@@ -1,3 +1,5 @@
+'use client'
+
 import { ReactElement, useMemo, useState } from 'react';
 import { ModalContext } from '../hooks/useModal';
 import Modal from '../components/modal';

@@ -1,16 +1,16 @@
+'use client'
+
 import Image from 'next/image';
-import { LegacyRef } from 'react';
-import { Trans, useTranslation } from 'next-i18next';
+import { forwardRef } from 'react';
+import { Trans } from 'react-i18next';
 
-import classNames from '../../utils/tailwindClassNamesHelper';
-import SectionContainer from './sectionContainer';
+import { useTranslation } from '../../app/i18n/client';
+import SectionContainer from '../sectionContainer';
 
-import styles from '../../styles/tailwindStyles.json';
-
-const About = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
-  const { t } = useTranslation(['common', 'about']);
+const About = forwardRef<HTMLElement>(({} ,ref) => {
+  const { t } = useTranslation('en', ['common', 'about']);
   return (
-    <SectionContainer id="about" innerRef={innerRef}>
+    <SectionContainer id="about" ref={ref}>
       <div className="relative">
         <div className="lg:absolute lg:inset-0">
           <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
@@ -35,16 +35,17 @@ const About = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
         </div>
         <div className="relative pb-16 pt-12 sm:px-6 sm:pt-16 lg:mx-auto lg:grid lg:grid-cols-2 lg:pl-8">
           <div className="lg:col-start-2 lg:pl-8">
-            <div className="mx-auto max-w-prose text-base lg:ml-auto lg:mr-0 lg:max-w-lg">
-              <h2 className={classNames(styles.text['section-title'], styles.text['gradient-b'])}>
+            <div className="mx-auto max-w-prose title lg:ml-auto lg:mr-0 lg:max-w-lg">
+              <h2 className="section-title gradient-b">
                 {t('SECTIONS.ABOUT')}
               </h2>
-              <div className={classNames(styles.text.primary, 'mt-5 prose prose-indigo')}>
+              <div className="title mt-5 prose prose-indigo">
                 <Trans
                   i18nKey="CONTENT"
                   ns="about"
+                  t={t}
                   components={{
-                    highlighted: <span className={styles.text['highlight-a']} />,
+                    highlighted: <span className="highlight-a" />,
                   }}
                 />
               </div>
@@ -54,6 +55,6 @@ const About = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
       </div>
     </SectionContainer>
   );
-};
+});
 
 export default About;

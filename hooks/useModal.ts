@@ -1,3 +1,5 @@
+'use client'
+
 import { createContext, ReactElement, useContext } from 'react';
 
 // This is clearly overkill. It aims to show a nice way to handle app modals

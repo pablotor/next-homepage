@@ -1,11 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { useTranslation } from 'next-i18next';
-
 import { DialogTitle } from '@headlessui/react';
-import { PortfolioItem } from '../types/portfolio';
-import classNames from '../utils/tailwindClassNamesHelper';
 
-import styles from '../styles/tailwindStyles.json';
+import { useTranslation } from '../app/i18n/client';
+import { PortfolioItem } from '../types/portfolio';
+import { Button } from './Button';
 
 interface Props extends PortfolioItem {
   onClose: () => void;
@@ -14,19 +12,11 @@ interface Props extends PortfolioItem {
 const PortfolioModal = ({
   id, techs, codeAvailable, deployed, onClose,
 }: Props) => {
-  const { t } = useTranslation(['portfolio', 'common']);
+  const { t } = useTranslation('en', 'portfolio');
   const i18nKey = id.toLocaleUpperCase();
-  const buttonStyle = classNames(styles.text['button-primary'], 'py-2 w-28 sm:w-36 rounded-md');
-  const altButtonStyle = classNames(styles.text['button-secondary'], 'py-2 w-28 sm:w-36 rounded-md');
   return (
     <div className="p-4">
-      <h4
-        className={classNames(
-          styles.text['section-title'],
-          styles.text['gradient-a'],
-          'mx-auto text-center',
-        )}
-      >
+      <h4 className="section-title gradient-a mx-auto text-center">
         {t(`ITEMS.${i18nKey}.TITLE`)}
       </h4>
       <p className="whitespace-pre-line text-justify">{t(`ITEMS.${i18nKey}.DESCRIPTION.FULL`)}</p>
@@ -55,28 +45,28 @@ const PortfolioModal = ({
         </div>
       )}
       <div className="mt-10 flex justify-between sm:justify-evenly">
-        <button type="button" onClick={onClose} className={altButtonStyle}>
+        <Button type="button" onClick={onClose} style="secondary">
           {t('MODAL.BUTTONS.CLOSE')}
-        </button>
+        </Button>
         {codeAvailable && (
-          <a
+          <Button
             href={`mailto:${t('EMAIL', { ns: 'common' })}`}
-            className={buttonStyle}
+            style="primary"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             {t('MODAL.BUTTONS.REQUEST_ACCESS')}
-          </a>
+          </Button>
         )}
         {deployed && (
-          <a
+          <Button
             href={t(`ITEMS.${i18nKey}.URL`)}
-            className={buttonStyle}
+            style="primary"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             {t('MODAL.BUTTONS.GOTO')}
-          </a>
+          </Button>
         )}
       </div>
     </div>

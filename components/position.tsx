@@ -1,8 +1,5 @@
-import { useTranslation } from 'next-i18next';
-
-import styles from '../styles/tailwindStyles.json';
+import { useTranslation } from '../app/i18n/client';
 import classNames from '../utils/tailwindClassNamesHelper';
-
 interface Props {
   i18nKey: string;
   namespace: string;
@@ -18,24 +15,19 @@ interface Props {
 const Position = ({
   i18nKey, namespace, sections, includeSecondary, highlight = 'a',
 }: Props) => {
-  const { t } = useTranslation(namespace);
+  const { t } = useTranslation('en', namespace);
   const formatKey = (key: string) => `${i18nKey.toLocaleUpperCase()}.${key}`;
   return (
-    <div className={styles.container.position}>
-      <h5
-        className={classNames(
-          styles.text['position-highlighted'],
-          styles.text[`highlight-${highlight}`],
-        )}
-      >
+    <div className="py-4">
+      <h5 className={`font-medium text-xl bg-clip-text highlight-${highlight}`}>
         {t(formatKey('HIGHLIGHTED'))}
       </h5>
       <div className="flex flex-col-reverse sm:w-full sm:flex-row sm:justify-between">
-        <h4 className={styles.text['position-title']}>{t(formatKey('TITLE'))}</h4>
-        <p className={styles.text['position-date']}>{t(formatKey('DATE'))}</p>
+        <h4 className="text-xl">{t(formatKey('TITLE'))}</h4>
+        <p className="font-light text-lg sm:text-xl text-gray-700">{t(formatKey('DATE'))}</p>
       </div>
       {includeSecondary && (
-        <h5 className={styles.text['position-secondary']}>
+        <h5 className="text-lg text-gray-700">
           {t(formatKey('SECONDARY'))}
         </h5>
       )}
@@ -44,7 +36,7 @@ const Position = ({
         return (
           <div key={section.id}>
             {section.showTitle && (
-              <h6 className={styles.text['position-section']}>
+              <h6 className="font-medium">
                 {t(`SUBTITLES.${sectionI18nKey}`)}
               </h6>
             )}

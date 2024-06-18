@@ -1,21 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
-import { useTranslation } from 'next-i18next';
 
 import { PortfolioItem } from '../types/portfolio';
 
+import { useTranslation } from '../app/i18n/client';
 import { useModal } from '../hooks/useModal';
 import classNames from '../utils/tailwindClassNamesHelper';
-import styles from '../styles/tailwindStyles.json';
+
 import PortfolioModal from './portfolioModal';
 
 interface Props {
   portfolio: PortfolioItem[];
-  namespace: string | string[];
+  namespace: string;
 }
 
 const PortfolioTable = ({ portfolio, namespace }: Props) => {
-  const { t } = useTranslation(namespace);
-  const { setModal, onClose } = useModal();
+  const { t } = useTranslation('en', namespace);
+  // const { setModal, onClose } = useModal();
   return (
     <div className="mt-10 overflow-hidden rounded-md sm:p-6">
       <ul className="grid gap-4">
@@ -27,12 +27,12 @@ const PortfolioTable = ({ portfolio, namespace }: Props) => {
             <button
               type="button"
               className="size-full"
-              onClick={() => setModal(<PortfolioModal onClose={onClose} {...item} />)}
+              // onClick={() => setModal(<PortfolioModal onClose={onClose} {...item} />)}
             >
               <div className="min-w-0 flex-1 p-4 sm:flex sm:items-center sm:justify-between sm:px-6">
                 <div>
                   <div className="flex text-sm">
-                    <p className={classNames('font-medium truncate', styles.text['highlight-a'])}>
+                    <p className="font-medium truncate highlight-a">
                       {t(`ITEMS.${item.id.toLocaleUpperCase()}.TITLE`)}
                     </p>
                     <p className="ml-1 shrink-0 font-normal text-gray-500">

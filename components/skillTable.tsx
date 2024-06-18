@@ -1,6 +1,4 @@
-import { useTranslation } from 'next-i18next';
-
-import styles from '../styles/tailwindStyles.json';
+import { useTranslation } from '../app/i18n/client';
 import classNames from '../utils/tailwindClassNamesHelper';
 
 type Expertise = 'high' | 'medium' | 'low';
@@ -10,8 +8,8 @@ interface SkillItemProps {
   skillArray?: (string | undefined)[];
 }
 
-const SkillItem = ({ expertise, skillArray }: SkillItemProps) => {
-  const { t } = useTranslation('skills');
+const SkillItem =  ({ expertise, skillArray }: SkillItemProps) => {
+  const { t } = useTranslation('en', 'skills');
   return (
     <div
       className={classNames(
@@ -20,10 +18,10 @@ const SkillItem = ({ expertise, skillArray }: SkillItemProps) => {
       )}
     >
       <div>
-        <h5 className={classNames(styles.text.primary, 'text-gray-700')}>
+        <h5 className="title text-gray-700">
           {t(`SKILLTABLE.${expertise.toLocaleUpperCase()}.TITLE`)}
         </h5>
-        <p className={styles.text.secondary}>
+        <p className="subtitle">
           {t(`SKILLTABLE.${expertise.toLocaleUpperCase()}.SUBTITLE`)}
         </p>
       </div>
@@ -35,7 +33,7 @@ const SkillItem = ({ expertise, skillArray }: SkillItemProps) => {
                 key={id}
                 className={classNames(
                   'hover:text-xl tracking-normal leading-8 hover:leading-4 whitespace-nowrap hover:text-transparent bg-clip-text transition-all ease-in-out cursor-default',
-                  styles.text['gradient-a'],
+                  'gradient-a',
                 )}
               >
                 {t(`SKILLS.${id?.toLocaleUpperCase()}.LABEL`)}

@@ -1,12 +1,10 @@
 import {
-  Menu, MenuButton, MenuItems, Transition,
+  Menu, MenuButton, MenuItem, MenuItems, Transition,
 } from '@headlessui/react';
-import { useTranslation } from 'next-i18next';
 
+import { useTranslation } from '../app/i18n/client';
 import classNames from '../utils/tailwindClassNamesHelper';
 import ChevronDownIcon from './icons/chevronDown';
-
-import styles from '../styles/tailwindStyles.json';
 
 interface Tab {
   id: string;
@@ -21,7 +19,7 @@ interface Props {
 }
 
 const Tabs = ({ tabArray, selected, namespace }: Props) => {
-  const { t } = useTranslation(namespace);
+  const { t } = useTranslation('en', namespace);
   return (
     <div>
       <div className="relative inline-block text-left md:hidden">
@@ -31,12 +29,12 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
               <MenuButton
                 className={classNames(
                   open
-                    ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
+                    ? classNames('text-transparent bg-clip-text', 'gradient-a')
                     : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
                   'group inline-flex justify-center py-4 px-10 text-sm font-medium text-center border-b-2 transition-all',
                 )}
               >
-                {/* {t(tabArray[selected]?.i18nKey || 'TABS.LABEL')} */}
+                {t(tabArray[selected]?.i18nKey || 'TABS.LABEL')}
                 <ChevronDownIcon
                   className="-mr-1 ml-3 size-5 shrink-0 text-gray-400 group-hover:text-gray-500"
                   aria-hidden="true"
@@ -56,12 +54,12 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
                   className="absolute left-0 mt-2 origin-top-right rounded-md bg-white p-4 shadow-2xl ring-1 ring-black/5 focus:outline-none"
                 >
                   {tabArray.map((option, index) => (
-                    <Menu.Item key={option.id}>
+                    <MenuItem key={option.id}>
                       <button
                         type="button"
                         className={classNames(
                           selected === index
-                            ? classNames('text-transparent bg-clip-text', styles.text['gradient-a'])
+                            ? classNames('text-transparent bg-clip-text', 'gradient-a')
                             : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
                           'flex w-full relative items-start py-2 pr-4 pl-2 font-medium cursor-pointer',
                         )}
@@ -83,7 +81,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
                           </label>
                         </div>
                       </button>
-                    </Menu.Item>
+                    </MenuItem>
                   ))}
                 </MenuItems>
               </Transition>
@@ -100,7 +98,7 @@ const Tabs = ({ tabArray, selected, namespace }: Props) => {
               role="tab"
               className={classNames(
                 selected === index
-                  ? classNames('text-transparent bg-clip-text border-indigo-500', styles.text['gradient-a'])
+                  ? classNames('text-transparent bg-clip-text border-indigo-500', 'gradient-a')
                   : 'text-gray-500 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700 hover:border-purple-500',
                 'w-1/4 py-4 px-8 xl:px-10 text-center border-b-2 font-medium text-sm cursor-pointer transition-all',
               )}

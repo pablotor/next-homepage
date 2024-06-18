@@ -1,13 +1,11 @@
-import { LegacyRef } from 'react';
-import { Trans, useTranslation } from 'next-i18next';
+import { forwardRef } from 'react';
+import { Trans } from 'react-i18next';
 
-import classNames from '../../utils/tailwindClassNamesHelper';
+import { useTranslation } from '../../app/i18n/client';
 import LinkedIn from '../icons/linkedIn';
 import Github from '../icons/github';
 
-import SectionContainer from './sectionContainer';
-
-import styles from '../../styles/tailwindStyles.json';
+import SectionContainer from '../sectionContainer';
 
 const socialMedia = [
   {
@@ -21,32 +19,31 @@ const socialMedia = [
   },
 ];
 
-const Hero = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
-  const { t } = useTranslation(['common', 'hero']);
+const Hero = forwardRef<HTMLElement>(({} ,ref) => {
+  const { t } = useTranslation('en', 'hero');
   return (
-    <SectionContainer id="profile" innerRef={innerRef}>
+    <SectionContainer id="profile" ref={ref}>
       <div>
         <h1 className="mb-2 text-[3.5rem] font-black leading-[1.1] sm:text-8xl sm:leading-snug">
-          <span className={classNames(styles.text['gradient-a'], 'bg-clip-text animate-vercel-text-a')}>
-            {t('FIRSTNAME')}
+          <span className="gradient-a bg-clip-text animate-vercel-text-a">
+            Pablo Javier
           </span>
           <br />
-          <span className={classNames(styles.text['gradient-b'], 'bg-clip-text animate-vercel-text-b')}>
-            {t('LASTNAME')}
+          <span className="gradient-b bg-clip-text animate-vercel-text-b">
+            Torrubiano
           </span>
         </h1>
-        <a href={`mailto:${t('EMAIL')}`}>
-          <h3 className="mb-6 text-2xl text-gray-600">{t('EMAIL')}</h3>
+        <a href="mailto:me@pablotor.dev">
+          <h3 className="mb-6 text-2xl text-gray-600">me@pablotor.dev</h3>
         </a>
       </div>
       <div>
         <Trans
-          ns="hero"
+          t={t}
           i18nKey="PROFILE"
-          className={styles.text.primary}
           components={{
-            primary: <p className={styles.text.primary} />,
-            highlightA: <span className={classNames(styles.text['highlight-a'])} />,
+            primary: <p className="title" />,
+            highlightA: <span className="highlight-a" />,
             // highlightB: <span className={classNames(styles.text['highlight-b'])}/>,
           }}
         />
@@ -62,11 +59,7 @@ const Hero = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
             rel="noreferrer"
           >
             <div
-              className={classNames(
-                'p-3 bg-gray-600 rounded-full hover:bg-gradient-to-r transition-all',
-                'from-purple-500 to-pink-700',
-                // index % 2 ? 'from-purple-500 to-pink-700' : 'from-blue-500 to-indigo-700',
-              )}
+              className="p-3 bg-gray-600 rounded-full hover:bg-gradient-to-r transition-all from-purple-500 to-pink-700"
             >
               <element.icon className="size-6 text-white" />
             </div>
@@ -75,6 +68,6 @@ const Hero = ({ innerRef }: { innerRef: LegacyRef<HTMLElement>; }) => {
       </div>
     </SectionContainer>
   );
-};
+});
 
 export default Hero;
