@@ -1,6 +1,9 @@
 {
   "PAGE.TITLE": "Pablo Tor | Developer",
   "PAGE.DESCRIPTION": "Online Resume & Portfolio",
+  "FIRSTNAME": "Pablo",
+  "LASTNAME": "Torrubiano",
+  "EMAIL": "me@pablotor.dev",
   "NAVBAR.MENU.OPEN": "Open navbar menu",
   "NAVBAR.MENU.CLOSE": "Close navbar menu",
   "SECTIONS.PROFILE": "Profile",

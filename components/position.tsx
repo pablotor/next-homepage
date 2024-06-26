@@ -1,5 +1,4 @@
 import { useTranslation } from '../app/i18n/client';
-import classNames from '../utils/classNames';
 interface Props {
   i18nKey: string;
   namespace: string;

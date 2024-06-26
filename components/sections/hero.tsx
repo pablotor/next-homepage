@@ -20,27 +20,30 @@ const socialMedia = [
 ];
 
 const Hero = forwardRef<HTMLElement>(({} ,ref) => {
-  const { t } = useTranslation('en', 'hero');
+  const { t } = useTranslation('en', ['common', 'hero']);
   return (
     <SectionContainer id="profile" ref={ref}>
       <div>
         <h1 className="mb-2 text-[3.5rem] font-black leading-[1.1] sm:text-8xl sm:leading-snug">
           <span className="gradient-a bg-clip-text animate-vercel-text-a">
-            Pablo Javier
+            {t('FIRSTNAME')}
           </span>
           <br />
           <span className="gradient-b bg-clip-text animate-vercel-text-b">
-            Torrubiano
+            {t('LASTNAME')}
           </span>
         </h1>
-        <a href="mailto:me@pablotor.dev">
-          <h3 className="mb-6 text-2xl text-gray-600">me@pablotor.dev</h3>
+        <a href={`mailto:${t('EMAIL')}`}>
+          <h3 className="mb-6 text-2xl text-gray-600">
+            {t('EMAIL')}
+          </h3>
         </a>
       </div>
       <div>
         <Trans
           t={t}
           i18nKey="PROFILE"
+          ns="hero"
           components={{
             primary: <p className="title" />,
             highlightA: <span className="highlight-a" />,
