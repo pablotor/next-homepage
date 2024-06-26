@@ -2,9 +2,9 @@ import { forwardRef } from 'react';
 import { Trans } from 'react-i18next';
 
 import { useTranslation } from '../../app/i18n/client';
+import { WithLanguage } from '../../app/i18n/WithLanguage';
 import LinkedIn from '../icons/linkedIn';
 import Github from '../icons/github';
-
 import SectionContainer from '../sectionContainer';
 
 const socialMedia = [
@@ -19,8 +19,8 @@ const socialMedia = [
   },
 ];
 
-const Hero = forwardRef<HTMLElement>(({} ,ref) => {
-  const { t } = useTranslation('en', ['common', 'hero']);
+const Hero = forwardRef<HTMLElement, WithLanguage>(({ lng } ,ref) => {
+  const { t } = useTranslation(lng, ['common', 'hero']);
   return (
     <SectionContainer id="profile" ref={ref}>
       <div>

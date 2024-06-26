@@ -12,8 +12,9 @@ import Portfolio from '../../components/sections/portfolio';
 import Education from '../../components/sections/education';
 import About from '../../components/sections/about';
 import ModalContext from '../../contexts/modalContext';
+import { WithLanguage } from '../i18n/WithLanguage';
 
-const Home: NextPage<{ params: { lng: string } }> = ({ params: { lng } }) => {
+const Home: NextPage<{ params: WithLanguage }> = ({ params: { lng } }) => {
   const [profileRef, profileInView] = useInView({ threshold: 0.51 });
   const [experienceRef, experienceInView] = useInView({ threshold: 0.51 });
   const [projectsRef, projectsInView] = useInView({ threshold: 0.51 });
@@ -35,15 +36,15 @@ const Home: NextPage<{ params: { lng: string } }> = ({ params: { lng } }) => {
   return (
     <div className="mx-auto max-w-screen-xl lg:flex">
       <ModalContext>
-        <Navbar sectionInViewWatchers={sectionInViewWatchers} />
+        <Navbar sectionInViewWatchers={sectionInViewWatchers} lng={lng}/>
         <main id="content" className="max-h-screen-mobile overflow-scroll lg:ml-56 lg:max-h-fit lg:overflow-auto">
-          <Hero ref={profileRef}/>
-          <Experience ref={experienceRef}/>
-          <Projects ref={projectsRef}/>
-          <Skills ref={skillsRef}/>
-          <Portfolio ref={portfolioRef}/>
-          <Education ref={educationRef}/>
-          <About ref={aboutRef}/>
+          <Hero ref={profileRef} lng={lng}/>
+          <Experience ref={experienceRef} lng={lng}/>
+          <Projects ref={projectsRef} lng={lng}/>
+          <Skills ref={skillsRef} lng={lng}/>
+          <Portfolio ref={portfolioRef} lng={lng}/>
+          <Education ref={educationRef} lng={lng}/>
+          <About ref={aboutRef} lng={lng}/>
         </main>
       </ModalContext>
     </div>

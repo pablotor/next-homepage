@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
 import { dir } from 'i18next';
 
+import { WithLanguage } from '../i18n/WithLanguage';
 import './globals.css';
 
-const languages = ['en', 'es'];
+const languages = ['en', 'es'] as const;
 
 export const generateStaticParams = async () => languages.map((lng) => ({ lng }));
 
@@ -12,22 +13,20 @@ export const metadata: Metadata = {
   description: "Online Resume & Portfolio",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
   params: {
     lng
   }
 }: Readonly<{
   children: React.ReactNode;
-  params: {
-      lng: string;
-  }
-}>) {
-  return (
-    <html lang={lng} dir={dir(lng)}>
-      <body>
-          {children}
-      </body>
-    </html>
-  );
-}
+  params: WithLanguage;
+}>) => (
+  <html lang={lng} dir={dir(lng)}>
+    <body>
+        {children}
+    </body>
+  </html>
+);
+
+export default RootLayout;

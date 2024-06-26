@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { FC } from 'react';
 import { useTranslation } from '../app/i18n/client';
+import { WithLanguage } from '../app/i18n/WithLanguage';
 import { useModal } from '../hooks/useModal';
 import classNames from '../utils/classNames';
 
@@ -89,8 +91,8 @@ const portfolio: PortfolioItem[] = [
   },
 ];
 
-const PortfolioTable = () => {
-  const { t } = useTranslation('en', 'portfolio');
+const PortfolioTable: FC<WithLanguage> = ({ lng }) => {
+  const { t } = useTranslation(lng, 'portfolio');
   const { setModal, onClose } = useModal();
   return (
     <div className="mt-10 overflow-hidden rounded-md sm:p-6">
@@ -103,7 +105,7 @@ const PortfolioTable = () => {
             <button
               type="button"
               className="size-full"
-              onClick={() => setModal(<PortfolioModal onClose={onClose} item={item} />)}
+              onClick={() => setModal(<PortfolioModal onClose={onClose} item={item} lng={lng}/>)}
             >
               <div className="min-w-0 flex-1 p-4 sm:flex sm:items-center sm:justify-between sm:px-6">
                 <div>

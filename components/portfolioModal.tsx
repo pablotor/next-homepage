@@ -1,24 +1,27 @@
 'use client'
 
 /* eslint-disable @next/next/no-img-element */
+import { FC } from 'react';
 import { DialogTitle } from '@headlessui/react';
 
-import type { PortfolioItem } from './portfolioTable';
 import { useTranslation } from '../app/i18n/client';
+import { WithLanguage } from '../app/i18n/WithLanguage';
 import { Button } from './button';
+import type { PortfolioItem } from './portfolioTable';
 
-interface PortfolioModalProps {
+type PortfolioModalProps = {
   item: PortfolioItem;
   onClose: () => void;
-}
+} & WithLanguage;
 
-const PortfolioModal = ({
+const PortfolioModal: FC<PortfolioModalProps> = ({
   item: {
     id, techs, codeAvailable, deployed,
   },
   onClose,
-}: PortfolioModalProps) => {
-  const { t } = useTranslation('en', 'portfolio');
+  lng,
+}) => {
+  const { t } = useTranslation(lng, 'portfolio');
   const i18nKey = id.toLocaleUpperCase();
   return (
     <div className="p-4">

@@ -3,9 +3,10 @@
 import { forwardRef, useState } from 'react';
 
 import { useTranslation } from '../../app/i18n/client';
+import { WithLanguage } from '../../app/i18n/WithLanguage';
+import Section from '../sectionContainer';
 import SkillTable from '../skillTable';
 import Tabs from '../tabs';
-import Section from '../sectionContainer';
 
 interface SkillSet {
   id: string;
@@ -81,9 +82,9 @@ const skills: SkillSet[] = [
   },
 ];
 
-const Skills = forwardRef<HTMLElement>(({} ,ref) => {
+const Skills = forwardRef<HTMLElement, WithLanguage>(({ lng } ,ref) => {
   const [selected, setSelected] = useState(0);
-  const { t } = useTranslation('en', ['common', 'skills']);
+  const { t } = useTranslation(lng, ['common', 'skills']);
   const enrichedSkills = [{
     id: 'all',
     high: skills.flatMap(({ high }) => high).filter((skill) => skill),
@@ -107,10 +108,10 @@ const Skills = forwardRef<HTMLElement>(({} ,ref) => {
       </p>
       <div className="mt-8 flex items-baseline justify-between">
         <div className="flex items-center">
-          <Tabs selected={selected} namespace="skills" tabArray={enrichedSkills} />
+          <Tabs selected={selected} namespace="skills" tabArray={enrichedSkills} lng={lng}/>
         </div>
       </div>
-      <SkillTable skills={enrichedSkills} selected={selected} />
+      <SkillTable skills={enrichedSkills} selected={selected} lng={lng}/>
     </Section>
   );
 });

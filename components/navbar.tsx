@@ -1,9 +1,10 @@
 'use client'
 
-import { Fragment, useEffect, useState } from 'react';
+import { FC, Fragment, useEffect, useState } from 'react';
 import { Popover, PopoverButton, PopoverPanel, Transition } from '@headlessui/react';
 
 import { useTranslation } from '../app/i18n/client';
+import { WithLanguage } from '../app/i18n/WithLanguage';
 import classNames from '../utils/classNames';
 import ChevronDownIcon from './icons/chevronDown';
 
@@ -17,8 +18,12 @@ const sections = [
   { i18nKey: 'about', href: '#about' },
 ];
 
-const Navbar = ({ sectionInViewWatchers }: { sectionInViewWatchers: boolean[] }) => {
-  const { t } = useTranslation('en', 'common');
+type NavbarProps = {
+  sectionInViewWatchers: boolean[];
+} & WithLanguage
+
+const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
+  const { t } = useTranslation(lng, 'common');
 
   const [inViewSection, setInViewSection] = useState(sectionInViewWatchers.indexOf(true));
 

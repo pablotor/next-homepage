@@ -3,6 +3,7 @@
 import { forwardRef } from 'react';
 
 import { useTranslation } from '../../app/i18n/client';
+import { WithLanguage } from '../../app/i18n/WithLanguage';
 import Position from '../position';
 import SectionContainer from '../sectionContainer';
 
@@ -21,8 +22,8 @@ const sections = [
   },
 ];
 
-const Projects = forwardRef<HTMLElement>(({} ,ref) => {
-  const { t } = useTranslation('en', ['common', 'projects']);
+const Projects = forwardRef<HTMLElement, WithLanguage>(({ lng } ,ref) => {
+  const { t } = useTranslation(lng, ['common', 'projects']);
   return (
     <SectionContainer id="projects" ref={ref}>
       <h2 className="section-title gradient-b">
@@ -39,6 +40,7 @@ const Projects = forwardRef<HTMLElement>(({} ,ref) => {
           sections={sections}
           highlight="a"
           includeSecondary
+          lng={lng}
         />
       ))}
     </SectionContainer>

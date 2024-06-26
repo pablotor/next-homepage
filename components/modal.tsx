@@ -1,16 +1,16 @@
-import { Fragment, ReactElement } from 'react';
+import { FC, Fragment, ReactElement } from 'react';
 import { Dialog, DialogPanel, Transition } from '@headlessui/react';
 
-interface Props {
+type ModalProps = {
   content: ReactElement | null;
   isOpen: boolean;
   onClose: () => void;
   // className?: string;
 }
 
-const Modal = ({
+const Modal: FC<ModalProps> = ({
   content, isOpen, onClose, // className,
-}: Props) => (
+}) => (
   <Transition
     show={isOpen}
     enter="ease-out duration-300"

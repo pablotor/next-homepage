@@ -1,5 +1,8 @@
+import { FC } from 'react';
 import { useTranslation } from '../app/i18n/client';
-interface Props {
+import { WithLanguage } from '../app/i18n/WithLanguage';
+
+type PositionProps = {
   i18nKey: string;
   namespace: string;
   sections: {
@@ -9,12 +12,12 @@ interface Props {
   }[];
   includeSecondary?: boolean;
   highlight?: 'a' | 'b';
-}
+} & WithLanguage;
 
-const Position = ({
-  i18nKey, namespace, sections, includeSecondary, highlight = 'a',
-}: Props) => {
-  const { t } = useTranslation('en', namespace);
+const Position: FC<PositionProps> = ({
+  i18nKey, namespace, sections, includeSecondary, highlight = 'a', lng,
+}) => {
+  const { t } = useTranslation(lng, namespace);
   const formatKey = (key: string) => `${i18nKey.toLocaleUpperCase()}.${key}`;
   return (
     <div className="py-4">

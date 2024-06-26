@@ -3,8 +3,9 @@
 import { forwardRef } from 'react';
 
 import { useTranslation } from '../../app/i18n/client';
-import Position from '../position';
+import { WithLanguage } from '../../app/i18n/WithLanguage';
 
+import Position from '../position';
 import SectionContainer from '../sectionContainer';
 
 const jobs = [
@@ -27,8 +28,8 @@ const sections = [
   },
 ];
 
-const Experience = forwardRef<HTMLElement>(({} ,ref) => {
-  const { t } = useTranslation('en', ['common', 'experience']);
+const Experience = forwardRef<HTMLElement, WithLanguage>(({ lng } ,ref) => {
+  const { t } = useTranslation(lng, ['common', 'experience']);
   return (
     <SectionContainer id="experience" ref={ref}>
       <h2 className="section-title gradient-a">
@@ -38,7 +39,14 @@ const Experience = forwardRef<HTMLElement>(({} ,ref) => {
         {t('COMMENT', { ns: 'experience' })}
       </p>
       {jobs.map((job) => (
-        <Position i18nKey={job} namespace="experience" key={job} sections={sections} includeSecondary />
+        <Position
+          i18nKey={job}
+          namespace="experience"
+          key={job}
+          sections={sections}
+          includeSecondary
+          lng={lng}
+        />
       ))}
     </SectionContainer>
   );

@@ -1,8 +1,10 @@
+import { FC } from 'react';
 import {
   Menu, MenuButton, MenuItem, MenuItems, Transition,
 } from '@headlessui/react';
 
 import { useTranslation } from '../app/i18n/client';
+import { WithLanguage } from '../app/i18n/WithLanguage';
 import classNames from '../utils/classNames';
 import ChevronDownIcon from './icons/chevronDown';
 
@@ -12,14 +14,14 @@ interface Tab {
   onSelect: () => void;
 }
 
-interface Props {
+type TabsProps = {
   tabArray: Tab[];
   selected: number;
   namespace: string;
-}
+} & WithLanguage;
 
-const Tabs = ({ tabArray, selected, namespace }: Props) => {
-  const { t } = useTranslation('en', namespace);
+const Tabs: FC<TabsProps> = ({ tabArray, selected, namespace, lng }) => {
+  const { t } = useTranslation(lng, namespace);
   return (
     <div>
       <div className="relative inline-block text-left md:hidden">

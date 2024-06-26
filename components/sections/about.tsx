@@ -1,14 +1,15 @@
 'use client'
 
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image';
 import { forwardRef } from 'react';
 import { Trans } from 'react-i18next';
 
 import { useTranslation } from '../../app/i18n/client';
+import { WithLanguage } from "../../app/i18n/WithLanguage";
 import SectionContainer from '../sectionContainer';
 
-const About = forwardRef<HTMLElement>(({} ,ref) => {
-  const { t } = useTranslation('en', ['common', 'about']);
+const About = forwardRef<HTMLElement, WithLanguage>(({ lng } ,ref) => {
+  const { t } = useTranslation(lng, ['common', 'about']);
   return (
     <SectionContainer id="about" ref={ref}>
       <div className="relative">
