@@ -16,15 +16,15 @@ type ButtonProps = {
   }
 );
 
-const baseStyle = 'text-center text-sm sm:title bg-gray-600 hover:bg-gradient-to-r py-2 w-28 sm:w-36 rounded-md transition-all';
+const baseStyle = 'text-center bg-gray-600 hover:bg-gradient-to-r py-2 w-28 sm:w-36 rounded-md transition-all';
 
 const buttonVariants: Record<'primary' | 'secondary', string> = {
-  primary: 'ext-white from-purple-500 to-pink-700',
+  primary: 'text-white from-purple-500 to-pink-700',
   secondary: 'text-white from-blue-500 to-indigo-700',
 };
 
-export const Button: FC<ButtonProps> = ({ variant, children, ...props }) => {
-  const style = classNames(baseStyle, buttonVariants[variant || 'primary']);
+export const Button: FC<ButtonProps> = ({ variant = 'primary', children, ...props }) => {
+  const style = classNames(baseStyle, buttonVariants[variant]);
   return 'href' in props ? (
     <a className={style} {...props}>
       {children}
