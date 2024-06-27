@@ -34,10 +34,7 @@ export const SkillItem: FC<SkillItemProps> = ({ expertise, skillArray, lng }) =>
             (id, index) => ([
               <span
                 key={id}
-                className={classNames(
-                  'hover:text-xl tracking-normal leading-8 hover:leading-4 whitespace-nowrap hover:text-transparent bg-clip-text transition-all ease-in-out cursor-default',
-                  'gradient-a',
-                )}
+                className="gradient-a cursor-default whitespace-nowrap bg-clip-text leading-8 tracking-normal transition-all ease-in-out hover:text-xl hover:leading-4 hover:text-transparent"
               >
                 {t(`SKILLS.${id?.toLocaleUpperCase()}.LABEL`)}
               </span>,
