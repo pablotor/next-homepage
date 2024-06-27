@@ -3,8 +3,8 @@ import {
   Menu, MenuButton, MenuItem, MenuItems, Transition,
 } from '@headlessui/react';
 
-import { useTranslation } from '../app/i18n/client';
-import { WithLanguage } from '../app/i18n/WithLanguage';
+import { useTranslation } from '../../i18n/client';
+import { WithLanguage } from '../../i18n/WithLanguage';
 import classNames from '../utils/classNames';
 import ChevronDownIcon from './icons/chevronDown';
 
@@ -20,7 +20,9 @@ type TabsProps = {
   namespace: string;
 } & WithLanguage;
 
-const Tabs: FC<TabsProps> = ({ tabArray, selected, namespace, lng }) => {
+const Tabs: FC<TabsProps> = ({
+  tabArray, selected, namespace, lng,
+}) => {
   const { t } = useTranslation(lng, namespace);
   return (
     <div>

@@ -7,12 +7,11 @@ const initI18next = async (lng: string, ns: Namespace) => {
   const i18nInstance = createInstance();
   await i18nInstance
     .use(initReactI18next)
-    .use(resourcesToBackend((language: string, namespace: Namespace ) => import(`./locales/${language}/${namespace}.json`)))
+    .use(resourcesToBackend((language: string, namespace: Namespace) => import(`./locales/${language}/${namespace}.json`)))
     .init(getOptions(lng, ns));
   return i18nInstance;
 };
 
-// eslint-disable-next-line max-len
 export const useTranslation = async (lng: string, ns: Namespace, options: ReactOptions = {}) => {
   const i18nextInstance = await initI18next(lng, ns);
   return {

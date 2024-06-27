@@ -1,8 +1,8 @@
 import { forwardRef } from 'react';
 import { Trans } from 'react-i18next';
 
-import { useTranslation } from '../../app/i18n/client';
-import { WithLanguage } from '../../app/i18n/WithLanguage';
+import { useTranslation } from '../../../i18n/client';
+import { WithLanguage } from '../../../i18n/WithLanguage';
 import LinkedIn from '../icons/linkedIn';
 import Github from '../icons/github';
 import SectionContainer from '../sectionContainer';
@@ -19,17 +19,17 @@ const socialMedia = [
   },
 ];
 
-const Hero = forwardRef<HTMLElement, WithLanguage>(({ lng } ,ref) => {
+const Hero = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
   const { t } = useTranslation(lng, ['common', 'hero']);
   return (
     <SectionContainer id="profile" ref={ref}>
       <div>
         <h1 className="mb-2 text-[3.5rem] font-black leading-[1.1] sm:text-8xl sm:leading-snug">
-          <span className="gradient-a bg-clip-text animate-vercel-text-a">
+          <span className="gradient-a animate-vercel-text-a bg-clip-text">
             {t('FIRSTNAME')}
           </span>
           <br />
-          <span className="gradient-b bg-clip-text animate-vercel-text-b">
+          <span className="gradient-b animate-vercel-text-b bg-clip-text">
             {t('LASTNAME')}
           </span>
         </h1>
@@ -62,7 +62,7 @@ const Hero = forwardRef<HTMLElement, WithLanguage>(({ lng } ,ref) => {
             rel="noreferrer"
           >
             <div
-              className="p-3 bg-gray-600 rounded-full hover:bg-gradient-to-r transition-all from-purple-500 to-pink-700"
+              className="rounded-full bg-gray-600 from-purple-500 to-pink-700 p-3 transition-all hover:bg-gradient-to-r"
             >
               <element.icon className="size-6 text-white" />
             </div>
@@ -72,5 +72,7 @@ const Hero = forwardRef<HTMLElement, WithLanguage>(({ lng } ,ref) => {
     </SectionContainer>
   );
 });
+
+Hero.displayName = 'Hero';
 
 export default Hero;

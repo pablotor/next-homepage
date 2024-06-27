@@ -9,22 +9,22 @@ const languages = ['en', 'es'] as const;
 export const generateStaticParams = async () => languages.map((lng) => ({ lng }));
 
 export const metadata: Metadata = {
-  title: "Pablo Tor | Developer",
-  description: "Online Resume & Portfolio",
+  title: 'Pablo Tor | Developer',
+  description: 'Online Resume & Portfolio',
 };
 
 const RootLayout = ({
   children,
   params: {
-    lng
-  }
+    lng,
+  },
 }: Readonly<{
   children: React.ReactNode;
   params: WithLanguage;
 }>) => (
   <html lang={lng} dir={dir(lng)}>
     <body>
-        {children}
+      {children}
     </body>
   </html>
 );

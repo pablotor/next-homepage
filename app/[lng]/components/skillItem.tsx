@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC } from 'react';
 
-import { useTranslation } from "../app/i18n/client";
-import { WithLanguage } from "../app/i18n/WithLanguage";
-import classNames from "../utils/classNames";
+import { useTranslation } from '../../i18n/client';
+import { WithLanguage } from '../../i18n/WithLanguage';
+import classNames from '../utils/classNames';
 
 export type Expertise = 'high' | 'medium' | 'low';
 
@@ -11,7 +11,7 @@ type SkillItemProps = {
   skillArray?: (string | undefined)[];
 } & WithLanguage;
 
-export const SkillItem: FC<SkillItemProps> =  ({ expertise, skillArray, lng }) => {
+export const SkillItem: FC<SkillItemProps> = ({ expertise, skillArray, lng }) => {
   const { t } = useTranslation(lng, 'skills');
   return (
     <div

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { WithLanguage } from '../app/i18n/WithLanguage';
+import { WithLanguage } from '../../i18n/WithLanguage';
 import { Expertise, SkillItem } from './skillItem';
 
 type SkillTableProps = {
@@ -10,7 +10,7 @@ type SkillTableProps = {
     low?: (string | undefined)[];
   }[];
   selected: number;
-} & WithLanguage
+} & WithLanguage;
 
 const SkillTable: FC<SkillTableProps> = ({ skills, selected, lng }) => {
   const expertiseArray: Expertise[] = ['high', 'medium', 'low'];

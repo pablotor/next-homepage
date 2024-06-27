@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { useTranslation } from '../app/i18n/client';
-import { WithLanguage } from '../app/i18n/WithLanguage';
+import { useTranslation } from '../../i18n/client';
+import { WithLanguage } from '../../i18n/WithLanguage';
+import classNames from '../utils/classNames';
 
 type PositionProps = {
   i18nKey: string;
@@ -21,12 +22,12 @@ const Position: FC<PositionProps> = ({
   const formatKey = (key: string) => `${i18nKey.toLocaleUpperCase()}.${key}`;
   return (
     <div className="py-4">
-      <h5 className={`font-medium text-xl bg-clip-text highlight-${highlight}`}>
+      <h5 className={classNames(`highlight-${highlight}`, 'bg-clip-text text-xl font-medium')}>
         {t(formatKey('HIGHLIGHTED'))}
       </h5>
       <div className="flex flex-col-reverse sm:w-full sm:flex-row sm:justify-between">
         <h4 className="text-xl">{t(formatKey('TITLE'))}</h4>
-        <p className="font-light text-lg sm:text-xl text-gray-700">{t(formatKey('DATE'))}</p>
+        <p className="text-lg font-light text-gray-700 sm:text-xl">{t(formatKey('DATE'))}</p>
       </div>
       {includeSecondary && (
         <h5 className="text-lg text-gray-700">

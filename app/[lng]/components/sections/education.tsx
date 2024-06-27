@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
 import { forwardRef } from 'react';
 
-import { useTranslation } from '../../app/i18n/client';
-import { WithLanguage } from '../../app/i18n/WithLanguage';
+import { useTranslation } from '../../../i18n/client';
+import { WithLanguage } from '../../../i18n/WithLanguage';
 import Position from '../position';
 import Section from '../sectionContainer';
 
@@ -22,7 +22,7 @@ const sections = [
   },
 ];
 
-const Education = forwardRef<HTMLElement, WithLanguage>(({ lng } ,ref)  => {
+const Education = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
   const { t } = useTranslation(lng, ['common', 'education']);
   return (
     <Section id="education" ref={ref}>
@@ -42,5 +42,7 @@ const Education = forwardRef<HTMLElement, WithLanguage>(({ lng } ,ref)  => {
     </Section>
   );
 });
+
+Education.displayName = 'Education';
 
 export default Education;

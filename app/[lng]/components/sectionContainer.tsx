@@ -7,10 +7,12 @@ interface SectionProps {
 
 const Section = forwardRef<HTMLElement, SectionProps>(
   ({ id, children }, ref) => (
-    <section id={id} className="px-8 py-16 min-h-section-mobile lg:min-h-screen flex flex-col justify-center" ref={ref}>
+    <section id={id} className="flex min-h-section-mobile flex-col justify-center px-8 py-16 lg:min-h-screen" ref={ref}>
       {children}
     </section>
-  )
+  ),
 );
+
+Section.displayName = 'Section';
 
 export default Section;

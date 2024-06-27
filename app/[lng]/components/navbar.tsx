@@ -1,10 +1,14 @@
-'use client'
+'use client';
 
-import { FC, Fragment, useEffect, useState } from 'react';
-import { Popover, PopoverButton, PopoverPanel, Transition } from '@headlessui/react';
+import {
+  FC, Fragment, useEffect, useState,
+} from 'react';
+import {
+  Popover, PopoverButton, PopoverPanel, Transition,
+} from '@headlessui/react';
 
-import { useTranslation } from '../app/i18n/client';
-import { WithLanguage } from '../app/i18n/WithLanguage';
+import { useTranslation } from '../../i18n/client';
+import { WithLanguage } from '../../i18n/WithLanguage';
 import classNames from '../utils/classNames';
 import ChevronDownIcon from './icons/chevronDown';
 
@@ -20,7 +24,7 @@ const sections = [
 
 type NavbarProps = {
   sectionInViewWatchers: boolean[];
-} & WithLanguage
+} & WithLanguage;
 
 const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
   const { t } = useTranslation(lng, 'common');
@@ -54,11 +58,11 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                       'hidden transition-all',
                     )}
                   >
-                    <span className="gradient-a bg-clip-text animate-vercel-text-a">
+                    <span className="gradient-a animate-vercel-text-a bg-clip-text">
                       {t('FIRSTNAME')}
                     </span>
                     {' '}
-                    <span className="gradient-b bg-clip-text animate-vercel-text-b">
+                    <span className="gradient-b animate-vercel-text-b bg-clip-text">
                       {t('LASTNAME')}
                     </span>
                   </span>

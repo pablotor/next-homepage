@@ -1,24 +1,24 @@
-'use client'
+'use client';
 
 /* eslint-disable @next/next/no-img-element */
 import { FC } from 'react';
 import { DialogTitle } from '@headlessui/react';
 
-import { useTranslation } from '../app/i18n/client';
-import { WithLanguage } from '../app/i18n/WithLanguage';
+import { useTranslation } from '../../i18n/client';
+import { WithLanguage } from '../../i18n/WithLanguage';
 import { Button } from './button';
 import type { PortfolioItem } from './portfolioTable';
 
 type PortfolioModalProps = {
   item: PortfolioItem;
-  onClose: () => void;
+  closeModal: () => void;
 } & WithLanguage;
 
 const PortfolioModal: FC<PortfolioModalProps> = ({
   item: {
     id, techs, codeAvailable, deployed,
   },
-  onClose,
+  closeModal,
   lng,
 }) => {
   const { t } = useTranslation(lng, 'portfolio');
@@ -54,13 +54,13 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
         </div>
       )}
       <div className="mt-10 flex justify-between sm:justify-evenly">
-        <Button type="button" onClick={onClose} style="secondary">
+        <Button type="button" onClick={closeModal} variant="secondary">
           {t('MODAL.BUTTONS.CLOSE')}
         </Button>
         {codeAvailable && (
           <Button
             href={`mailto:${t('EMAIL', { ns: 'common' })}`}
-            style="primary"
+            variant="primary"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -70,7 +70,7 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
         {deployed && (
           <Button
             href={t(`ITEMS.${i18nKey}.URL`)}
-            style="primary"
+            variant="primary"
             target="_blank"
             rel="noopener noreferrer"
           >
