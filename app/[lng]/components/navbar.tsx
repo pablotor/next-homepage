@@ -29,12 +29,14 @@ type NavbarProps = {
 const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
   const { t } = useTranslation(lng, 'common');
 
-  const [inViewSection, setInViewSection] = useState(sectionInViewWatchers.indexOf(true));
+  const [inViewSectionIndex, setInViewSectionIndex] = useState(0);
 
   useEffect(() => {
-    if (sectionInViewWatchers.indexOf(true) !== -1) {
-      setInViewSection(sectionInViewWatchers.indexOf(true));
+    const updatedIndex = sectionInViewWatchers.indexOf(true);
+    if (updatedIndex !== -1) {
+      setInViewSectionIndex(updatedIndex);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, sectionInViewWatchers);
 
   return (
@@ -51,22 +53,20 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                   )}
                   aria-label={t(open ? 'NAVBAR.MENU.CLOSE' : 'NAVBAR.MENU.OPEN')}
                 >
-                  <span className="w-1/3 text-left">{t(sections[inViewSection]?.i18nKey)}</span>
+                  <span className="w-1/4">{t(sections[inViewSectionIndex]?.i18nKey)}</span>
                   <span
                     className={classNames(
-                      inViewSection === 0 ? '' : 'sm:block sm:w-1/3 sm:font-black sm:mx-auto',
-                      'hidden transition-all',
+                      inViewSectionIndex === 0 ? 'opacity-0' : 'opacity-100',
+                      'transition-all ease-in-out delay-150 duration-300 sm:block font-bold mx-auto',
                     )}
                   >
-                    <span className="gradient-a animate-vercel-text-a bg-clip-text">
+                    <span className="animate-switch-gradient bg-gradient-to-r bg-clip-text">
                       {t('FIRSTNAME')}
-                    </span>
-                    {' '}
-                    <span className="gradient-b animate-vercel-text-b bg-clip-text">
+                      {' '}
                       {t('LASTNAME')}
                     </span>
                   </span>
-                  <div className="flex w-1/3 justify-end">
+                  <div className="flex w-1/4 justify-end">
                     <ChevronDownIcon
                       className={classNames(
                         open ? 'text-gray-600' : 'text-gray-400',
@@ -101,8 +101,8 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                             href={item.href}
                             className={classNames(
                               'flex justify-center p-3 title font-medium transition-all',
-                              inViewSection === index
-                                ? classNames('gradient-a', 'text-transparent bg-clip-text')
+                              inViewSectionIndex === index
+                                ? 'gradient-a text-transparent bg-clip-text'
                                 : 'text-gray-900 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700',
                             )}
                           >
@@ -126,8 +126,8 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                 href={item.href}
                 className={classNames(
                   'flex items-center p-3 -m-3 title font-mediumtransition-all',
-                  inViewSection === index
-                    ? classNames('text-transparent bg-clip-text', 'gradient-a')
+                  inViewSectionIndex === index
+                    ? 'text-transparent bg-clip-text gradient-a'
                     : 'text-gray-900 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700',
                 )}
               >

@@ -13,14 +13,16 @@ import Education from './components/sections/education';
 import About from './components/sections/about';
 import { WithLanguage } from '../i18n/WithLanguage';
 
+const MIN_INVIEW_THREEHOLD = 0.20;
+
 const Home: NextPage<{ params: WithLanguage }> = ({ params: { lng } }) => {
-  const [profileRef, profileInView] = useInView({ threshold: 0.51 });
-  const [experienceRef, experienceInView] = useInView({ threshold: 0.51 });
-  const [projectsRef, projectsInView] = useInView({ threshold: 0.51 });
-  const [skillsRef, skillsInView] = useInView({ threshold: 0.51 });
-  const [portfolioRef, portfolioInView] = useInView({ threshold: 0.51 });
-  const [educationRef, educationInView] = useInView({ threshold: 0.51 });
-  const [aboutRef, aboutInView] = useInView({ threshold: 0.40 });
+  const [profileRef, profileInView] = useInView({ threshold: MIN_INVIEW_THREEHOLD });
+  const [experienceRef, experienceInView] = useInView({ threshold: MIN_INVIEW_THREEHOLD });
+  const [projectsRef, projectsInView] = useInView({ threshold: MIN_INVIEW_THREEHOLD });
+  const [skillsRef, skillsInView] = useInView({ threshold: MIN_INVIEW_THREEHOLD });
+  const [portfolioRef, portfolioInView] = useInView({ threshold: MIN_INVIEW_THREEHOLD });
+  const [educationRef, educationInView] = useInView({ threshold: MIN_INVIEW_THREEHOLD });
+  const [aboutRef, aboutInView] = useInView({ threshold: MIN_INVIEW_THREEHOLD });
 
   const sectionInViewWatchers = [
     profileInView,
