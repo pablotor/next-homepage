@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .section-title {
+    @apply uppercase font-semibold text-4xl w-fit bg-clip-text mb-4 animate-section-title;
+  };
+  .title {
+    @apply whitespace-pre-line text-xl mb-2;
+  };
+  .subtitle {
+    @apply whitespace-pre-line text-lg text-gray-500 mb-2;
+  };
+  .gradient-a {
+    @apply bg-gradient-to-r from-blue-500 to-indigo-700;
+  };
+  .gradient-b {
+    @apply bg-gradient-to-r from-purple-500 to-pink-700;
+  };
+  .highlight-a {
+    @apply text-indigo-600;
+  }
+  .highlight-b {
+    @apply text-pink-500;
+  }
+}
+
+html,
+body {
+  font-family: Ubuntu, Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
