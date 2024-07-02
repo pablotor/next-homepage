@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useTranslation } from '../../i18n/client';
+import { useTranslation } from '../../i18n';
 import { WithLanguage } from '../../i18n/WithLanguage';
 import classNames from '../utils/classNames';
 
@@ -15,10 +15,10 @@ type PositionProps = {
   highlight?: 'a' | 'b';
 } & WithLanguage;
 
-const Position: FC<PositionProps> = ({
+const Position: FC<PositionProps> = async ({
   i18nKey, namespace, sections, includeSecondary, highlight = 'a', lng,
 }) => {
-  const { t } = useTranslation(lng, namespace);
+  const { t } = await useTranslation(lng, namespace);
   const formatKey = (key: string) => `${i18nKey.toLocaleUpperCase()}.${key}`;
   return (
     <div className="py-4">

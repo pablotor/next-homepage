@@ -1,10 +1,9 @@
 'use client';
 
-import { forwardRef, useState } from 'react';
+import { FC, useState } from 'react';
 
 import { useTranslation } from '../../../i18n/client';
 import { WithLanguage } from '../../../i18n/WithLanguage';
-import Section from '../sectionContainer';
 import SkillTable from '../skillTable';
 import Tabs from '../tabs';
 
@@ -82,7 +81,7 @@ const skills: SkillSet[] = [
   },
 ];
 
-const Skills = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
+const Skills: FC<WithLanguage> = (({ lng }) => {
   const [selected, setSelected] = useState(0);
   const { t } = useTranslation(lng, ['common', 'skills']);
   const enrichedSkills = [{
@@ -99,7 +98,7 @@ const Skills = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
   );
 
   return (
-    <Section id="skills" ref={ref}>
+    <>
       <h2 className="section-title gradient-a">
         {t('SECTIONS.SKILLS')}
       </h2>
@@ -112,10 +111,8 @@ const Skills = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
         </div>
       </div>
       <SkillTable skills={enrichedSkills} selected={selected} lng={lng} />
-    </Section>
+    </>
   );
 });
-
-Skills.displayName = 'Skills';
 
 export default Skills;

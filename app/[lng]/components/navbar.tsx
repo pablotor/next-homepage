@@ -10,17 +10,8 @@ import {
 import { useTranslation } from '../../i18n/client';
 import { WithLanguage } from '../../i18n/WithLanguage';
 import classNames from '../utils/classNames';
+import { sectionsData } from './sections/sectionsData';
 import ChevronDownIcon from './icons/chevronDown';
-
-const sections = [
-  { i18nKey: 'profile', href: '#profile' },
-  { i18nKey: 'experience', href: '#experience' },
-  { i18nKey: 'projects', href: '#projects' },
-  { i18nKey: 'skills', href: '#skills' },
-  { i18nKey: 'portfolio', href: '#portfolio' },
-  { i18nKey: 'education', href: '#education' },
-  { i18nKey: 'about', href: '#about' },
-];
 
 type NavbarProps = {
   sectionInViewWatchers: boolean[];
@@ -53,7 +44,7 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                   )}
                   aria-label={t(open ? 'NAVBAR.MENU.CLOSE' : 'NAVBAR.MENU.OPEN')}
                 >
-                  <span className="w-1/4">{t(sections[inViewSectionIndex]?.i18nKey)}</span>
+                  <span className="w-1/4">{t(sectionsData[inViewSectionIndex]?.id)}</span>
                   <span
                     className={classNames(
                       inViewSectionIndex === 0 ? 'opacity-0' : 'opacity-100',
@@ -95,8 +86,8 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                     aria-labelledby="solutions-heading"
                   >
                     <ul className="mt-5 space-y-6">
-                      {sections.map((item, index) => (
-                        <PopoverButton as="li" key={item.i18nKey} className="flow-root">
+                      {sectionsData.map((item, index) => (
+                        <PopoverButton as="li" key={item.id} className="flow-root">
                           <a
                             href={item.href}
                             className={classNames(
@@ -106,7 +97,7 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                                 : 'text-gray-900 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700',
                             )}
                           >
-                            <span className="mx-4">{t(item.i18nKey)}</span>
+                            <span className="mx-4">{t(item.id)}</span>
                           </a>
                         </PopoverButton>
                       ))}
@@ -120,8 +111,8 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
       </Popover>
       <div id="navbar-desktop" className="mr-16 hidden h-screen flex-col justify-center px-8 lg:flex">
         <ul className="mt-5 space-y-6">
-          {sections.map((item, index) => (
-            <li key={item.i18nKey} className="flow-root">
+          {sectionsData.map((item, index) => (
+            <li key={item.id} className="flow-root">
               <a
                 href={item.href}
                 className={classNames(
@@ -131,7 +122,7 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                     : 'text-gray-900 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700',
                 )}
               >
-                <span className="ml-4">{t(item.i18nKey)}</span>
+                <span className="ml-4">{t(item.id)}</span>
               </a>
             </li>
           ))}

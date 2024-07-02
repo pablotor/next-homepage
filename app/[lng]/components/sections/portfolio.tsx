@@ -1,14 +1,13 @@
-import { forwardRef } from 'react';
+import { FC } from 'react';
 
-import { useTranslation } from '../../../i18n/client';
+import { useTranslation } from '../../../i18n';
 import { WithLanguage } from '../../../i18n/WithLanguage';
 import PortfolioTable from '../portfolioTable';
-import Section from '../sectionContainer';
 
-const Portfolio = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
-  const { t } = useTranslation(lng, ['common', 'portfolio']);
+const Portfolio: FC<WithLanguage> = async ({ lng }) => {
+  const { t } = await useTranslation(lng, ['common', 'portfolio']);
   return (
-    <Section id="portfolio" ref={ref}>
+    <>
       <h2 className="section-title gradient-b">
         {t('SECTIONS.PORTFOLIO')}
       </h2>
@@ -16,10 +15,8 @@ const Portfolio = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
         {t('COMMENT', { ns: 'portfolio' })}
       </p>
       <PortfolioTable lng={lng} />
-    </Section>
+    </>
   );
-});
-
-Portfolio.displayName = 'Portfolio';
+};
 
 export default Portfolio;

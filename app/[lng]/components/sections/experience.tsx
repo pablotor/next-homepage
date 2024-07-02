@@ -1,12 +1,9 @@
-'use client';
+import { FC } from 'react';
 
-import { forwardRef } from 'react';
-
-import { useTranslation } from '../../../i18n/client';
+import { useTranslation } from '../../../i18n';
 import { WithLanguage } from '../../../i18n/WithLanguage';
 
 import Position from '../position';
-import SectionContainer from '../sectionContainer';
 
 const jobs = [
   'wye',
@@ -28,10 +25,10 @@ const sections = [
   },
 ];
 
-const Experience = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
-  const { t } = useTranslation(lng, ['common', 'experience']);
+const Experience: FC<WithLanguage> = async ({ lng }) => {
+  const { t } = await useTranslation(lng, ['common', 'experience']);
   return (
-    <SectionContainer id="experience" ref={ref}>
+    <>
       <h2 className="section-title gradient-a">
         {t('SECTIONS.EXPERIENCE')}
       </h2>
@@ -48,10 +45,8 @@ const Experience = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
           lng={lng}
         />
       ))}
-    </SectionContainer>
+    </>
   );
-});
-
-Experience.displayName = 'Experience';
+};
 
 export default Experience;

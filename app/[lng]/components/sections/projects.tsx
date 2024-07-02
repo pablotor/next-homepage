@@ -1,11 +1,8 @@
-'use client';
+import { FC } from 'react';
 
-import { forwardRef } from 'react';
-
-import { useTranslation } from '../../../i18n/client';
+import { useTranslation } from '../../../i18n';
 import { WithLanguage } from '../../../i18n/WithLanguage';
 import Position from '../position';
-import SectionContainer from '../sectionContainer';
 
 const projects = [
   'digital_shores',
@@ -22,10 +19,10 @@ const sections = [
   },
 ];
 
-const Projects = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
-  const { t } = useTranslation(lng, ['common', 'projects']);
+const Projects: FC<WithLanguage> = async ({ lng }) => {
+  const { t } = await useTranslation(lng, ['common', 'projects']);
   return (
-    <SectionContainer id="projects" ref={ref}>
+    <>
       <h2 className="section-title gradient-b">
         {t('SECTIONS.PROJECTS')}
       </h2>
@@ -43,10 +40,8 @@ const Projects = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
           lng={lng}
         />
       ))}
-    </SectionContainer>
+    </>
   );
-});
-
-Projects.displayName = 'Projects';
+};
 
 export default Projects;

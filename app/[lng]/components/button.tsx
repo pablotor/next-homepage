@@ -7,7 +7,7 @@ type ButtonProps = {
   variant?: 'primary' | 'secondary';
 } & (
   {
-    type?: HTMLButtonElement['type'];
+    type: HTMLButtonElement['type'];
     onClick?: MouseEventHandler<HTMLButtonElement>;
   } | {
     href: HTMLLinkElement['href'];

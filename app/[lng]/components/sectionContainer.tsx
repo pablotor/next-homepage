@@ -1,11 +1,11 @@
 import { forwardRef, ReactNode } from 'react';
 
-interface SectionProps {
+interface SectionContainerProps {
   id: string;
   children: ReactNode | ReactNode[];
 }
 
-const Section = forwardRef<HTMLElement, SectionProps>(
+const SectionContainer = forwardRef<HTMLElement, SectionContainerProps>(
   ({ id, children }, ref) => (
     <section id={id} className="flex min-h-section-mobile flex-col justify-center px-8 py-16 lg:min-h-screen" ref={ref}>
       {children}
@@ -13,6 +13,6 @@ const Section = forwardRef<HTMLElement, SectionProps>(
   ),
 );
 
-Section.displayName = 'Section';
+SectionContainer.displayName = 'SectionContainer';
 
-export default Section;
+export default SectionContainer;

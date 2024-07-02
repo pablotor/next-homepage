@@ -1,11 +1,10 @@
-import { forwardRef } from 'react';
-import { Trans } from 'react-i18next';
+import { FC } from 'react';
+import { Trans } from 'react-i18next/TransWithoutContext';
 
-import { useTranslation } from '../../../i18n/client';
+import { useTranslation } from '../../../i18n';
 import { WithLanguage } from '../../../i18n/WithLanguage';
 import LinkedIn from '../icons/linkedIn';
 import Github from '../icons/github';
-import SectionContainer from '../sectionContainer';
 
 const socialMedia = [
   {
@@ -19,23 +18,23 @@ const socialMedia = [
   },
 ];
 
-const Hero = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
-  const { t } = useTranslation(lng, ['common', 'hero']);
+const Hero: FC<WithLanguage> = async ({ lng }) => {
+  const { t } = await useTranslation(lng, ['hero', 'common']);
   return (
-    <SectionContainer id="profile" ref={ref}>
+    <>
       <div>
         <h1 className="mb-2 text-[3.5rem] font-black leading-[1.1] sm:text-8xl sm:leading-snug">
           <span className="gradient-a animate-vercel-text-a bg-clip-text">
-            {t('FIRSTNAME')}
+            {t('FIRSTNAME', { ns: 'common' })}
           </span>
           <br />
           <span className="gradient-b animate-vercel-text-b bg-clip-text">
-            {t('LASTNAME')}
+            {t('LASTNAME', { ns: 'common' })}
           </span>
         </h1>
-        <a href={`mailto:${t('EMAIL')}`}>
+        <a href={`mailto:${t('EMAIL', { ns: 'common' })}`}>
           <h3 className="mb-6 text-2xl text-gray-600">
-            {t('EMAIL')}
+            {t('EMAIL', { ns: 'common' })}
           </h3>
         </a>
       </div>
@@ -43,7 +42,6 @@ const Hero = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
         <Trans
           t={t}
           i18nKey="PROFILE"
-          ns="hero"
           components={{
             primary: <p className="title" />,
             highlightA: <span className="highlight-a" />,
@@ -69,10 +67,8 @@ const Hero = forwardRef<HTMLElement, WithLanguage>(({ lng }, ref) => {
           </a>
         ))}
       </div>
-    </SectionContainer>
+    </>
   );
-});
-
-Hero.displayName = 'Hero';
+};
 
 export default Hero;
