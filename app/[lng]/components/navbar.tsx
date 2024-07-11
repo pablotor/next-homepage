@@ -44,8 +44,8 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                   )}
                   aria-label={t(open ? 'NAVBAR.MENU.CLOSE' : 'NAVBAR.MENU.OPEN')}
                 >
-                  <span className="w-1/4">{t(sectionsData[inViewSectionIndex]?.id)}</span>
-                  <span
+                  <span className="w-1/4 text-left">{t(sectionsData[inViewSectionIndex]?.id)}</span>
+                  <div
                     className={classNames(
                       inViewSectionIndex === 0 ? 'opacity-0' : 'opacity-100',
                       'transition-all ease-in-out delay-150 duration-300 sm:block font-bold mx-auto',
@@ -56,7 +56,7 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                       {' '}
                       {t('LASTNAME')}
                     </span>
-                  </span>
+                  </div>
                   <div className="flex w-1/4 justify-end">
                     <ChevronDownIcon
                       className={classNames(
