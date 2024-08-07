@@ -1,28 +1,21 @@
-/* eslint-disable @next/next/no-img-element */
-
 'use client';
 
 import { FC } from 'react';
+
+import type { WithLanguage } from '../../i18n';
+
 import { useTranslation } from '../../i18n/client';
-import { WithLanguage } from '../../i18n/WithLanguage';
 import { useModal } from '../hooks/useModal';
-import classNames from '../utils/classNames';
-
-import PortfolioModal from './portfolioModal';
+import TechIcon from './icons/techIcon';
 import Modal from './modal';
-
-type Tech = {
-  id: string;
-  src: string;
-  style?: string;
-};
+import PortfolioModal from './portfolioModal';
 
 export type PortfolioItem = {
   id: string;
   type: string;
   codeAvailable: boolean;
-  deployed: boolean;
-  techs: Tech[];
+  // deployed: boolean;
+  techIds: string[];
 };
 
 const portfolio: PortfolioItem[] = [
@@ -30,67 +23,22 @@ const portfolio: PortfolioItem[] = [
     id: 'homesite',
     type: 'frontend',
     codeAvailable: true,
-    deployed: false,
-    techs: [
-      {
-        id: 'tailwind',
-        src: '/img/tailwind.svg',
-        style: 'bg-[#1C5C78] p-1',
-      }, {
-        id: 'react',
-        src: '/img/react.svg',
-        style: 'bg-[#17333B] p-1',
-      }, {
-        id: 'next',
-        src: '/img/next.svg',
-      }, {
-        id: 'ts',
-        src: '/img/typescript.svg',
-        style: 'bg-[#3178C6] pb-0.5',
-      },
-    ],
+    techIds: ['tailwind', 'react', 'next', 'ts'],
   }, {
-    id: 'wibson',
-    type: 'fullstack',
-    codeAvailable: false,
-    deployed: true,
-    techs: [],
+    id: 'trellodiscography',
+    type: 'backend',
+    codeAvailable: true,
+    techIds: ['node', 'ts'],
   }, {
     id: 'linbot',
     type: 'backend',
     codeAvailable: true,
-    deployed: false,
-    techs: [
-      {
-        id: 'puppeteer',
-        src: '/img/puppeteer.svg',
-        style: 'bg-[#17333B] p-1',
-      }, {
-        id: 'node',
-        src: '/img/node.svg',
-        style: 'bg-white',
-      }, {
-        id: 'ts',
-        src: '/img/typescript.svg',
-        style: 'bg-[#3178C6] pb-0.5',
-      },
-    ],
+    techIds: ['puppeteer', 'node', 'ts'],
   }, {
-    id: 'appointer',
+    id: 'berlinerluft',
     type: 'backend',
     codeAvailable: true,
-    deployed: false,
-    techs: [
-      {
-        id: 'node',
-        src: '/img/node.svg',
-        style: 'bg-white',
-      }, {
-        id: 'js',
-        src: '/img/javascript.svg',
-        style: 'bg-[#f7df1e] pb-0.5',
-      },
-    ],
+    techIds: ['puppeteer', 'node', 'ts'],
   },
 ];
 
@@ -104,7 +52,7 @@ const PortfolioTable: FC<WithLanguage> = ({ lng }) => {
         <ul className="grid gap-4">
           {portfolio.map((item) => (
             <li
-              key={item.id}
+              key={`${item.id}ListItem`}
               className="block cursor-pointer border border-blue-200 shadow transition-all hover:bg-blue-50 sm:rounded-md"
             >
               <button
@@ -121,7 +69,7 @@ const PortfolioTable: FC<WithLanguage> = ({ lng }) => {
                         {t(`ITEMS.${item.id.toLocaleUpperCase()}.TITLE`)}
                       </p>
                       <p className="ml-1 shrink-0 font-normal text-gray-500">
-                        {t(`TABLE.TYPE.${item.type.toLocaleUpperCase()}`)}
+                        {t(`PROJECT_TYPE.${item.type.toLocaleUpperCase()}`)}
                       </p>
                     </div>
                     <div className="mt-2 flex">
@@ -132,17 +80,14 @@ const PortfolioTable: FC<WithLanguage> = ({ lng }) => {
                   </div>
                   <div className="mt-4 shrink-0 sm:ml-5 sm:mt-0">
                     <div className="flex -space-x-1 overflow-hidden">
-                      {item.techs.map((tech) => (
-                        <img
-                          key={tech.id}
-                          className={classNames(
-                            'inline-block rounded-full w-6 h-6 ring-2 ring-white',
-                            tech.style || '',
-                          )}
-                          src={tech.src}
-                          alt={t(
-                            'TABLE.TECH.ICON_LABEL',
-                            { techname: t(`TABLE.TECH.${tech.id.toLocaleUpperCase()}`) },
+                      {item.techIds.map((techId) => (
+                        <TechIcon
+                          techId={techId}
+                          key={`${techId}Icon`}
+                          className="inline-block size-6 rounded-full ring-2 ring-white"
+                          altIntlFn={(label) => t(
+                            'TECH_ICON_ALT',
+                            { techname: label },
                           )}
                         />
                       ))}

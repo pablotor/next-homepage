@@ -1,13 +1,14 @@
 'use client';
 
-/* eslint-disable @next/next/no-img-element */
 import { FC } from 'react';
 import { DialogTitle } from '@headlessui/react';
 
-import { useTranslation } from '../../i18n/client';
-import { WithLanguage } from '../../i18n/WithLanguage';
-import { Button } from './button';
+import type { WithLanguage } from '../../i18n';
 import type { PortfolioItem } from './portfolioTable';
+
+import { useTranslation } from '../../i18n/client';
+import TechIcon from './icons/techIcon';
+import { Button } from './button';
 
 type PortfolioModalProps = {
   item: PortfolioItem;
@@ -16,7 +17,7 @@ type PortfolioModalProps = {
 
 const PortfolioModal: FC<PortfolioModalProps> = ({
   item: {
-    id, techs, codeAvailable, deployed,
+    id, techIds, codeAvailable,
   },
   closeModal,
   lng,
@@ -29,25 +30,23 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
         {t(`ITEMS.${i18nKey}.TITLE`)}
       </h4>
       <p className="whitespace-pre-line text-justify">{t(`ITEMS.${i18nKey}.DESCRIPTION.FULL`)}</p>
-      {techs.length !== 0 && (
+      {techIds.length !== 0 && (
         <div>
           <DialogTitle className="mt-8 font-medium uppercase text-gray-500">
             {t('MODAL.TECHS')}
           </DialogTitle>
           <ul className="mt-2">
-            {techs.map((tech) => (
-              <li key={tech.id} className="ml-2 mt-1 flex items-baseline">
-                <img
+            {techIds.map((techId) => (
+              <li key={`${techId}ModalIcon`} className="ml-2 mt-1 flex items-baseline">
+                <TechIcon
+                  techId={techId}
                   className="mr-2 size-5 rounded-sm"
-                  src={tech.src}
-                  alt={t(
-                    'TABLE.TECH.ICON_LABEL',
-                    { techname: t(`TABLE.TECH.${tech.id.toLocaleUpperCase()}`) },
+                  altIntlFn={(label) => t(
+                    'TECH_ICON_ALT',
+                    { techname: label },
                   )}
+                  withLabel
                 />
-                <span className="text-gray-700">
-                  {t(`TABLE.TECH.${tech.id.toLocaleUpperCase()}`)}
-                </span>
               </li>
             ))}
           </ul>
@@ -59,15 +58,15 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
         </Button>
         {codeAvailable && (
           <Button
-            href={`mailto:${t('EMAIL', { ns: 'common' })}`}
+            href={t(`ITEMS.${i18nKey}.REPO_URL`)}
             variant="primary"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t('MODAL.BUTTONS.REQUEST_ACCESS')}
+            {t('MODAL.BUTTONS.GOTO')}
           </Button>
         )}
-        {deployed && (
+        {/* {deployed && (
           <Button
             href={t(`ITEMS.${i18nKey}.URL`)}
             variant="primary"
@@ -76,7 +75,7 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
           >
             {t('MODAL.BUTTONS.GOTO')}
           </Button>
-        )}
+        )} */}
       </div>
     </div>
   );

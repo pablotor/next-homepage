@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
+import type { WithLanguage } from '../../../i18n';
+
 import { useTranslation } from '../../../i18n';
-import { WithLanguage } from '../../../i18n/WithLanguage';
 import PortfolioTable from '../portfolioTable';
 
 const Portfolio: FC<WithLanguage> = async ({ lng }) => {
