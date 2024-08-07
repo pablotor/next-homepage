@@ -1,4 +1,4 @@
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { FC } from 'react';
 import { Trans } from 'react-i18next/TransWithoutContext';
 
@@ -18,8 +18,11 @@ const About: FC<WithLanguage> = async ({ lng }) => {
               className="object-cover object-top "
               src="/img/about-mobile.jpg"
               alt={t('IMAGE_ALT')}
-              layout="fill"
-              objectFit="cover"
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: 'cover',
+              }}
             />
           </div>
           <div className="hidden w-full lg:absolute lg:block lg:h-full">
@@ -27,7 +30,8 @@ const About: FC<WithLanguage> = async ({ lng }) => {
               className="object-cover"
               src="/img/about-desktop.jpg"
               alt={t('IMAGE_ALT')}
-              layout="fill"
+              fill
+              sizes="100vw"
             />
           </div>
         </div>
