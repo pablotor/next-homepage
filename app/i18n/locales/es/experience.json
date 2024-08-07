@@ -1,23 +1,39 @@
 {
-  "COMMENT": "Let's go over my work...",
-  "SUBTITLES.RESPONSIBILITIES": "Responsibilities",
-  "SUBTITLES.PROJECTS": "Main projects",
-  "WIBSON.HIGHLIGHTED": "Wibson",
-  "WIBSON.TITLE": "Sr FullStack Dev",
-  "WIBSON.SECONDARY": "React Native, React & NodeJS | JavaScript & TypeScript",
-  "WIBSON.DATE": "Aug 2020 - Nov 2021",
-  "WIBSON.RESPONSIBILITIES": "Design, development and maintenance of Wibson products.",
-  "WIBSON.PROJECTS": ["Wibson Privacy Platform - wibson.io", "Wibson App (deprecated)"],
-  "FIRST_DATA.HIGHLIGHTED": "First Data",
-  "FIRST_DATA.TITLE": "Sr BASE24 System Analyst",
-  "FIRST_DATA.SECONDARY": "BASE24 Classic - First Vision Platform | TACL, TAL & COBOL",
-  "FIRST_DATA.DATE": "Aug 2014 - Nov 2018 ",
-  "FIRST_DATA.RESPONSIBILITIES": "e2e solution cycle (design, develop, test, certificate, deploy and monitor), client contact point and platform project leader for Colombia.",
-  "FIRST_DATA.PROJECTS": ["TUYA credit portfolio migration as Project Leader", "Bancolombia prepaid as Project Leader", "Bancolombia credit portfolio migration as System Analyst"],
-  "CONEXIA.HIGHLIGHTED": "Conexia",
-  "CONEXIA.TITLE": "IT Analyst",
-  "CONEXIA.SECONDARY": "Ubuntu Server, Windows Server, Networking & Telecommunications",
-  "CONEXIA.DATE": "Sep 2012 - Dec 2013",
-  "CONEXIA.RESPONSIBILITIES": "Level I and II IT support, VM management and networking.",
-  "CONEXIA.PROJECTS": ["Desktop system installation standardization"]
+  "COMMENT": "Repasemos los lugares donde trabajé...",
+  "SECTIONS": {
+    "RESPONSIBILITIES": "Responsabilidades",
+    "PROJECTS": "Proyectos principales"
+  },
+  "WYE": {
+    "HIGHLIGHTED": "WyeWorks",
+    "TITLE": "Ingeniero de Software sr",
+    "SECONDARY": "React & NodeJS | TypeScript",
+    "DATE": "May 2022 - Jun 2023",
+    "RESPONSIBILITIES": ["Arquitectura de software y desarrollo fullstack para los clientes de WyeWorks."],
+    "PROJECTS": ["Plataforma ClearSession - startup estadounidense con fines médicos"]
+  },
+  "WIBSON": {
+    "HIGHLIGHTED": "Wibson (ahora illow)",
+    "TITLE": "Ingeniero de Software sr",
+    "SECONDARY": "React Native, React & NodeJS | JavaScript & TypeScript",
+    "DATE": "Ago 2020 - Nov 2021",
+    "RESPONSIBILITIES": ["Arquitectura de software, desarrollo fullstack e infraestructura para los productos de Wibson."],
+    "PROJECTS": ["Wibson Privacy Platform (actualmente illow platform) - illow.io", "Wibson App para Android e iOS (obsoleta)"]
+  },
+  "FIRST_DATA": {
+    "HIGHLIGHTED": "First Data",
+    "TITLE": "Analista BASE24 Classic sr",
+    "SECONDARY": "BASE24 Classic - Plataforma First Vision  | TAL & COBOL ",
+    "DATE": "Ago 2014 - Nov 2018 ",
+    "RESPONSIBILITIES": ["Líder de plataforma para proyectos de emisión.", "Persona de contacto para los proyectos de emisión de Bancolombia, Grupo Aval y Grupo Éxito, Colombia.", "Soluciones e2e, incluyendo diseño, desarrollo, testeo, certificación, puesta en producción y monitoreo."],
+    "PROJECTS": ["Certificación Visa Contactless Banco de Bogotá - Líder de proyecto", "Migración de la catera TUYA crédito - Líder de proyecto", "Lanzamientos de tarjetas prepagas Bancolombia - Líder de proyecto", "Migración de la catera Bancolombia crédito - analista de plataforma"]
+  },
+  "CONEXIA": {
+    "HIGHLIGHTED": "Conexia",
+    "TITLE": "Analista de Infraestructura jr",
+    "SECONDARY": "Administración de servidores, Redes & Telecomunicaciones",
+    "DATE": "Sep 2012 - Dic 2013",
+    "RESPONSIBILITIES": ["Soporte de infraestructura niveles I y II."],
+    "PROJECTS": ["Estandarización de los equipos de trabajo", "Back-up y recuperación de servidores críticos"]
+  }
 }

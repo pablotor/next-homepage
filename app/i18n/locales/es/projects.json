@@ -1,23 +1,38 @@
 {
-  "COMMENT": "But my experience working for companies is only half of the story. I've also tried a couple of things on my own...",
-  "DIGITAL_SHORES.HIGHLIGHTED": "Digital Shores | digital-shores.com",
-  "DIGITAL_SHORES.TITLE": "Digital Marketing",
-  "DIGITAL_SHORES.SECONDARY": "Founder",
-  "DIGITAL_SHORES.DATE": "Nov 2021 - Present",
-  "DIGITAL_SHORES.DESCRIPTION": "Web design, online marketing and strategy for self-employed people and entrepreneurs.",
-  "IIB.HIGHLIGHTED": "Biomedic Engineering Institute | FIUBA",
-  "IIB.TITLE": "RasPi/Arduino Developer",
-  "IIB.SECONDARY": "Collaboration",
-  "IIB.DATE": "Jun 2015 - Jul 2016",
-  "IIB.DESCRIPTION": "RaspberryPi and Arduino system development to assist people with motion disabilities.",
-  "BICHITO.HIGHLIGHTED": "Milonga del Bichito",
-  "BICHITO.TITLE": "Tango Club",
-  "BICHITO.SECONDARY": "Founder",
-  "BICHITO.DATE": "Mar 2014 - Mar 2015",
-  "BICHITO.DESCRIPTION": "The only non tech related item on my list, but definitely worth mentioning. If you need to organize a weekly event for 100+ people with live music, dance shows, food and drinks, I've got you covered.",
-  "ABANDON.HIGHLIGHTED": "Abandon PC Store",
-  "ABANDON.TITLE": "PCs and Hardware e-commerce",
-  "ABANDON.SECONDARY": "Founder",
-  "ABANDON.DATE": "Feb 2010 - May 2012",
-  "ABANDON.DESCRIPTION": "Specialized in providing high performance computers and tech advice, it was focused on the gamer community in rural areas and small cities. Management included digital marketing, logistics, computer assembly and setup."
+  "COMMENT": "Pero mi trabajo en empresas cuenta solamente la mitad de la historia. Estos son algunos de los proyectos que emprendí...",
+  "AZURRO": {
+    "HIGHLIGHTED":  "Azurro",
+    "TITLE": "Conversión de camioneta en casa rodante",
+    "SECONDARY": "Electricista, carpintero, plomero y mecánico",
+    "DATE": "Jun 2022 - Presente",
+    "DESCRIPTION": "Conversión desde cero de una camioneta de carga Iveco Daily en nuestra casa sobre ruedas. Por lejos el proyecto más desafiante que hice en mi vida. La galería de fotos está en camino!"
+  },
+  "DIGITAL_SHORES": {
+    "HIGHLIGHTED":  "Digital Shores | digital-shores.com",
+    "TITLE": "Marketing Digital",
+    "SECONDARY": "Cofundador",
+    "DATE": "Nov 2021 - Presente",
+    "DESCRIPTION": "Emprendimiento familiar junto a mi pareja Kerstin. Brindamos diseño web, marketing y estrategia digital para emprendedores y cuentapropistas."
+  },
+  "IIB": {
+    "HIGHLIGHTED": "Instituto de Ingeniería Biomédica | FIUBA",
+    "TITLE": "Desarrollador RasPi/Arduino",
+    "SECONDARY": "Colaborador",
+    "DATE": "Jun 2015 - Jul 2016",
+    "DESCRIPTION": "Desarrollo de un sistema de generación de sonido en tiempo real, en base a sensores de presión"
+  },
+  "BICHITO": {
+    "HIGHLIGHTED": "Milonga del Bichito",
+    "TITLE": "Tango Club",
+    "SECONDARY": "Cofundador",
+    "DATE": "Mar 2014 - Mar 2015",
+    "DESCRIPTION": "Mi proyecto más artístico. Club de tango autogestionado que tuvo lugar en San Telmo, Buenos Aires desde 2014 hasta 2016. Funcionábamos todos los martes por la noche y ofrecíamos clases de tango, música en vivo y, en mi humilde opinión, uno de los mejores djs de tango que tuve el placer de escuchar."
+  },
+  "ABANDON": {
+    "HIGHLIGHTED": "Abandon PC Store",
+    "TITLE": "Eshop de Computadoras y Hardware",
+    "SECONDARY": "Fundador",
+    "DATE": "Feb 2010 - May 2012",
+    "DESCRIPTION": "Mi primer emprendimiento profesional consistió en capitalizar mis conocimientos para montar un negocio de hardware especializado. Mi audiencia era principalmente la comunidad gamer en zonas rurales, para quienes la oferta era mucho más limitada. Me especializaba en conseguir los componentes con la mejor relación precio calidad del momento, resolviendo la logística, preparación de los equipos y envío. También me encargué de la imagen de marca y del marketing a través de foros especializados."
+  }
 }
