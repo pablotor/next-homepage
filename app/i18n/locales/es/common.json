@@ -1,13 +1,17 @@
 {
-  "PAGE.TITLE": "Pablo Tor | Developer",
-  "PAGE.DESCRIPTION": "Online Resume and Portfolio",
-  "NAVBAR.MENU.OPEN": "Open navbar menu",
-  "NAVBAR.MENU.CLOSE": "Close navbar menu",
-  "SECTIONS.PROFILE": "Profile",
-  "SECTIONS.EXPERIENCE": "Experience",
-  "SECTIONS.PROJECTS": "Projects",
-  "SECTIONS.SKILLS": "Skills",
-  "SECTIONS.PORTFOLIO": "Portfolio",
-  "SECTIONS.EDUCATION": "Education",
-  "SECTIONS.ABOUT": "About me"
+  "NAVBAR": {
+    "MENU": {
+      "OPEN": "Abrir menú de navegación",
+      "CLOSE": "Cerrar menú de navegación"
+    }
+  },
+  "SECTIONS": {
+    "PROFILE": "Perfil",
+    "EXPERIENCE": "Experiencia",
+    "PROJECTS": "Proyectos",
+    "SKILLS": "Destrezas",
+    "PORTFOLIO": "Portfolio",
+    "EDUCATION": "Educación",
+    "ABOUT": "Sobre mi"
+  }
 }

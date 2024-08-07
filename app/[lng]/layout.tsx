@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import { dir } from 'i18next';
 
-import { WithLanguage } from '../i18n/WithLanguage';
+import type { WithLanguage } from '../i18n';
+
 import './globals.css';
 
 const languages = ['en', 'es'] as const;

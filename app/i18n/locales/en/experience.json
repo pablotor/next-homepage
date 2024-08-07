@@ -1,29 +1,39 @@
 {
   "COMMENT": "Let's go over my work...",
-  "SUBTITLES.RESPONSIBILITIES": "Responsibilities",
-  "SUBTITLES.PROJECTS": "Main projects",
-  "WYE.HIGHLIGHTED": "WyeWorks",
-  "WYE.TITLE": "Sr FullStack Web Dev",
-  "WYE.SECONDARY": "React & NodeJS | TypeScript",
-  "WYE.DATE": "May 2022 - June 2023",
-  "WYE.RESPONSIBILITIES": "Architecht, developer and consultant for WyeWorks clients.",
-  "WYE.PROJECTS": ["ClearSession platform"],
-  "WIBSON.HIGHLIGHTED": "Wibson",
-  "WIBSON.TITLE": "Sr FullStack Web Dev",
-  "WIBSON.SECONDARY": "React Native, React & NodeJS | JavaScript & TypeScript",
-  "WIBSON.DATE": "Aug 2020 - Nov 2021",
-  "WIBSON.RESPONSIBILITIES": "Design, development and maintenance of Wibson products.",
-  "WIBSON.PROJECTS": ["Wibson Privacy Platform - wibson.io", "Wibson App (deprecated)"],
-  "FIRST_DATA.HIGHLIGHTED": "First Data",
-  "FIRST_DATA.TITLE": "Sr BASE24 System Analyst",
-  "FIRST_DATA.SECONDARY": "BASE24 Classic - First Vision Platform | TACL, TAL & COBOL",
-  "FIRST_DATA.DATE": "Aug 2014 - Nov 2018 ",
-  "FIRST_DATA.RESPONSIBILITIES": "e2e solution cycle (design, develop, test, certificate, deploy and monitor), client contact point and platform project leader for Colombia.",
-  "FIRST_DATA.PROJECTS": ["TUYA credit portfolio migration as Project Leader", "Bancolombia prepaid as Project Leader", "Bancolombia credit portfolio migration as System Analyst"],
-  "CONEXIA.HIGHLIGHTED": "Conexia",
-  "CONEXIA.TITLE": "IT Analyst",
-  "CONEXIA.SECONDARY": "Ubuntu Server, Windows Server, Networking & Telecommunications",
-  "CONEXIA.DATE": "Sep 2012 - Dec 2013",
-  "CONEXIA.RESPONSIBILITIES": "Level I and II IT support, VM management and networking.",
-  "CONEXIA.PROJECTS": ["Desktop system installation standardization"]
+  "SECTIONS": {
+    "RESPONSIBILITIES": "Responsibilities",
+    "PROJECTS": "Main projects"
+  },
+  "WYE": {
+    "HIGHLIGHTED": "WyeWorks",
+    "TITLE": "Sr Software Engineer",
+    "SECONDARY": "React & NodeJS | TypeScript",
+    "DATE": "May 2022 - June 2023",
+    "RESPONSIBILITIES": ["Software architecture and fullstack development for WyeWorks clients."],
+    "PROJECTS": ["ClearSession platform - Health startup based in the US"]
+  },
+  "WIBSON": {
+    "HIGHLIGHTED": "Wibson (now illow)",
+    "TITLE": "Sr Software Engineer",
+    "SECONDARY": "React Native, React & NodeJS | JavaScript & TypeScript",
+    "DATE": "Aug 2020 - Nov 2021",
+    "RESPONSIBILITIES": ["Software architecture, fullstack development and infrastructure support for Wibson products."],
+    "PROJECTS": ["Wibson Privacy Platform (now illow platform) - illow.io", "Wibson App (deprecated)"]
+  },
+  "FIRST_DATA": {
+    "HIGHLIGHTED": "First Data",
+    "TITLE": "Sr BASE24 Classic Analyst",
+    "SECONDARY": "BASE24 Classic - First Vision Platform | TAL & COBOL",
+    "DATE": "Aug 2014 - Nov 2018 ",
+    "RESPONSIBILITIES": ["e2e solution cycle (design, develop, test, certificate, deploy and monitor), client contact point and platform project leader for Colombia."],
+    "PROJECTS": ["Visa Contactless certification for Banco de Bogotá - Project leader", "TUYA credit portfolio migration - Project Leader", "Bancolombia prepaid launch - Project Leader", "Bancolombia credit portfolio migration - Platform analyst"]
+  },
+  "CONEXIA": {
+    "HIGHLIGHTED": "Conexia",
+    "TITLE": "IT Analyst",
+    "SECONDARY": "Ubuntu Server, Windows Server, Networking & Telecommunications",
+    "DATE": "Sep 2012 - Dec 2013",
+    "RESPONSIBILITIES": ["Level I and II IT support."],
+    "PROJECTS": ["Standardization of desktop computers", "Back-up and recovery of critical servers"]
+  }
 }

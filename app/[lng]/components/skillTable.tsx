@@ -1,6 +1,10 @@
 import { FC } from 'react';
-import { WithLanguage } from '../../i18n/WithLanguage';
+
+import type { WithLanguage } from '../../i18n';
+
 import { Expertise, SkillItem } from './skillItem';
+
+const expertiseArray: Expertise[] = ['high', 'medium', 'low'];
 
 type SkillTableProps = {
   skills: {
@@ -12,20 +16,17 @@ type SkillTableProps = {
   selected: number;
 } & WithLanguage;
 
-const SkillTable: FC<SkillTableProps> = ({ skills, selected, lng }) => {
-  const expertiseArray: Expertise[] = ['high', 'medium', 'low'];
-  return (
-    <div className="mt-8">
-      {expertiseArray.map((expertise) => (
-        <SkillItem
-          key={expertise}
-          expertise={expertise}
-          skillArray={skills[selected][expertise]}
-          lng={lng}
-        />
-      ))}
-    </div>
-  );
-};
+const SkillTable: FC<SkillTableProps> = ({ skills, selected, lng }) => (
+  <div className="mt-8">
+    {expertiseArray.map((expertise) => (
+      <SkillItem
+        key={expertise}
+        expertise={expertise}
+        skillArray={skills[selected][expertise]}
+        lng={lng}
+      />
+    ))}
+  </div>
+);
 
 export default SkillTable;

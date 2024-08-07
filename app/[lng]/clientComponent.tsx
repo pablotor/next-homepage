@@ -1,10 +1,11 @@
 'use client';
 
-import { FC, ReactElement } from 'react';
+import { FC, ReactElement, useMemo } from 'react';
 import { useInView } from 'react-intersection-observer';
 
+import type { WithLanguage } from '../i18n';
+
 import Navbar from './components/navbar';
-import { WithLanguage } from '../i18n/WithLanguage';
 import { sectionsData } from './components/sections/sectionsData';
 import SectionContainer from './components/sectionContainer';
 
@@ -25,25 +26,34 @@ const ClientComponent: FC<ClientComponentProps> = ({ lng, children }) => {
   const [educationRef, educationInView] = useInView({ threshold: MIN_INVIEW_THREEHOLD });
   const [aboutRef, aboutInView] = useInView({ threshold: MIN_INVIEW_THREEHOLD });
 
-  const sectionInViewRefs = [
-    profileRef,
-    experienceRef,
-    projectsRef,
-    skillsRef,
-    portfolioRef,
-    educationRef,
-    aboutRef,
-  ];
-
-  const sectionInViewWatchers = [
-    profileInView,
-    experienceInView,
-    projectsInView,
-    skillsInView,
-    portfolioInView,
-    educationInView,
-    aboutInView,
-  ];
+  const {
+    sectionInViewRefs,
+    sectionInViewWatchers,
+  } = useMemo(() => ({
+    sectionInViewRefs: [
+      profileRef,
+      experienceRef,
+      projectsRef,
+      skillsRef,
+      portfolioRef,
+      educationRef,
+      aboutRef,
+    ],
+    sectionInViewWatchers: [
+      profileInView,
+      experienceInView,
+      projectsInView,
+      skillsInView,
+      portfolioInView,
+      educationInView,
+      aboutInView,
+    ],
+  }), [
+    aboutInView, aboutRef, educationInView, educationRef,
+    experienceInView, experienceRef, portfolioInView, portfolioRef,
+    profileInView, profileRef, projectsInView, projectsRef,
+    skillsInView, skillsRef,
+  ]);
 
   return (
     <>

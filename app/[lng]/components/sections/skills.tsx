@@ -1,9 +1,10 @@
 'use client';
 
-import { FC, useState } from 'react';
+import { FC, useMemo, useState } from 'react';
+
+import type { WithLanguage } from '../../../i18n';
 
 import { useTranslation } from '../../../i18n/client';
-import { WithLanguage } from '../../../i18n/WithLanguage';
 import SkillTable from '../skillTable';
 import Tabs from '../tabs';
 
@@ -16,49 +17,35 @@ interface SkillSet {
 
 const skills: SkillSet[] = [
   {
-    id: 'communication',
-    high: ['spanish', 'english'],
-    low: ['italian'],
-  },
-  {
     id: 'languages',
     high: ['javascript', 'typescript', 'html', 'css', 'tal', 'tacl'],
-    medium: ['python', 'cobol', 'cplusplus', 'scripting'],
-    low: ['ruby', 'r', 'java'],
+    medium: ['python', 'cplusplus', 'scripting'],
+    low: ['ruby', 'cobol', 'r', 'java', 'assembly'],
   },
   {
-    id: 'techs',
-    high: [
-      'linux',
-      'react',
-      'react_native',
-      'nodejs',
-      'leveldb',
-      'dynamodb',
-      'base24',
-      'visa_vts',
-      'mcar_bnet',
-      'simpp',
-    ],
+    id: 'frameworks',
+    high: ['vercel'],
+    low: ['rails', 'django'],
+  },
+  {
+    id: 'databases',
     medium: [
-      'django',
-      'docker',
-      'aws',
-      'ses',
-      'cognito',
-      'oauth',
-      'stripe',
-      'travis',
-      'firebase',
-      'mixpanel',
+      'leveldb',
+      'postgresql',
+      'dynamodb',
+    ],
+    low: [
       'enscribe',
-      'tss',
     ],
   },
   {
     id: 'libaries',
     high: [
+      'react',
+      'react_native',
+      'nodejs',
       'tailwind',
+      'nestjs',
       'nextjs',
       'i18next',
       'express',
@@ -79,23 +66,45 @@ const skills: SkillSet[] = [
     high: ['scrum', 'watefall'],
     low: ['tdd'],
   },
+  {
+    id: 'others',
+    high: [
+      'linux',
+      'base24',
+      'visa_vts',
+      'mcar_bnet',
+      'simpp',
+    ],
+    medium: [
+      'aws',
+      'cognito',
+      'docker',
+      'firebase',
+      'mixpanel',
+      'oauth',
+      'ses',
+      'stripe',
+      'travis',
+      'tss',
+    ],
+  },
 ];
 
 const Skills: FC<WithLanguage> = (({ lng }) => {
   const [selected, setSelected] = useState(0);
   const { t } = useTranslation(lng, ['common', 'skills']);
-  const enrichedSkills = [{
+  const enrichedSkills = useMemo(() => [{
     id: 'all',
     high: skills.flatMap(({ high }) => high).filter((skill) => skill),
     medium: skills.flatMap(({ medium }) => medium).filter((skill) => skill),
     low: skills.flatMap(({ low }) => low).filter((skill) => skill),
   }, ...skills].map(
     (skill, index) => ({
-      i18nKey: `CATEGORY.${skill.id.toLocaleUpperCase()}`,
+      i18nKey: `CATEGORIES.${skill.id.toLocaleUpperCase()}`,
       onSelect: () => setSelected(index),
       ...skill,
     }),
-  );
+  ), []);
 
   return (
     <>
@@ -105,11 +114,7 @@ const Skills: FC<WithLanguage> = (({ lng }) => {
       <p className="subtitle">
         {t('COMMENT', { ns: 'skills' })}
       </p>
-      <div className="mt-8 flex items-baseline justify-between">
-        <div className="flex items-center">
-          <Tabs selected={selected} namespace="skills" tabArray={enrichedSkills} lng={lng} />
-        </div>
-      </div>
+      <Tabs selected={selected} namespace="skills" tabArray={enrichedSkills} lng={lng} />
       <SkillTable skills={enrichedSkills} selected={selected} lng={lng} />
     </>
   );

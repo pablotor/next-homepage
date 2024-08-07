@@ -7,7 +7,11 @@ interface SectionContainerProps {
 
 const SectionContainer = forwardRef<HTMLElement, SectionContainerProps>(
   ({ id, children }, ref) => (
-    <section id={id} className="flex min-h-section-mobile flex-col justify-center px-8 py-16 lg:min-h-screen" ref={ref}>
+    <section
+      id={id}
+      ref={ref}
+      className="flex min-h-section-mobile flex-col justify-center px-8 py-16 lg:min-h-screen"
+    >
       {children}
     </section>
   ),
