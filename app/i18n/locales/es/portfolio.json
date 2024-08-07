@@ -1,31 +1,38 @@
 {
-  "COMMENT": "Here you will find some products and code samples I've worked in. Check them out or write me to have access to the GitHub repos (when available).",
-  "TABLE.TYPE.FRONTEND": "FrontEnd",
-  "TABLE.TYPE.BACKEND": "BackEnd",
-  "TABLE.TYPE.FULLSTACK": "FullStack",
-  "TABLE.TECH.ICON_LABEL": "{{techname}} icon",
-  "TABLE.TECH.JS": "JavaScript",
-  "TABLE.TECH.NODE": "NodeJS",
-  "TABLE.TECH.NEXT": "NextJS",
-  "TABLE.TECH.PUPPETEER": "Puppeteer",
-  "TABLE.TECH.REACT": "React",
-  "TABLE.TECH.TAILWIND": "Tailwind",
-  "TABLE.TECH.TS": "TypeScript",
-  "MODAL.TECHS": "Main Techs",
-  "MODAL.BUTTONS.REQUEST_ACCESS": "Request Access",
-  "MODAL.BUTTONS.GOTO": "Go to website",
-  "MODAL.BUTTONS.CLOSE": "Close",
-  "ITEMS.HOMESITE.TITLE": "Homesite",
-  "ITEMS.HOMESITE.DESCRIPTION.BRIEF": "This very website. A minimalist one-pager with a touch of color.",
-  "ITEMS.HOMESITE.DESCRIPTION.FULL": "Inspired by the Vercel website, this site uses bleeding edge technology. Its code is not aimed to be practical, but elegant, and intends to show off the use of complex elements like Contexts and Custom Hooks.",
-  "ITEMS.WIBSON.TITLE": "Wibson Privacy Platform",
-  "ITEMS.WIBSON.URL": "https://wibson.io",
-  "ITEMS.WIBSON.DESCRIPTION.BRIEF": "A simple platform to solve a complicated issue: Privacy.",
-  "ITEMS.WIBSON.DESCRIPTION.FULL": "If you asked me what I am proud about as a developer, the Wibson Privacy Platform would be my answer. Created by Wibson's CTO Daniel Fernandez and me, it's the greatest example of how a complex topic like privacy can be incorporated into every single website in a simple and elegant way.\n\nNo source code is available for obvious reasons, but I really encourage you to try out the platform!",
-  "ITEMS.LINBOT.TITLE": "LinkedIn bot",
-  "ITEMS.LINBOT.DESCRIPTION.BRIEF": "A proof of concept on LinkedIn automatization. Say hi to your contacts from the command-line!",
-  "ITEMS.LINBOT.DESCRIPTION.FULL": "This node app lets you log into LinkedIn and send messages to your contacts from the command line. It uses puppeteer to automate LinkedIn's log in and messaging.",
-  "ITEMS.APPOINTER.TITLE": "Appointer",
-  "ITEMS.APPOINTER.DESCRIPTION.BRIEF": "A BackEnd app that handles appointments.",
-  "ITEMS.APPOINTER.DESCRIPTION.FULL": "Coded as an interview exercise for a well-known health services company, this app is focused on algorithmic and database use."
+  "COMMENT": "Aquí encontrarán algunos ejemplos de mi trabajo. Estoy en modo renovación así que voy a ir sumando cosas nuevas en las próximas semanas.",
+  "TECH_ICON_ALT": "Ícono de {{techname}}",
+  "MODAL": {
+    "BUTTONS": {
+      "GOTO": "Ir al repo",
+      "CLOSE": "Cerrar"
+    },
+    "TECHS": "Tecnologías principales"
+  },
+  "ITEMS": {
+    "HOMESITE": {
+      "DESCRIPTION" : {
+        "BRIEF": "La mismísima página que estás viendo. Un onepager minimalista, con un toque de color.",
+        "FULL": "Inspirada en una versión previa de la web de Vercel, diseñé y construí esta página como mi cv online en 2021. Actualmente me sirve también como ejercicio para mantenerme actualizado sobre los cambios en NextJS."
+      }
+    },
+    "TRELLODISCOGRAPHY": {
+      "DESCRIPTION": {
+        "BRIEF": "Disfrutá de todas las tapas de los discos de tu banda favorita, elegantemente ordenados en una tablero de Trello.",
+        "FULL": "Hecho como ejercicio para una entrevista, esta app en node se centra en la integración con APIs, incluyendo la de Spotify y la de Trello."
+      }
+    },
+    "HOMEFINDER": {
+      "DESCRIPTION" : {
+        "BRIEF": "Encontrá un departamento para alquilar, libre de subscripciones!",
+        "FULL": "El código de este repo no será muy lindo, pero me consiguió un departamento en uno de los mejores barrios de Berlín. Dados algunos parámetros, principalmente el dónde y cuándo, la app scrapea un sitio de anuncios inmobiliarios, busca los anuncios nuevos que cumplan con tu criterio y los manda a un grupo de Telegram. Es más rápido y confiable que la propia subscripción a la página!"
+      }
+    },
+    "LINBOT": {
+      "DESCRIPTION": {
+        "BRIEF": "Una prueba de concepto sobre automatización en LinkedIn. Decile hola a tus contactos desde la terminal!",
+        "FULL": "Esta app en node te permite loggearte en LinkedIn y enviar mensajes a tus contactos desde la terminal usando Puppeteer."
+      }
+    }
+  }
 }
+

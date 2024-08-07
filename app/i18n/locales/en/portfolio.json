@@ -1,31 +1,51 @@
 {
   "COMMENT": "Here you will find some products and code samples I've worked in. Check them out or write me to have access to the GitHub repos (when available).",
-  "TABLE.TYPE.FRONTEND": "FrontEnd",
-  "TABLE.TYPE.BACKEND": "BackEnd",
-  "TABLE.TYPE.FULLSTACK": "FullStack",
-  "TABLE.TECH.ICON_LABEL": "{{techname}} icon",
-  "TABLE.TECH.JS": "JavaScript",
-  "TABLE.TECH.NODE": "NodeJS",
-  "TABLE.TECH.NEXT": "NextJS",
-  "TABLE.TECH.PUPPETEER": "Puppeteer",
-  "TABLE.TECH.REACT": "React",
-  "TABLE.TECH.TAILWIND": "Tailwind",
-  "TABLE.TECH.TS": "TypeScript",
-  "MODAL.TECHS": "Main Techs",
-  "MODAL.BUTTONS.REQUEST_ACCESS": "Request Access",
-  "MODAL.BUTTONS.GOTO": "Go to website",
-  "MODAL.BUTTONS.CLOSE": "Close",
-  "ITEMS.HOMESITE.TITLE": "Homesite",
-  "ITEMS.HOMESITE.DESCRIPTION.BRIEF": "This very website. A minimalist one-pager with a touch of color.",
-  "ITEMS.HOMESITE.DESCRIPTION.FULL": "Inspired by the Vercel website, this site uses bleeding edge technology. Its code is not aimed to be practical, but elegant, and intends to show off the use of complex elements like Contexts and Custom Hooks.",
-  "ITEMS.WIBSON.TITLE": "Wibson Privacy Platform",
-  "ITEMS.WIBSON.URL": "https://wibson.io",
-  "ITEMS.WIBSON.DESCRIPTION.BRIEF": "A simple platform to solve a complicated issue: Privacy.",
-  "ITEMS.WIBSON.DESCRIPTION.FULL": "If you asked me what I am proud about as a developer, the Wibson Privacy Platform would be my answer. Created by Wibson's CTO Daniel Fernandez and me, it's the greatest example of how a complex topic like privacy can be incorporated into every single website in a simple and elegant way.\n\nNo source code is available for obvious reasons, but I really encourage you to try out the platform!",
-  "ITEMS.LINBOT.TITLE": "LinkedIn bot",
-  "ITEMS.LINBOT.DESCRIPTION.BRIEF": "A proof of concept on LinkedIn automatization. Say hi to your contacts from the command-line!",
-  "ITEMS.LINBOT.DESCRIPTION.FULL": "This node app lets you log into LinkedIn and send messages to your contacts from the command line. It uses puppeteer to automate LinkedIn's log in and messaging.",
-  "ITEMS.APPOINTER.TITLE": "Appointer",
-  "ITEMS.APPOINTER.DESCRIPTION.BRIEF": "A BackEnd app that handles appointments.",
-  "ITEMS.APPOINTER.DESCRIPTION.FULL": "Coded as an interview exercise for a well-known health services company, this app is focused on algorithmic and database use."
+  "TECH_ICON_ALT": "{{techname}} icon",
+  "PROJECT_TYPE": {
+    "FRONTEND": "Frontend",
+    "BACKEND": "Backend",
+    "FULLSTACK": "Fullstack"
+  },
+  "MODAL": {
+    "BUTTONS": {
+      "REQUEST_ACCESS": "Request Access",
+      "GOTO": "Open repo",
+      "CLOSE": "Close"
+    },
+    "TECHS": "Main Techs"
+  },
+  "ITEMS": {
+    "HOMESITE": {
+      "TITLE": "Homesite",
+      "REPO_URL": "https://github.com/pablotor/next-homepage",
+      "DESCRIPTION" : {
+        "BRIEF": "This very website. A minimalist one-pager with a touch of color.",
+        "FULL": "Inspired by the former Vercel website, I built this site as my online cv in 2021. Lately it has served me as a fantastic excercise to keep up with the changes on NextJS framework."
+      }
+    },
+    "TRELLODISCOGRAPHY": {
+      "TITLE": "Trello Discography",
+      "REPO_URL": "https://github.com/pablotor/challenge",
+      "DESCRIPTION": {
+        "BRIEF": "Check all your favorite band art covers, beautifully ordered and on a Trello board.",
+        "FULL": "Coded as an interview exercise, this node app focus on API integration, featuring Spotify and Trello."
+      }
+    },
+    "BERLINERLUFT": {
+      "TITLE": "Berliner Luft",
+      "REPO_URL": "https://github.com/pablotor/berlinerluft",
+      "DESCRIPTION" : {
+        "BRIEF": "Find an appartment to rent, subscription free!",
+        "FULL": "This repo won't get any praise for its code, but it got me an appartment in one of the best neighborhoods of Berlin. Given some parameters, like where and when, it scraps an inmobilia website, search for the new listings that meet that criteria and sends them into a telegram group. It proved to be faster and more reliable than any subscription."
+      }
+    },
+    "LINBOT": {
+      "TITLE": "LinkedIn bot",
+      "REPO_URL": "https://github.com/pablotor/inbot",
+      "DESCRIPTION": {
+        "BRIEF": "A proof of concept on LinkedIn automatization. Say hi to your contacts from the command-line!",
+        "FULL": "This node app lets you log into LinkedIn and send messages to your contacts from the command line using Puppeteer."
+      }
+    }
+  }
 }

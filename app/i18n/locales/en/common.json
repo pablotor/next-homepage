@@ -1,16 +1,20 @@
 {
-  "PAGE.TITLE": "Pablo Tor | Developer",
-  "PAGE.DESCRIPTION": "Online Resume & Portfolio",
   "FIRSTNAME": "Pablo",
   "LASTNAME": "Torrubiano",
   "EMAIL": "me@pablotor.dev",
-  "NAVBAR.MENU.OPEN": "Open navbar menu",
-  "NAVBAR.MENU.CLOSE": "Close navbar menu",
-  "SECTIONS.PROFILE": "Profile",
-  "SECTIONS.EXPERIENCE": "Experience",
-  "SECTIONS.PROJECTS": "Projects",
-  "SECTIONS.SKILLS": "Skills",
-  "SECTIONS.PORTFOLIO": "Portfolio",
-  "SECTIONS.EDUCATION": "Education",
-  "SECTIONS.ABOUT": "About me"
+  "NAVBAR": {
+    "MENU": {
+      "OPEN": "Open navbar menu",
+      "CLOSE": "Close navbar menu"
+    }
+  },
+  "SECTIONS": {
+    "PROFILE": "Profile",
+    "EXPERIENCE": "Experience",
+    "PROJECTS": "Projects",
+    "SKILLS": "Skills",
+    "PORTFOLIO": "Portfolio",
+    "EDUCATION": "Education",
+    "ABOUT": "About me"
+  }
 }

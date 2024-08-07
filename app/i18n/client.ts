@@ -5,10 +5,9 @@ import i18next, { FlatNamespace, KeyPrefix } from 'i18next';
 import {
   FallbackNs, initReactI18next, UseTranslationOptions, useTranslation as useTranslationOrg,
 } from 'react-i18next';
-import { useCookies } from 'react-cookie';
 import resourcesToBackend from 'i18next-resources-to-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import { getOptions, languages, cookieName } from './settings';
+import { getOptions, languages } from './settings';
 
 const runsOnServerSide = typeof window === 'undefined';
 
@@ -37,7 +36,7 @@ KPrefix extends KeyPrefix<FallbackNs<Ns>> = undefined,
     ns?: Ns,
     options?: UseTranslationOptions<KPrefix>,
   ) => {
-  const [cookies, setCookie] = useCookies([cookieName]);
+  // const [cookies, setCookie] = useCookies([cookieName]);
   const ret = useTranslationOrg(ns, options);
   const { i18n } = ret;
   if (runsOnServerSide && lng && i18n.resolvedLanguage !== lng) {
@@ -55,11 +54,11 @@ KPrefix extends KeyPrefix<FallbackNs<Ns>> = undefined,
       if (!lng || i18n.resolvedLanguage === lng) return;
       i18n.changeLanguage(lng);
     }, [lng, i18n]);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(() => {
-      if (cookies.i18next === lng) return;
-      setCookie(cookieName, lng, { path: '/' });
-    }, [lng, cookies.i18next, setCookie]);
+    /* WARNING this triggers infinite re renders */
+    // useEffect(() => {
+    //   if (cookies.i18next === lng) return;
+    //   setCookie(cookieName, lng, { path: '/' });
+    // }, [lng, cookies.i18next, setCookie]);
   }
   return ret;
 };

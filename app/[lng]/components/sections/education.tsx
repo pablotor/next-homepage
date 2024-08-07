@@ -1,7 +1,9 @@
 import { FC } from 'react';
 
+import type { WithLanguage } from '../../../i18n';
+import type { SectionData } from '../position';
+
 import { useTranslation } from '../../../i18n';
-import { WithLanguage } from '../../../i18n/WithLanguage';
 import Position from '../position';
 
 const studies = [
@@ -11,10 +13,10 @@ const studies = [
   'fuce',
 ];
 
-const sections = [
+const sections: SectionData[] = [
   {
     id: 'description',
-    contentType: 'single',
+    contentType: 'text',
     showTitle: false,
   },
 ];

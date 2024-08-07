@@ -1,23 +1,38 @@
 {
   "COMMENT": "But my experience working for companies is only half of the story. I've also tried a couple of things on my own...",
-  "DIGITAL_SHORES.HIGHLIGHTED": "Digital Shores | digital-shores.com",
-  "DIGITAL_SHORES.TITLE": "Digital Marketing",
-  "DIGITAL_SHORES.SECONDARY": "Founder",
-  "DIGITAL_SHORES.DATE": "Nov 2021 - Present",
-  "DIGITAL_SHORES.DESCRIPTION": "Web design, online marketing and strategy for self-employed people and entrepreneurs.",
-  "IIB.HIGHLIGHTED": "Biomedic Engineering Institute | FIUBA",
-  "IIB.TITLE": "RasPi/Arduino Developer",
-  "IIB.SECONDARY": "Collaboration",
-  "IIB.DATE": "Jun 2015 - Jul 2016",
-  "IIB.DESCRIPTION": "RaspberryPi and Arduino system development to assist people with motion disabilities.",
-  "BICHITO.HIGHLIGHTED": "Milonga del Bichito",
-  "BICHITO.TITLE": "Tango Club",
-  "BICHITO.SECONDARY": "Founder",
-  "BICHITO.DATE": "Mar 2014 - Mar 2015",
-  "BICHITO.DESCRIPTION": "The only non tech related item on my list, but definitely worth mentioning. If you need to organize a weekly event for 100+ people with live music, dance shows, food and drinks, I've got you covered.",
-  "ABANDON.HIGHLIGHTED": "Abandon PC Store",
-  "ABANDON.TITLE": "PCs and Hardware e-commerce",
-  "ABANDON.SECONDARY": "Founder",
-  "ABANDON.DATE": "Feb 2010 - May 2012",
-  "ABANDON.DESCRIPTION": "Specialized in providing high performance computers and tech advice, it was focused on the gamer community in rural areas and small cities. Management included digital marketing, logistics, computer assembly and setup."
+  "AZURRO": {
+    "HIGHLIGHTED":  "Azurro",
+    "TITLE": "Van conversion",
+    "SECONDARY": "Electrician, carpenter, plumber and mechanic",
+    "DATE": "Jun 2022 - Present",
+    "DESCRIPTION": "Van conversión from scratch of an Iveco Daily cargo truck into our home on wheels. By far the most demanding project I've ever done. A photo gallery is on its way!"
+  },
+  "DIGITAL_SHORES": {
+    "HIGHLIGHTED": "Digital Shores | digital-shores.com",
+    "TITLE": "Digital Marketing",
+    "SECONDARY": "Founder",
+    "DATE": "Nov 2021 - Present",
+    "DESCRIPTION": "Web design, online marketing and strategy for self-employed people and entrepreneurs."
+  },
+  "IIB": {
+    "HIGHLIGHTED": "Biomedic Engineering Institute | FIUBA",
+    "TITLE": "RasPi/Arduino Developer",
+    "SECONDARY": "Collaboration",
+    "DATE": "Jun 2015 - Jul 2016",
+    "DESCRIPTION": "RaspberryPi and Arduino system development to assist people with motion disabilities."
+  },
+  "BICHITO": {
+    "HIGHLIGHTED": "Milonga del Bichito",
+    "TITLE": "Tango Club",
+    "SECONDARY": "Founder",
+    "DATE": "Mar 2014 - Mar 2015",
+    "DESCRIPTION": "The only non tech related item on my list, but definitely worth mentioning. If you need to organize a weekly event for 100+ people with live music, dance shows, food and drinks, I've got you covered."  
+  },
+  "ABANDON": {
+    "HIGHLIGHTED": "Abandon PC Store",
+    "TITLE": "PCs and Hardware e-commerce",
+    "SECONDARY": "Founder",
+    "DATE": "Feb 2010 - May 2012",
+    "DESCRIPTION": "Specialized in providing high performance computers and tech advice, it was focused on the gamer community in rural areas and small cities. Management included digital marketing, logistics, assembly and distribution."
+  }
 }
