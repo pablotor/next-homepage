@@ -1,5 +1,5 @@
 {
-  "COMMENT": "This was a tricky one. I don't believe there's an useful way to quantisize knowledge. So instead I thought about how comfortable I feel using these languages/techs/methologies. Of course, I've just included what I considered relevant, so if not listed just ask!",
+  "COMMENT": "This was a tricky one. I don't believe there's a useful way to quantize knowledge. So instead I thought about how comfortable I feel using these languages/techs/methodologies. Of course, I've just included what I considered relevant, so if not listed, just ask!",
   "TABS_LABEL": "Category",
   "CATEGORIES": {
     "ALL": "All",
@@ -12,11 +12,11 @@
   },
   "LEVELS": {
     "HIGH": {
-      "TITLE": "I'm very confortable with...",
+      "TITLE": "I'm very comfortable with...",
       "SUBTITLE": "A skill that I've used constantly during a long period of time."
     },
     "MEDIUM": {
-      "TITLE": "I'm confortable with...",
+      "TITLE": "I'm comfortable with...",
       "SUBTITLE": "A skill that I've used a lot, but not recently or with enough depth"
     },
     "LOW": {
