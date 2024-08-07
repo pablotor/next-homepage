@@ -1,18 +1,20 @@
 import { FC } from 'react';
 import { Trans } from 'react-i18next/TransWithoutContext';
 
+import type { WithLanguage } from '../../../i18n';
+
 import { useTranslation } from '../../../i18n';
-import { WithLanguage } from '../../../i18n/WithLanguage';
 import LinkedIn from '../icons/linkedIn';
 import Github from '../icons/github';
+import EmailLink from '../emailLink';
 
 const socialMedia = [
   {
-    icon: LinkedIn,
+    Icon: LinkedIn,
     label: 'LinkedIn',
     link: 'https://www.linkedin.com/in/pablotor',
   }, {
-    icon: Github,
+    Icon: Github,
     label: 'Github',
     link: 'https://github.com/pablotor',
   },
@@ -22,8 +24,8 @@ const Hero: FC<WithLanguage> = async ({ lng }) => {
   const { t } = await useTranslation(lng, ['hero', 'common']);
   return (
     <>
-      <div>
-        <h1 className="mb-2 text-[3.5rem] font-black leading-[1.1] sm:text-8xl sm:leading-snug">
+      <div className="mb-8 sm:mb-6">
+        <h1 className="mb-2 text-[3.5rem] font-black leading-[1.2] sm:mb-0 sm:text-8xl sm:leading-snug">
           <span className="gradient-a animate-vercel-text-a bg-clip-text">
             {t('FIRSTNAME', { ns: 'common' })}
           </span>
@@ -32,37 +34,29 @@ const Hero: FC<WithLanguage> = async ({ lng }) => {
             {t('LASTNAME', { ns: 'common' })}
           </span>
         </h1>
-        <a href={`mailto:${t('EMAIL', { ns: 'common' })}`}>
-          <h3 className="mb-6 text-2xl text-gray-600">
-            {t('EMAIL', { ns: 'common' })}
-          </h3>
-        </a>
+        <EmailLink email={t('EMAIL', { ns: 'common' })} className="text-2xl" />
       </div>
-      <div>
+      <div className="title space-y-2">
         <Trans
           t={t}
           i18nKey="PROFILE"
-          components={{
-            primary: <p className="title" />,
-            highlightA: <span className="highlight-a" />,
-            // highlightB: <span className={classNames(styles.text['highlight-b'])}/>,
-          }}
+          components={{ h: <span className="highlight-a" /> }}
         />
       </div>
       <div className="mt-6 flex">
-        {socialMedia.map((element) => (
+        {socialMedia.map(({ Icon, label, link }) => (
           <a
-            key={element.label}
-            href={element.link}
+            key={label}
+            href={link}
             className="mr-6 "
-            aria-label={element.label}
+            aria-label={label}
             target="_blank"
             rel="noreferrer"
           >
             <div
-              className="rounded-full bg-gray-600 from-purple-500 to-pink-700 p-3 transition-all hover:bg-gradient-to-r"
+              className="rounded-full bg-gray-600 from-purple-500 to-pink-700 p-3 text-white transition-all hover:bg-gradient-to-r"
             >
-              <element.icon className="size-6 text-white" />
+              <Icon className="size-6" />
             </div>
           </a>
         ))}
