@@ -15,6 +15,9 @@ const config: Config = {
       minHeight: {
         'section-mobile': 'calc(100vh - 5.5rem)',
       },
+      height: {
+        'navbar-menu': 'calc(100vh - 4.5rem)',
+      },
       keyframes: {
         'vercel-text': {
           '0%, 55%': {
