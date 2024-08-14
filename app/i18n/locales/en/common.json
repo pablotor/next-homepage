@@ -6,7 +6,8 @@
     "MENU": {
       "OPEN": "Open navbar menu",
       "CLOSE": "Close navbar menu"
-    }
+    },
+    "BACKTO_MAIN": "Back to main page"
   },
   "SECTIONS": {
     "PROFILE": "Profile",
