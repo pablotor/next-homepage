@@ -3,7 +3,7 @@ import classNames from '../utils/classNames';
 
 interface SectionContainerProps {
   id: string;
-  verticalAllignment: 'center' | 'start';
+  verticalAllignment?: 'center' | 'start';
   children: ReactNode | ReactNode[];
 }
 
