@@ -49,12 +49,21 @@ const config: Config = {
             color: 'transparent',
           },
         },
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1',
+          },
+        },
       },
       animation: {
         'vercel-text-a': 'vercel-text 8s infinite',
         'vercel-text-b': 'vercel-text 8s infinite 4s',
         'switch-gradient': 'switch-gradient 10s infinite',
         'section-title': 'section-title 4s infinite',
+        'fade-in': 'fade-in 2s',
       },
     },
   },

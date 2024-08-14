@@ -3,7 +3,8 @@
     "MENU": {
       "OPEN": "Abrir menú de navegación",
       "CLOSE": "Cerrar menú de navegación"
-    }
+    },
+    "BACKTO_MAIN": "Volver"
   },
   "SECTIONS": {
     "PROFILE": "Perfil",

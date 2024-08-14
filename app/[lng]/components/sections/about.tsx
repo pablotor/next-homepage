@@ -15,7 +15,7 @@ const About: FC<WithLanguage> = async ({ lng }) => {
         <div className="lg:absolute lg:inset-y-0 lg:left-0 lg:w-1/2">
           <div className="relative h-36 w-full sm:h-72 lg:hidden">
             <Image
-              className="object-cover object-top "
+              className="animate-fade-in object-cover object-top"
               src="/img/about-mobile.jpg"
               alt={t('IMAGE_ALT')}
               layout="fill"
@@ -24,7 +24,7 @@ const About: FC<WithLanguage> = async ({ lng }) => {
           </div>
           <div className="hidden w-full lg:absolute lg:block lg:h-full">
             <Image
-              className="object-cover"
+              className="animate-fade-in object-cover"
               src="/img/about-desktop.jpg"
               alt={t('IMAGE_ALT')}
               layout="fill"
