@@ -95,8 +95,8 @@ const Tabs: FC<TabsProps> = ({
             )}
           </Menu>
         </div>
-        <div className="hidden border-b border-gray-200 lg:block">
-          <nav className="-mb-px flex" aria-label="Tab list">
+        <nav className="hidden border-b border-gray-200 lg:block" aria-labelledby="tab-navigation">
+          <div className="-mb-px flex" aria-label="Tab list" role="tablist">
             {tabArray.map((tab, index) => (
               <button
                 key={tab.id}
@@ -114,8 +114,8 @@ const Tabs: FC<TabsProps> = ({
                 {(t(tab.i18nKey))}
               </button>
             ))}
-          </nav>
-        </div>
+          </div>
+        </nav>
       </div>
     </div>
   );
