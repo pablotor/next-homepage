@@ -28,7 +28,7 @@ const Azurro: NextPage<{ params: WithLanguage }> = async ({ params: { lng } }) =
                 knowing where you&apos;ll be swept off to.&quot;
                 <br />
                 <br />
-                JR Tolkien
+                JRR Tolkien
               </p>
             </div>
           </div>
