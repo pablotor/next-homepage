@@ -22,9 +22,9 @@ export const SkillItem: FC<SkillItemProps> = ({ expertise, skillArray, lng }) =>
       )}
     >
       <div>
-        <h5 className="title text-gray-700">
+        <h3 className="title text-gray-700">
           {t(`LEVELS.${expertise.toLocaleUpperCase()}.TITLE`)}
-        </h5>
+        </h3>
         <p className="subtitle">
           {t(`LEVELS.${expertise.toLocaleUpperCase()}.SUBTITLE`)}
         </p>
