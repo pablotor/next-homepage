@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Link from 'next/link';
 
 import type { WithLanguage } from '../../../i18n';
 import type { SectionData } from '../position';
@@ -41,6 +42,10 @@ const Projects: FC<WithLanguage> = async ({ lng }) => {
           highlight="a"
           includeSecondary
           lng={lng}
+          interpolationComponents={{
+            aa: <Link href={`/${lng}/azurro`} className="gradient-a hover:gradient-b bg-clip-text text-transparent" />,
+            ad: <Link href="https://www.digital-shores.com" className="gradient-a  bg-clip-text transition-all hover:text-transparent" />,
+          }}
         />
       ))}
     </>

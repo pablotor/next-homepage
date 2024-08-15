@@ -6,7 +6,7 @@ import type { WithLanguage } from '../../../i18n';
 import { useTranslation } from '../../../i18n';
 import ChevronDownIcon from '../../components/icons/chevronDown';
 
-const Navbar: FC<WithLanguage> = async ({ lng }) => {
+const GalleryNavbar: FC<WithLanguage> = async ({ lng }) => {
   const { t } = await useTranslation(lng, 'common');
 
   return (
@@ -63,4 +63,4 @@ const Navbar: FC<WithLanguage> = async ({ lng }) => {
   );
 };
 
-export default Navbar;
+export default GalleryNavbar;

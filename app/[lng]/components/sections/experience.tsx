@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Link from 'next/link';
 
 import type { WithLanguage } from '../../../i18n';
 
@@ -44,6 +45,9 @@ const Experience: FC<WithLanguage> = async ({ lng }) => {
             sections={sections}
             includeSecondary
             lng={lng}
+            interpolationComponents={{
+              ai: <Link href="https://illow.io" className="gradient-b bg-clip-text transition-colors hover:text-transparent" />,
+            }}
           />
         ))}
       </div>
