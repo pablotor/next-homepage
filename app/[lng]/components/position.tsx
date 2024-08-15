@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import { FC, ReactElement } from 'react';
+import { Trans } from 'react-i18next/TransWithoutContext';
 
 import type { WithLanguage } from '../../i18n';
 
@@ -17,10 +18,11 @@ type PositionProps = {
   sections: SectionData[];
   includeSecondary?: boolean;
   highlight?: 'a' | 'b';
+  interpolationComponents?: Record<string, ReactElement>;
 } & WithLanguage;
 
 const Position: FC<PositionProps> = async ({
-  i18nKey, namespace, sections, includeSecondary, highlight = 'a', lng,
+  i18nKey, namespace, sections, includeSecondary, highlight = 'a', lng, interpolationComponents,
 }) => {
   const { t } = await useTranslation(lng, namespace);
   const formatKey = (key: string) => `${i18nKey.toLocaleUpperCase()}.${key}`;
@@ -28,7 +30,11 @@ const Position: FC<PositionProps> = async ({
     <div className="py-4">
       {/* Main title (highlighted) */}
       <h3 className={classNames(`highlight-${highlight}`, 'bg-clip-text text-xl font-medium')}>
-        {t(formatKey('HIGHLIGHTED'))}
+        <Trans
+          t={t}
+          i18nKey={formatKey('HIGHLIGHTED')}
+          components={interpolationComponents}
+        />
       </h3>
       {/* Subtitle (black) */}
       <div className="flex flex-col-reverse sm:w-full sm:flex-row sm:justify-between">
@@ -57,11 +63,21 @@ const Position: FC<PositionProps> = async ({
             {section.contentType === 'list' ? (
               <ul>
                 {(t(formatKey(sectionI18nKey), { returnObjects: true }) as string[]).map(
-                  (element) => <li key={element}>{element}</li>,
+                  (element) => (
+                    <li key={element}>
+                      <Trans i18nKey={element} components={interpolationComponents} />
+                    </li>
+                  ),
                 )}
               </ul>
             ) : (
-              <p>{t(formatKey(sectionI18nKey))}</p>
+              <p>
+                <Trans
+                  t={t}
+                  i18nKey={formatKey(sectionI18nKey)}
+                  components={interpolationComponents}
+                />
+              </p>
             )}
           </div>
         );
