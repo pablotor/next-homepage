@@ -4,7 +4,7 @@ import { dir } from 'i18next';
 import type { WithLanguage } from '../../i18n';
 
 import '../globals.css';
-import Navbar from './components/navbar';
+import Navbar from './components/galleryNavbar';
 
 const languages = ['en', 'es'] as const;
 
