@@ -44,7 +44,7 @@ const Projects: FC<WithLanguage> = async ({ lng }) => {
           lng={lng}
           interpolationComponents={{
             aa: <Link href={`/${lng}/azurro`} className="gradient-a hover:gradient-b bg-clip-text text-transparent" />,
-            ad: <Link href="https://www.digital-shores.com" className="gradient-a  bg-clip-text transition-all hover:text-transparent" />,
+            ad: <Link href="https://www.digital-shores.com" className="gradient-b  bg-clip-text transition-all hover:text-transparent" />,
           }}
         />
       ))}
