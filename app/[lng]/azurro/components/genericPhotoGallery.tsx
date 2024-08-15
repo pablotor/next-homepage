@@ -16,7 +16,7 @@ import usePhotoFetcher from '../hooks/usePhotoFetcher';
 
 const renderNextImage = (
   { alt = '', title, sizes }: RenderImageProps,
-  { photo }: RenderImageContext,
+  { photo, index }: RenderImageContext,
 ) => (
   <div className="relative">
     <Image
@@ -26,7 +26,11 @@ const renderNextImage = (
       alt={alt}
       title={title}
       sizes={sizes}
-      className="animate-fade-in"
+      className="opacity-0"
+      loading={index < 10 ? 'eager' : 'lazy'}
+      onLoadingComplete={(img) => {
+        img.setAttribute('class', 'animate-fade-in');
+      }}
       // placeholder={'blurDataURL' in photo ? 'blur' : undefined}
     />
     <div className="absolute inset-0 bg-gradient-to-t from-slate-500 to-transparent opacity-0 transition-opacity hover:opacity-30" />
@@ -71,7 +75,13 @@ const GenericPhotoGallery: FC<GenericPhotoGalleryProps> = ({ photos, epilogue })
             size: '1168px',
             sizes: [{ viewport: '(max-width: 1200px)', size: 'calc(100vw - 32px)' }],
           }}
-          componentsProps={{ container: { style: { marginBottom: 20 } } }}
+          componentsProps={{
+            container: {
+              style: {
+                marginBottom: (typeof window !== 'undefined' && window.innerWidth > 400) ? 15 : 10,
+              },
+            },
+          }}
         />
       </InfiniteScroll>
       <Lightbox

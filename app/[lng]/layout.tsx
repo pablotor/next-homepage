@@ -25,6 +25,7 @@ const RootLayout = ({
 }>) => (
   <html lang={lng} dir={dir(lng)}>
     <body>
+      {/* Navbar was moved into clientComponent.tsx to achieve the change on scroll effect */}
       {children}
     </body>
   </html>
