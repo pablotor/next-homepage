@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Link from 'next/link';
 import { Trans } from 'react-i18next/TransWithoutContext';
 
 import type { WithLanguage } from '../../../i18n';
@@ -45,20 +46,18 @@ const Hero: FC<WithLanguage> = async ({ lng }) => {
       </div>
       <div className="mt-6 flex">
         {socialMedia.map(({ Icon, label, link }) => (
-          <a
+          <Link
             key={label}
             href={link}
-            className="mr-6 "
+            className="gradient-b group relative mr-6 rounded-full p-3"
             aria-label={label}
             target="_blank"
             rel="noreferrer"
           >
-            <div
-              className="rounded-full bg-gray-600 from-purple-500 to-pink-700 p-3 text-white transition-all hover:bg-gradient-to-r"
-            >
-              <Icon className="size-6" />
-            </div>
-          </a>
+            <Icon className="relative z-10 size-6 text-white" />
+            {/* Since transitions don't work on gradients, we need this background overlay */}
+            <div className="absolute inset-0 z-0 rounded-full bg-gray-600 p-3 transition-colors group-hover:bg-transparent" />
+          </Link>
         ))}
       </div>
     </>
