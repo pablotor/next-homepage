@@ -48,15 +48,16 @@ const Hero: FC<WithLanguage> = async ({ lng }) => {
           <a
             key={label}
             href={link}
-            className="mr-6 "
+            className="mr-6"
             aria-label={label}
             target="_blank"
             rel="noreferrer"
           >
             <div
-              className="rounded-full bg-gray-600 from-purple-500 to-pink-700 p-3 text-white transition-all hover:bg-gradient-to-r"
+              className="gradient-b group relative rounded-full p-3"
             >
-              <Icon className="size-6" />
+              <Icon className="relative z-10 size-6 text-white" />
+              <div className="absolute inset-0 z-0 rounded-full bg-gray-600 p-3 transition-colors group-hover:bg-transparent" />
             </div>
           </a>
         ))}
