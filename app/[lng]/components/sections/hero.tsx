@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import Link from 'next/link';
 import { Trans } from 'react-i18next/TransWithoutContext';
 
 import type { WithLanguage } from '../../../i18n';
@@ -7,7 +8,6 @@ import { useTranslation } from '../../../i18n';
 import LinkedIn from '../icons/linkedIn';
 import Github from '../icons/github';
 import EmailLink from '../emailLink';
-import Link from 'next/link';
 
 const socialMedia = [
   {
