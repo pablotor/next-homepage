@@ -24,14 +24,18 @@ const skills: SkillSet[] = [
   },
   {
     id: 'frameworks',
-    high: ['vercel'],
+    high: [
+      'nextjs',
+      'nestjs',
+      'react_native',
+    ],
     low: ['rails', 'django'],
   },
   {
     id: 'databases',
     medium: [
-      'leveldb',
       'postgresql',
+      'leveldb',
       'dynamodb',
     ],
     low: [
@@ -42,17 +46,14 @@ const skills: SkillSet[] = [
     id: 'libaries',
     high: [
       'react',
-      'react_native',
       'nodejs',
       'tailwind',
-      'nestjs',
-      'nextjs',
-      'i18next',
       'express',
       'react_router',
       'redux',
       'saga',
       'swagger',
+      'i18next',
     ],
     medium: [
       'puppeteer',
@@ -62,29 +63,34 @@ const skills: SkillSet[] = [
     ],
   },
   {
-    id: 'methodologies',
-    high: ['scrum', 'watefall'],
-    low: ['tdd'],
+    id: 'infra',
+    high: [
+      'vercel',
+    ],
+    medium: [
+      'aws',
+      'heroku',
+      'docker',
+      'terraform',
+      'travis',
+      'linux',
+    ],
   },
   {
     id: 'others',
     high: [
-      'linux',
       'base24',
       'visa_vts',
       'mcar_bnet',
       'simpp',
     ],
     medium: [
-      'aws',
       'cognito',
-      'docker',
       'firebase',
       'mixpanel',
       'oauth',
       'ses',
       'stripe',
-      'travis',
       'tss',
     ],
   },

@@ -8,11 +8,11 @@
     "LANGUAGES": "Languages",
     "OTHERS": "Others",
     "LIBARIES": "Libraries",
-    "METHODOLOGIES": "Methodologies"
+    "INFRA": "Infra"
   },
   "LEVELS": {
     "HIGH": {
-      "TITLE": "I'm very comfortable with...",
+      "TITLE": "I'm proficient with...",
       "SUBTITLE": "A skill that I've used constantly during a long period of time."
     },
     "MEDIUM": {
@@ -39,6 +39,7 @@
     "ENSCRIBE": "Enscribe DB",
     "EXPRESS": "expressjs",
     "FIREBASE": "Google Firebase",
+    "HEROKU": "Heroku",
     "HTML": "HTML",
     "I18NEXT": "i18next",
     "JAVA": "Java",
@@ -74,6 +75,7 @@
     "TAILWIND": "TailwindCSS",
     "TAL": "Tal",
     "TDD": "Test Driven Development",
+    "TERRAFORM": "Terraform",
     "TRAVIS": "Travis CI",
     "TSS": "ACI TSS",
     "TYPESCRIPT": "TypeScript",
