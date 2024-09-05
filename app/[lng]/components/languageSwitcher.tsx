@@ -19,12 +19,12 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ lng, className }) => (
       className,
     )}
   >
-    <span className={classNames('bg-clip-text transition-all', lng === 'es' ? 'gradient-a' : 'gradient-b')}>
-      es
+    <span className={classNames('bg-clip-text transition-all', lng === 'en' ? 'gradient-a' : 'gradient-b')}>
+      EN
     </span>
     <span>{' / '}</span>
-    <span className={classNames('bg-clip-text transition-all', lng === 'en' ? 'gradient-a' : 'gradient-b')}>
-      en
+    <span className={classNames('bg-clip-text transition-all', lng === 'es' ? 'gradient-a' : 'gradient-b')}>
+      ES
     </span>
   </a>
 );
