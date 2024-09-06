@@ -23,7 +23,7 @@ const portfolio: PortfolioItem[] = [
     id: 'pablobot',
     type: 'frontend',
     deployAvailable: true,
-    techIds: ['react', 'next', 'ts'],
+    techIds: ['chatGPT', 'tailwind', 'react', 'next', 'ts'],
   }, {
     id: 'homesite',
     type: 'frontend',

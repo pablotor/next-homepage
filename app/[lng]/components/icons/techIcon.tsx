@@ -3,6 +3,11 @@ import { FC } from 'react';
 import classNames from '../../utils/classNames';
 
 const techIconData: Record<string, { label: string; src: string; style?: string; }> = {
+  chatGPT: {
+    label: 'ChatGPT',
+    src: '/img/chatGPT.svg',
+    style: 'bg-gray-200 p-0.5',
+  },
   react: {
     label: 'React',
     src: '/img/react.svg',
