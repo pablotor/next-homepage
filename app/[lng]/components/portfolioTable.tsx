@@ -13,13 +13,18 @@ import PortfolioModal from './portfolioModal';
 export type PortfolioItem = {
   id: string;
   type: string;
-  codeAvailable: boolean;
-  // deployed: boolean;
+  codeAvailable?: boolean;
+  deployAvailable?: boolean;
   techIds: string[];
 };
 
 const portfolio: PortfolioItem[] = [
   {
+    id: 'pablobot',
+    type: 'frontend',
+    deployAvailable: true,
+    techIds: ['chatGPT', 'tailwind', 'react', 'next', 'ts'],
+  }, {
     id: 'homesite',
     type: 'frontend',
     codeAvailable: true,
@@ -29,11 +34,6 @@ const portfolio: PortfolioItem[] = [
     type: 'backend',
     codeAvailable: true,
     techIds: ['node', 'ts'],
-  }, {
-    id: 'linbot',
-    type: 'backend',
-    codeAvailable: true,
-    techIds: ['puppeteer', 'node', 'ts'],
   }, {
     id: 'berlinerluft',
     type: 'backend',
