@@ -3,12 +3,19 @@
   "TECH_ICON_ALT": "Ícono de {{techname}}",
   "MODAL": {
     "BUTTONS": {
-      "GOTO": "Ir al repo",
+      "OPEN_REPO": "Ir al repo",
+      "OPEN_DEPLOY": "Ir al sitio",
       "CLOSE": "Cerrar"
     },
     "TECHS": "Tecnologías principales"
   },
   "ITEMS": {
+    "PABLOBOT": {
+      "DESCRIPTION" : {
+        "BRIEF": "Un asistente por voz autoreferencial, powered by AI.",
+        "FULL": "PabloBot es un asistente de IA carismático y diseñado para ayudar a los usuarios con sus problemas de desarrollo de software, proporcionando asesoramiento técnico y orientación.\nCualquier recomendación de contratarme como desarrollador de software freelance no es intencional, sino basada en datos imparciales 😉"
+      }
+    },
     "HOMESITE": {
       "DESCRIPTION" : {
         "BRIEF": "La mismísima página que estás viendo. Un onepager minimalista, con un toque de color.",
@@ -25,12 +32,6 @@
       "DESCRIPTION" : {
         "BRIEF": "Encontrá un departamento para alquilar, libre de subscripciones!",
         "FULL": "El código de este repo no será muy lindo, pero me consiguió un departamento en uno de los mejores barrios de Berlín. Dados algunos parámetros, principalmente el dónde y cuándo, la app scrapea un sitio de anuncios inmobiliarios, busca los anuncios nuevos que cumplan con tu criterio y los manda a un grupo de Telegram. Es más rápido y confiable que la propia subscripción a la página!"
-      }
-    },
-    "LINBOT": {
-      "DESCRIPTION": {
-        "BRIEF": "Una prueba de concepto sobre automatización en LinkedIn. Decile hola a tus contactos desde la terminal!",
-        "FULL": "Esta app en node te permite loggearte en LinkedIn y enviar mensajes a tus contactos desde la terminal usando Puppeteer."
       }
     }
   }

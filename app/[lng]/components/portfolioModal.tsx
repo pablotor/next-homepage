@@ -17,7 +17,7 @@ type PortfolioModalProps = {
 
 const PortfolioModal: FC<PortfolioModalProps> = ({
   item: {
-    id, techIds, codeAvailable,
+    id, techIds, codeAvailable, deployAvailable,
   },
   closeModal,
   lng,
@@ -63,19 +63,19 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t('MODAL.BUTTONS.GOTO')}
+            {t('MODAL.BUTTONS.OPEN_REPO')}
           </Button>
         )}
-        {/* {deployed && (
+        {deployAvailable && (
           <Button
-            href={t(`ITEMS.${i18nKey}.URL`)}
+            href={t(`ITEMS.${i18nKey}.DEPLOY_URL`)}
             variant="primary"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t('MODAL.BUTTONS.GOTO')}
+            {t('MODAL.BUTTONS.OPEN_DEPLOY')}
           </Button>
-        )} */}
+        )}
       </div>
     </div>
   );
