@@ -37,7 +37,7 @@
       "REPO_URL": "https://github.com/pablotor/challenge",
       "DESCRIPTION": {
         "BRIEF": "Check all your favorite band art covers, beautifully ordered and on a Trello board.",
-        "FULL": "Coded as an interview exercise, this node app focuses on API integration, featuring Spotify and Trello."
+        "FULL": "Coded as an interview exercise, this node app focuses on API integration and features Spotify and Trello APIs."
       }
     },
     "BERLINERLUFT": {
