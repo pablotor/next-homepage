@@ -30,7 +30,10 @@
     "tailwindcss/classnames-order": "warn",
     "tailwindcss/no-arbitrary-value": "off",
     "tailwindcss/no-custom-classname": "warn",
-    "tailwindcss/no-contradicting-classname": "error"
+    "tailwindcss/no-contradicting-classname": "error",
+
+    // Quickfix for hooks in async fns
+    "react-hooks/rules-of-hooks": "off"
   },
   "parserOptions": {
     "project": "./tsconfig.json"

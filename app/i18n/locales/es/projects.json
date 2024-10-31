@@ -1,18 +1,18 @@
 {
   "COMMENT": "Pero mi trabajo en empresas cuenta solamente la mitad de la historia. Estos son algunos de los proyectos que emprendí...",
+  "DIGITAL_SHORES": {
+    "HIGHLIGHTED":  "Digital Shores | <ad>digital-shores.com</ad>",
+    "TITLE": "Marketing Digital",
+    "SECONDARY": "Cofundador",
+    "DATE": "Jul 2023 - Presente",
+    "DESCRIPTION": "Emprendimiento familiar junto a mi pareja Kerstin. Brindamos diseño web, marketing y estrategia digital para emprendedores y cuentapropistas."
+  },
   "AZURRO": {
     "HIGHLIGHTED":  "Azurro",
     "TITLE": "Conversión de camioneta en casa rodante",
     "SECONDARY": "Electricista, carpintero, plomero y mecánico",
     "DATE": "Jun 2022 - Presente",
     "DESCRIPTION": "Conversión desde cero de una camioneta de carga Iveco Daily en nuestra casa sobre ruedas. Por lejos el proyecto más desafiante que hice en mi vida. Si te interesa ver fotos del proceso, podés <aa>entrar acá.</aa>"
-  },
-  "DIGITAL_SHORES": {
-    "HIGHLIGHTED":  "Digital Shores | <ad>digital-shores.com</ad>",
-    "TITLE": "Marketing Digital",
-    "SECONDARY": "Cofundador",
-    "DATE": "Nov 2021 - Presente",
-    "DESCRIPTION": "Emprendimiento familiar junto a mi pareja Kerstin. Brindamos diseño web, marketing y estrategia digital para emprendedores y cuentapropistas."
   },
   "IIB": {
     "HIGHLIGHTED": "Instituto de Ingeniería Biomédica | FIUBA",
