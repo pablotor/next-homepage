@@ -21,7 +21,7 @@
       "DEPLOY_URL": "https://pablobot.vercel.app",
       "DESCRIPTION" : {
         "BRIEF": "An auto-referential voice assistant, powered by AI.",
-        "FULL": "PabloBot is a charismatic and knowledgeable AI assistant designed to help users with their software development problems, providing technical advice and guidance.\nAny recommendation of hiring me as a freelance software developer is unintentional but based on unbiased facts 😉"
+        "FULL": "PabloBot is a charismatic and knowledgeable AI assistant designed to help users with software development problems, providing technical advice and guidance.\nAny recommendation of hiring me as a freelance software developer is unintentional but based on unbiased facts 😉"
       }
     },
     "HOMESITE": {
@@ -29,7 +29,7 @@
       "REPO_URL": "https://github.com/pablotor/next-homepage",
       "DESCRIPTION" : {
         "BRIEF": "This very website. A minimalist one-pager with a touch of color.",
-        "FULL": "Inspired by the former Vercel website, I built this site as my online cv in 2021. Lately it has served me as a fantastic excercise to keep up with the changes on NextJS framework."
+        "FULL": "Inspired by the former Vercel website, I built this site as my online CV in 2021. Lately, it has served me as a fantastic exercise to keep up with the changes in the NextJS framework."
       }
     },
     "TRELLODISCOGRAPHY": {
@@ -37,7 +37,7 @@
       "REPO_URL": "https://github.com/pablotor/challenge",
       "DESCRIPTION": {
         "BRIEF": "Check all your favorite band art covers, beautifully ordered and on a Trello board.",
-        "FULL": "Coded as an interview exercise, this node app focus on API integration, featuring Spotify and Trello."
+        "FULL": "Coded as an interview exercise, this node app focuses on API integration, featuring Spotify and Trello."
       }
     },
     "BERLINERLUFT": {
@@ -45,7 +45,7 @@
       "REPO_URL": "https://github.com/pablotor/berlinerluft",
       "DESCRIPTION" : {
         "BRIEF": "Find an appartment to rent, subscription free!",
-        "FULL": "This repo won't get any praise for its code, but it got me an appartment in one of the best neighborhoods of Berlin. Given some parameters, like where and when, it scraps an inmobilia website, search for the new listings that meet that criteria and sends them into a telegram group. It proved to be faster and more reliable than any subscription."
+        "FULL": "This repo won't get any praise for its code, but it got me an apartment in one of the best neighborhoods of Berlin. Given some parameters, like where and when, it scraps a house renting website, searches for the new listings that meet those criteria, and sends them into a telegram group. It proved to be faster and more reliable than any subscription."
       }
     }
   }

@@ -65,7 +65,10 @@ const Position: FC<PositionProps> = async ({
                 {(t(formatKey(sectionI18nKey), { returnObjects: true }) as string[]).map(
                   (element) => (
                     <li key={element}>
-                      <Trans i18nKey={element} components={interpolationComponents} />
+                      <Trans
+                        i18nKey={element}
+                        components={interpolationComponents}
+                      />
                     </li>
                   ),
                 )}
