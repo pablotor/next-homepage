@@ -4,15 +4,12 @@ import Image, { StaticImageData } from 'next/image';
 import {
   FC, ReactNode, useCallback, useState,
 } from 'react';
-import { UnstableInfiniteScroll as InfiniteScroll } from 'react-photo-album/scroll';
+import InfiniteScroll from 'react-photo-album/scroll';
 import { RenderImageContext, RenderImageProps, RowsPhotoAlbum } from 'react-photo-album';
 import Lightbox from 'yet-another-react-lightbox';
 
-import 'react-photo-album/rows.css';
-import 'yet-another-react-lightbox/styles.css';
-
-import Spinner from './spinner';
 import usePhotoFetcher from '../hooks/usePhotoFetcher';
+import Spinner from './spinner';
 
 const renderNextImage = (
   { alt = '', title, sizes }: RenderImageProps,

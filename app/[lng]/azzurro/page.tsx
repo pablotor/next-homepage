@@ -5,10 +5,10 @@ import photos from './assets/photos';
 import SectionContainer from '../components/sectionContainer';
 import GenericPhotoGallery from './components/genericPhotoGallery';
 
-const Azurro: NextPage<{ params: WithLanguage }> = async ({ params: { lng } }) => {
-  const { t } = await useTranslation(lng, 'azurro');
+const Azzurro: NextPage<{ params: Promise<WithLanguage> }> = async ({ params }) => {
+  const { t } = await useTranslation((await params).lng, 'azzurro');
   return (
-    <SectionContainer id="azurro" verticalAllignment="start">
+    <SectionContainer id="azzurro" verticalAllignment="start">
       <h2 className="section-title gradient-a">
         {t('TITLE')}
       </h2>
@@ -38,4 +38,4 @@ const Azurro: NextPage<{ params: WithLanguage }> = async ({ params: { lng } }) =
   );
 };
 
-export default Azurro;
+export default Azzurro;

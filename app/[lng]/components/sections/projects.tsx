@@ -8,7 +8,7 @@ import { useTranslation } from '../../../i18n';
 import Position from '../position';
 
 const projects = [
-  'azurro',
+  'azzurro',
   'digital_shores',
   'iib',
   'bichito',
@@ -43,7 +43,7 @@ const Projects: FC<WithLanguage> = async ({ lng }) => {
           includeSecondary
           lng={lng}
           interpolationComponents={{
-            aa: <Link href={`/${lng}/azurro`} className="gradient-a hover:gradient-b bg-clip-text text-transparent" />,
+            aa: <Link href={`/${lng}/azzurro`} className="gradient-a hover:gradient-b bg-clip-text text-transparent" />,
             ad: <Link href="https://www.digital-shores.com" className="gradient-b  bg-clip-text transition-all hover:text-transparent" />,
           }}
         />
