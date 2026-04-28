@@ -9,6 +9,8 @@ import {
   RowsPhotoAlbum,
 } from 'react-photo-album';
 import Lightbox from 'yet-another-react-lightbox';
+import 'react-photo-album/rows.css';
+import 'yet-another-react-lightbox/styles.css';
 
 import usePhotoFetcher from '../hooks/usePhotoFetcher';
 import Spinner from './spinner';
