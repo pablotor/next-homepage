@@ -12,7 +12,10 @@ const SectionContainer = forwardRef<HTMLElement, SectionContainerProps>(
     <section
       id={id}
       ref={ref}
-      className={classNames('flex min-h-section-mobile flex-col px-8 py-16 lg:min-h-screen', verticalAllignment === 'center' ? 'justify-center' : '')}
+      className={classNames(
+        'flex min-h-section-mobile flex-col px-8 py-16 lg:min-h-screen',
+        verticalAllignment === 'center' ? 'justify-center' : '',
+      )}
     >
       {children}
     </section>

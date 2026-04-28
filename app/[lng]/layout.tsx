@@ -7,7 +7,8 @@ import './globals.css';
 
 const languages = ['en', 'es'] as const;
 
-export const generateStaticParams = async () => languages.map((lng) => ({ lng }));
+export const generateStaticParams = async () =>
+  languages.map((lng) => ({ lng }));
 
 export const metadata: Metadata = {
   title: 'Pablo Tor | Developer',

@@ -11,7 +11,9 @@ import Education from './components/sections/education';
 import About from './components/sections/about';
 import ClientComponent from './clientComponent';
 
-const Home: NextPage<{ params: Promise<WithLanguage> }> = async ({ params }) => (
+const Home: NextPage<{ params: Promise<WithLanguage> }> = async ({
+  params,
+}) => (
   <div className="mx-auto max-w-screen-xl overflow-x-hidden lg:flex">
     <ClientComponent lng={(await params).lng}>
       <Hero lng={(await params).lng} />

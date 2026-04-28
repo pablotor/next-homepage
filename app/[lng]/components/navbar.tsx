@@ -1,10 +1,11 @@
 'use client';
 
+import { FC, Fragment, useMemo } from 'react';
 import {
-  FC, Fragment, useEffect, useState,
-} from 'react';
-import {
-  Popover, PopoverButton, PopoverPanel, Transition,
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+  Transition,
 } from '@headlessui/react';
 
 import type { WithLanguage } from '../../i18n';
@@ -22,13 +23,9 @@ type NavbarProps = {
 const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
   const { t } = useTranslation(lng, 'common');
 
-  const [inViewSectionIndex, setInViewSectionIndex] = useState(0);
-
-  useEffect(() => {
+  const inViewSectionIndex = useMemo(() => {
     const updatedIndex = sectionInViewWatchers.indexOf(true);
-    if (updatedIndex !== -1) {
-      setInViewSectionIndex(updatedIndex);
-    }
+    return updatedIndex !== -1 ? updatedIndex : 0;
   }, [sectionInViewWatchers]);
 
   return (
@@ -45,7 +42,9 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                 aria-label={t(open ? 'NAVBAR.MENU.CLOSE' : 'NAVBAR.MENU.OPEN')}
               >
                 <span className="w-1/5 text-nowrap text-left">
-                  {t(`SECTIONS.${sectionsData[inViewSectionIndex]?.id.toLocaleUpperCase()}`).toLocaleLowerCase()}
+                  {t(
+                    `SECTIONS.${sectionsData[inViewSectionIndex]?.id.toLocaleUpperCase()}`,
+                  ).toLocaleLowerCase()}
                 </span>
                 <div
                   className={classNames(
@@ -54,9 +53,7 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                   )}
                 >
                   <span className="animate-switch-gradient bg-gradient-to-r bg-clip-text">
-                    {t('FIRSTNAME')}
-                    {' '}
-                    {t('LASTNAME')}
+                    {t('FIRSTNAME')} {t('LASTNAME')}
                   </span>
                 </div>
                 <div className="flex w-1/5 justify-end">
@@ -88,7 +85,11 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                   >
                     <ul className="mt-5 flex h-full flex-col justify-between">
                       {sectionsData.map((item, index) => (
-                        <PopoverButton as="li" key={item.id} className="flow-root">
+                        <PopoverButton
+                          as="li"
+                          key={item.id}
+                          className="flow-root"
+                        >
                           <a
                             href={item.href}
                             className={classNames(
@@ -98,12 +99,17 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                                 : 'text-gray-900 hover:text-transparent bg-clip-text gradient-b',
                             )}
                           >
-                            {t(`SECTIONS.${item.id.toLocaleUpperCase()}`).toLocaleLowerCase()}
+                            {t(
+                              `SECTIONS.${item.id.toLocaleUpperCase()}`,
+                            ).toLocaleLowerCase()}
                           </a>
                         </PopoverButton>
                       ))}
                       <PopoverButton as="li" className="flow-root">
-                        <LanguageSwitcher lng={lng} className="justify-center font-medium" />
+                        <LanguageSwitcher
+                          lng={lng}
+                          className="justify-center font-medium"
+                        />
                       </PopoverButton>
                     </ul>
                   </div>
@@ -113,7 +119,10 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
           </>
         )}
       </Popover>
-      <div id="navbar-desktop" className="mr-16 hidden h-screen flex-col justify-center px-8 lg:flex">
+      <div
+        id="navbar-desktop"
+        className="mr-16 hidden h-screen flex-col justify-center px-8 lg:flex"
+      >
         <ul className="mt-5 space-y-6">
           {sectionsData.map((item, index) => (
             <li key={item.id} className="flow-root">
@@ -126,7 +135,9 @@ const Navbar: FC<NavbarProps> = ({ sectionInViewWatchers, lng }) => {
                     : 'text-gray-900 hover:text-transparent bg-clip-text gradient-b',
                 )}
               >
-                {t(`SECTIONS.${item.id.toLocaleUpperCase()}`).toLocaleLowerCase()}
+                {t(
+                  `SECTIONS.${item.id.toLocaleUpperCase()}`,
+                ).toLocaleLowerCase()}
               </a>
             </li>
           ))}

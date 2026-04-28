@@ -24,17 +24,20 @@ const portfolio: PortfolioItem[] = [
     type: 'frontend',
     deployAvailable: true,
     techIds: ['chatGPT', 'tailwind', 'react', 'next', 'ts'],
-  }, {
+  },
+  {
     id: 'homesite',
     type: 'frontend',
     codeAvailable: true,
     techIds: ['tailwind', 'react', 'next', 'ts'],
-  }, {
+  },
+  {
     id: 'trellodiscography',
     type: 'backend',
     codeAvailable: true,
     techIds: ['node', 'ts'],
-  }, {
+  },
+  {
     id: 'berlinerluft',
     type: 'backend',
     codeAvailable: true,
@@ -47,7 +50,11 @@ const PortfolioTable: FC<WithLanguage> = ({ lng }) => {
   const modal = useModal();
   return (
     <>
-      <Modal isOpen={modal.isOpen} content={modal.content} onClose={modal.close} />
+      <Modal
+        isOpen={modal.isOpen}
+        content={modal.content}
+        onClose={modal.close}
+      />
       <div className="mt-10 overflow-hidden rounded-md sm:p-6">
         <ul className="grid gap-4">
           {portfolio.map((item) => (
@@ -58,9 +65,15 @@ const PortfolioTable: FC<WithLanguage> = ({ lng }) => {
               <button
                 type="button"
                 className="size-full"
-                onClick={() => modal.open(
-                  <PortfolioModal closeModal={modal.close} item={item} lng={lng} />,
-                )}
+                onClick={() =>
+                  modal.open(
+                    <PortfolioModal
+                      closeModal={modal.close}
+                      item={item}
+                      lng={lng}
+                    />,
+                  )
+                }
               >
                 <div className="min-w-0 flex-1 p-4 sm:flex sm:items-center sm:justify-between sm:px-6">
                   <div>
@@ -74,7 +87,9 @@ const PortfolioTable: FC<WithLanguage> = ({ lng }) => {
                     </div>
                     <div className="mt-2 flex">
                       <p className="text-left text-sm text-gray-500">
-                        {t(`ITEMS.${item.id.toLocaleUpperCase()}.DESCRIPTION.BRIEF`)}
+                        {t(
+                          `ITEMS.${item.id.toLocaleUpperCase()}.DESCRIPTION.BRIEF`,
+                        )}
                       </p>
                     </div>
                   </div>
@@ -85,10 +100,9 @@ const PortfolioTable: FC<WithLanguage> = ({ lng }) => {
                           techId={techId}
                           key={`${techId}Icon`}
                           className="inline-block size-6 rounded-full ring-2 ring-white"
-                          altIntlFn={(label) => t(
-                            'TECH_ICON_ALT',
-                            { techname: label },
-                          )}
+                          altIntlFn={(label) =>
+                            t('TECH_ICON_ALT', { techname: label })
+                          }
                         />
                       ))}
                     </div>

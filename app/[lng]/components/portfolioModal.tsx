@@ -16,9 +16,7 @@ type PortfolioModalProps = {
 } & WithLanguage;
 
 const PortfolioModal: FC<PortfolioModalProps> = ({
-  item: {
-    id, techIds, codeAvailable, deployAvailable,
-  },
+  item: { id, techIds, codeAvailable, deployAvailable },
   closeModal,
   lng,
 }) => {
@@ -29,7 +27,9 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
       <h4 className="section-title gradient-a mx-auto text-center">
         {t(`ITEMS.${i18nKey}.TITLE`)}
       </h4>
-      <p className="whitespace-pre-line text-justify">{t(`ITEMS.${i18nKey}.DESCRIPTION.FULL`)}</p>
+      <p className="whitespace-pre-line text-justify">
+        {t(`ITEMS.${i18nKey}.DESCRIPTION.FULL`)}
+      </p>
       {techIds.length !== 0 && (
         <div>
           <DialogTitle className="mt-8 font-medium uppercase text-gray-500">
@@ -37,14 +37,14 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
           </DialogTitle>
           <ul className="mt-2">
             {techIds.map((techId) => (
-              <li key={`${techId}ModalIcon`} className="ml-2 mt-1 flex items-baseline">
+              <li
+                key={`${techId}ModalIcon`}
+                className="ml-2 mt-1 flex items-baseline"
+              >
                 <TechIcon
                   techId={techId}
                   className="mr-2 size-5 rounded-sm"
-                  altIntlFn={(label) => t(
-                    'TECH_ICON_ALT',
-                    { techname: label },
-                  )}
+                  altIntlFn={(label) => t('TECH_ICON_ALT', { techname: label })}
                   withLabel
                 />
               </li>

@@ -1,11 +1,13 @@
 'use client';
 
 import Image, { StaticImageData } from 'next/image';
-import {
-  FC, ReactNode, useCallback, useState,
-} from 'react';
+import { FC, ReactNode, useCallback, useState } from 'react';
 import InfiniteScroll from 'react-photo-album/scroll';
-import { RenderImageContext, RenderImageProps, RowsPhotoAlbum } from 'react-photo-album';
+import {
+  RenderImageContext,
+  RenderImageProps,
+  RowsPhotoAlbum,
+} from 'react-photo-album';
 import Lightbox from 'yet-another-react-lightbox';
 
 import usePhotoFetcher from '../hooks/usePhotoFetcher';
@@ -39,8 +41,13 @@ type GenericPhotoGalleryProps = {
   epilogue?: ReactNode;
 };
 
-const GenericPhotoGallery: FC<GenericPhotoGalleryProps> = ({ photos, epilogue }) => {
-  const [lightboxPhotoIndex, setLightboxPhotoIndex] = useState<number | null>(null);
+const GenericPhotoGallery: FC<GenericPhotoGalleryProps> = ({
+  photos,
+  epilogue,
+}) => {
+  const [lightboxPhotoIndex, setLightboxPhotoIndex] = useState<number | null>(
+    null,
+  );
   const photoFetcher = usePhotoFetcher({ photos });
 
   const closeLightbox = useCallback(() => setLightboxPhotoIndex(null), []);
@@ -70,25 +77,36 @@ const GenericPhotoGallery: FC<GenericPhotoGalleryProps> = ({ photos, epilogue })
           breakpoints={[300, 600, 900]}
           sizes={{
             size: '1168px',
-            sizes: [{ viewport: '(max-width: 1200px)', size: 'calc(100vw - 32px)' }],
+            sizes: [
+              { viewport: '(max-width: 1200px)', size: 'calc(100vw - 32px)' },
+            ],
           }}
           componentsProps={{
             container: {
               style: {
-                marginBottom: (typeof window !== 'undefined' && window.innerWidth > 400) ? 15 : 10,
+                marginBottom:
+                  typeof window !== 'undefined' && window.innerWidth > 400
+                    ? 15
+                    : 10,
               },
             },
           }}
         />
       </InfiniteScroll>
       <Lightbox
-        open={Boolean(typeof lightboxPhotoIndex === 'number' && photos[lightboxPhotoIndex])}
+        open={Boolean(
+          typeof lightboxPhotoIndex === 'number' && photos[lightboxPhotoIndex],
+        )}
         close={() => closeLightbox()}
         index={lightboxPhotoIndex || 0}
         slides={photos}
         carousel={{ finite: true }}
         styles={{ root: { '--yarl__color_backdrop': 'rgba(0, 0, 0, .8)' } }}
-        controller={{ closeOnBackdropClick: true, closeOnPullUp: true, closeOnPullDown: true }}
+        controller={{
+          closeOnBackdropClick: true,
+          closeOnPullUp: true,
+          closeOnPullDown: true,
+        }}
       />
     </>
   );
