@@ -14,16 +14,14 @@ export const metadata: Metadata = {
   description: 'Online Resume & Portfolio',
 };
 
-const RootLayout = ({
+const RootLayout = async ({
   children,
-  params: {
-    lng,
-  },
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: WithLanguage;
+  params: Promise<WithLanguage>;
 }>) => (
-  <html lang={lng} dir={dir(lng)}>
+  <html lang={(await params).lng} dir={dir((await params).lng)}>
     <body>
       {/* Navbar was moved into clientComponent.tsx to achieve the change on scroll effect */}
       {children}
