@@ -12,20 +12,18 @@ export const generateStaticParams = async () => languages.map((lng) => ({ lng })
 
 export const metadata: Metadata = {
   title: 'Pablo Tor | Developer',
-  description: 'Azurro Gallery',
+  description: 'Azzurro Gallery',
 };
 
-const RootLayout = ({
+const RootLayout = async ({
   children,
-  params: {
-    lng,
-  },
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: WithLanguage;
-}>) => (
+  params: Promise<WithLanguage>;
+}>) =>  (
   <div className="mx-auto max-w-screen-xl overflow-x-hidden">
-    <Navbar lng={lng} />
+    <Navbar lng={(await params).lng} />
     <main id="content" className="max-h-screen-mobile overflow-scroll lg:ml-56 lg:max-h-fit lg:overflow-auto">
       {children}
     </main>
