@@ -24,23 +24,13 @@ const skills: SkillSet[] = [
   },
   {
     id: 'frameworks',
-    high: [
-      'nextjs',
-      'nestjs',
-      'react_native',
-    ],
+    high: ['nextjs', 'nestjs', 'react_native'],
     low: ['rails', 'django'],
   },
   {
     id: 'databases',
-    medium: [
-      'postgresql',
-      'leveldb',
-      'dynamodb',
-    ],
-    low: [
-      'enscribe',
-    ],
+    medium: ['postgresql', 'leveldb', 'dynamodb'],
+    low: ['enscribe'],
   },
   {
     id: 'libaries',
@@ -55,35 +45,16 @@ const skills: SkillSet[] = [
       'swagger',
       'i18next',
     ],
-    medium: [
-      'puppeteer',
-      'react_navigation',
-      'amplify',
-      'jest',
-    ],
+    medium: ['puppeteer', 'react_navigation', 'amplify', 'jest'],
   },
   {
     id: 'infra',
-    high: [
-      'vercel',
-    ],
-    medium: [
-      'aws',
-      'heroku',
-      'docker',
-      'terraform',
-      'travis',
-      'linux',
-    ],
+    high: ['vercel'],
+    medium: ['aws', 'heroku', 'docker', 'terraform', 'travis', 'linux'],
   },
   {
     id: 'others',
-    high: [
-      'base24',
-      'visa_vts',
-      'mcar_bnet',
-      'simpp',
-    ],
+    high: ['base24', 'visa_vts', 'mcar_bnet', 'simpp'],
     medium: [
       'cognito',
       'firebase',
@@ -96,34 +67,42 @@ const skills: SkillSet[] = [
   },
 ];
 
-const Skills: FC<WithLanguage> = (({ lng }) => {
+const Skills: FC<WithLanguage> = ({ lng }) => {
   const [selected, setSelected] = useState(0);
   const { t } = useTranslation(lng, ['common', 'skills']);
-  const enrichedSkills = useMemo(() => [{
-    id: 'all',
-    high: skills.flatMap(({ high }) => high).filter((skill) => skill),
-    medium: skills.flatMap(({ medium }) => medium).filter((skill) => skill),
-    low: skills.flatMap(({ low }) => low).filter((skill) => skill),
-  }, ...skills].map(
-    (skill, index) => ({
-      i18nKey: `CATEGORIES.${skill.id.toLocaleUpperCase()}`,
-      onSelect: () => setSelected(index),
-      ...skill,
-    }),
-  ), []);
+  const enrichedSkills = useMemo(
+    () =>
+      [
+        {
+          id: 'all',
+          high: skills.flatMap(({ high }) => high).filter((skill) => skill),
+          medium: skills
+            .flatMap(({ medium }) => medium)
+            .filter((skill) => skill),
+          low: skills.flatMap(({ low }) => low).filter((skill) => skill),
+        },
+        ...skills,
+      ].map((skill, index) => ({
+        i18nKey: `CATEGORIES.${skill.id.toLocaleUpperCase()}`,
+        onSelect: () => setSelected(index),
+        ...skill,
+      })),
+    [],
+  );
 
   return (
     <>
-      <h2 className="section-title gradient-a">
-        {t('SECTIONS.SKILLS')}
-      </h2>
-      <p className="subtitle">
-        {t('COMMENT', { ns: 'skills' })}
-      </p>
-      <Tabs selected={selected} namespace="skills" tabArray={enrichedSkills} lng={lng} />
+      <h2 className="section-title gradient-a">{t('SECTIONS.SKILLS')}</h2>
+      <p className="subtitle">{t('COMMENT', { ns: 'skills' })}</p>
+      <Tabs
+        selected={selected}
+        namespace="skills"
+        tabArray={enrichedSkills}
+        lng={lng}
+      />
       <SkillTable skills={enrichedSkills} selected={selected} lng={lng} />
     </>
   );
-});
+};
 
 export default Skills;

@@ -7,12 +7,16 @@ import { useTranslation } from '../../../i18n';
 import ChevronDownIcon from '../../components/icons/chevronDown';
 
 const GalleryNavbar: FC<WithLanguage> = async ({ lng }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng, 'common');
 
   return (
     <nav className="lg:fixed">
       <div id="navbar-mobile" className="relative z-10 lg:hidden">
-        <div id="navbar-mobile" className="relative z-20 mx-auto flex bg-white px-4 py-2 text-lg font-medium shadow sm:px-8">
+        <div
+          id="navbar-mobile"
+          className="relative z-20 mx-auto flex bg-white px-4 py-2 text-lg font-medium shadow sm:px-8"
+        >
           <Link
             href={`/${lng}`}
             className="group inline-flex w-full items-center rounded-md bg-white py-3 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -26,16 +30,17 @@ const GalleryNavbar: FC<WithLanguage> = async ({ lng }) => {
             </div>
             <div className="mx-auto font-bold sm:block">
               <span className="animate-switch-gradient bg-gradient-to-r bg-clip-text">
-                {t('FIRSTNAME')}
-                {' '}
-                {t('LASTNAME')}
+                {t('FIRSTNAME')} {t('LASTNAME')}
               </span>
             </div>
             <div className="w-1/5" />
           </Link>
         </div>
       </div>
-      <div id="navbar-desktop" className="mr-16 hidden h-screen flex-col justify-center px-8 lg:flex">
+      <div
+        id="navbar-desktop"
+        className="mr-16 hidden h-screen flex-col justify-center px-8 lg:flex"
+      >
         <div className="h-96">
           <div className="mx-auto text-2xl font-semibold sm:block">
             <span className="gradient-a animate-vercel-text-a bg-clip-text">

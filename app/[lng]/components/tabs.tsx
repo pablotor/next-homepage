@@ -1,6 +1,10 @@
 import { FC } from 'react';
 import {
-  Menu, MenuButton, MenuItem, MenuItems, Transition,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Transition,
 } from '@headlessui/react';
 
 import type { WithLanguage } from '../../i18n';
@@ -21,9 +25,7 @@ type TabsProps = {
   namespace: string;
 } & WithLanguage;
 
-const Tabs: FC<TabsProps> = ({
-  tabArray, selected, namespace, lng,
-}) => {
+const Tabs: FC<TabsProps> = ({ tabArray, selected, namespace, lng }) => {
   const { t } = useTranslation(lng, namespace);
   return (
     <div className="mt-8 flex items-baseline justify-between">
@@ -35,7 +37,10 @@ const Tabs: FC<TabsProps> = ({
                 <MenuButton
                   className={classNames(
                     open
-                      ? classNames('text-transparent bg-clip-text', 'gradient-a')
+                      ? classNames(
+                          'text-transparent bg-clip-text',
+                          'gradient-a',
+                        )
                       : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
                     'group inline-flex justify-center py-4 px-10 text-sm font-medium text-center border-b-2 transition-all',
                   )}
@@ -65,7 +70,10 @@ const Tabs: FC<TabsProps> = ({
                           type="button"
                           className={classNames(
                             selected === index
-                              ? classNames('text-transparent bg-clip-text', 'gradient-a')
+                              ? classNames(
+                                  'text-transparent bg-clip-text',
+                                  'gradient-a',
+                                )
                               : 'text-gray-500 hover:text-transparent bg-clip-text hover:bg-gradient-to-r from-purple-500 to-pink-700',
                             'flex w-full relative items-start py-2 pr-4 pl-2 font-medium cursor-pointer',
                           )}
@@ -74,7 +82,9 @@ const Tabs: FC<TabsProps> = ({
                           <div className="flex h-5 items-center">
                             <input
                               id={option.id}
-                              aria-describedby={t(`${option.i18nKey}.ARIA_DESCRIPTION`)}
+                              aria-describedby={t(
+                                `${option.i18nKey}.ARIA_DESCRIPTION`,
+                              )}
                               name={option.id}
                               type="radio"
                               checked={selected === index}
@@ -95,7 +105,10 @@ const Tabs: FC<TabsProps> = ({
             )}
           </Menu>
         </div>
-        <nav className="hidden border-b border-gray-200 lg:block" aria-labelledby="tab-navigation">
+        <nav
+          className="hidden border-b border-gray-200 lg:block"
+          aria-labelledby="tab-navigation"
+        >
           <div className="-mb-px flex" aria-label="Tab list" role="tablist">
             {tabArray.map((tab, index) => (
               <button
@@ -104,14 +117,17 @@ const Tabs: FC<TabsProps> = ({
                 role="tab"
                 className={classNames(
                   selected === index
-                    ? classNames('text-transparent bg-clip-text border-indigo-500', 'gradient-a')
+                    ? classNames(
+                        'text-transparent bg-clip-text border-indigo-500',
+                        'gradient-a',
+                      )
                     : 'text-gray-500 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-700 hover:border-purple-500',
                   'w-1/4 py-4 px-8 xl:px-10 text-center border-b-2 font-medium text-sm cursor-pointer transition-all',
                 )}
                 onClick={tab.onSelect}
                 aria-current={selected === index ? 'page' : undefined}
               >
-                {(t(tab.i18nKey))}
+                {t(tab.i18nKey)}
               </button>
             ))}
           </div>
