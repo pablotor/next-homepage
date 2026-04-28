@@ -1,6 +1,9 @@
 import { FC, Fragment, ReactElement } from 'react';
 import {
-  Dialog, DialogPanel, Transition, TransitionChild,
+  Dialog,
+  DialogPanel,
+  Transition,
+  TransitionChild,
 } from '@headlessui/react';
 
 type ModalProps = {
@@ -11,13 +14,17 @@ type ModalProps = {
 };
 
 const Modal: FC<ModalProps> = ({
-  content, isOpen, onClose, // className,
+  content,
+  isOpen,
+  onClose, // className,
 }) => (
-  <Transition
-    show={isOpen}
-    as={Fragment}
-  >
-    <Dialog open={isOpen} as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={onClose}>
+  <Transition show={isOpen} as={Fragment}>
+    <Dialog
+      open={isOpen}
+      as="div"
+      className="fixed inset-0 z-10 overflow-y-auto"
+      onClose={onClose}
+    >
       <TransitionChild
         as={Fragment}
         enter="ease-out duration-300"
@@ -31,7 +38,10 @@ const Modal: FC<ModalProps> = ({
       </TransitionChild>
       <div className="flex min-h-screen items-end justify-center px-4 pb-20 pt-4 text-center sm:block sm:p-0">
         {/* This element is to trick the browser into centering the modal contents. */}
-        <span className="hidden sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true">
+        <span
+          className="hidden sm:inline-block sm:h-screen sm:align-middle"
+          aria-hidden="true"
+        >
           &#8203;
         </span>
         <TransitionChild

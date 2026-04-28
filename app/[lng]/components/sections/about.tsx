@@ -8,6 +8,7 @@ import { useTranslation } from '../../../i18n';
 import EmailLink from '../emailLink';
 
 const About: FC<WithLanguage> = async ({ lng }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng, ['about', 'common']);
   return (
     <div className="relative">

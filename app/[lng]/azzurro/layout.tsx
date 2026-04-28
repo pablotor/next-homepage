@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
-import { dir } from 'i18next';
 
-import type { WithLanguage } from '../i18n';
+import type { WithLanguage } from '../../i18n';
 
-import './globals.css';
+import '../globals.css';
+import Navbar from './components/galleryNavbar';
 
 const languages = ['en', 'es'] as const;
 
@@ -12,7 +12,7 @@ export const generateStaticParams = async () =>
 
 export const metadata: Metadata = {
   title: 'Pablo Tor | Developer',
-  description: 'Online Resume & Portfolio',
+  description: 'Azzurro Gallery',
 };
 
 const RootLayout = async ({
@@ -22,12 +22,15 @@ const RootLayout = async ({
   children: React.ReactNode;
   params: Promise<WithLanguage>;
 }>) => (
-  <html lang={(await params).lng} dir={dir((await params).lng)}>
-    <body>
-      {/* Navbar was moved into clientComponent.tsx to achieve the change on scroll effect */}
+  <div className="mx-auto max-w-screen-xl overflow-x-hidden">
+    <Navbar lng={(await params).lng} />
+    <main
+      id="content"
+      className="max-h-screen-mobile overflow-scroll lg:ml-56 lg:max-h-fit lg:overflow-auto"
+    >
       {children}
-    </body>
-  </html>
+    </main>
+  </div>
 );
 
 export default RootLayout;

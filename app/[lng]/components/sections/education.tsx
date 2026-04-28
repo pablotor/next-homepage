@@ -6,12 +6,7 @@ import type { SectionData } from '../position';
 import { useTranslation } from '../../../i18n';
 import Position from '../position';
 
-const studies = [
-  'fiuba',
-  'cbc',
-  'enspa',
-  'fuce',
-];
+const studies = ['fiuba', 'cbc', 'enspa', 'fuce'];
 
 const sections: SectionData[] = [
   {
@@ -22,12 +17,11 @@ const sections: SectionData[] = [
 ];
 
 const Education: FC<WithLanguage> = async ({ lng }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng, ['common', 'education']);
   return (
     <>
-      <h2 className="section-title gradient-a">
-        {t('SECTIONS.EDUCATION')}
-      </h2>
+      <h2 className="section-title gradient-a">{t('SECTIONS.EDUCATION')}</h2>
       {studies.map((study) => (
         <Position
           i18nKey={study}

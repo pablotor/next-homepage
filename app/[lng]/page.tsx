@@ -11,16 +11,18 @@ import Education from './components/sections/education';
 import About from './components/sections/about';
 import ClientComponent from './clientComponent';
 
-const Home: NextPage<{ params: WithLanguage }> = ({ params: { lng } }) => (
+const Home: NextPage<{ params: Promise<WithLanguage> }> = async ({
+  params,
+}) => (
   <div className="mx-auto max-w-screen-xl overflow-x-hidden lg:flex">
-    <ClientComponent lng={lng}>
-      <Hero lng={lng} />
-      <Experience lng={lng} />
-      <Projects lng={lng} />
-      <Skills lng={lng} />
-      <Portfolio lng={lng} />
-      <Education lng={lng} />
-      <About lng={lng} />
+    <ClientComponent lng={(await params).lng}>
+      <Hero lng={(await params).lng} />
+      <Experience lng={(await params).lng} />
+      <Projects lng={(await params).lng} />
+      <Skills lng={(await params).lng} />
+      <Portfolio lng={(await params).lng} />
+      <Education lng={(await params).lng} />
+      <About lng={(await params).lng} />
     </ClientComponent>
   </div>
 );

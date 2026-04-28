@@ -12,7 +12,11 @@ type SkillItemProps = {
   skillArray?: (string | undefined)[];
 } & WithLanguage;
 
-export const SkillItem: FC<SkillItemProps> = ({ expertise, skillArray, lng }) => {
+export const SkillItem: FC<SkillItemProps> = ({
+  expertise,
+  skillArray,
+  lng,
+}) => {
   const { t } = useTranslation(lng, 'skills');
   return (
     <div
@@ -31,17 +35,15 @@ export const SkillItem: FC<SkillItemProps> = ({ expertise, skillArray, lng }) =>
       </div>
       <div>
         <p className="leading-8 tracking-widest">
-          {skillArray?.flatMap(
-            (id, index) => ([
-              <span
-                key={id}
-                className="gradient-a cursor-default whitespace-nowrap bg-clip-text leading-8 tracking-normal transition-all ease-in-out hover:text-xl hover:leading-4 hover:text-transparent"
-              >
-                {t(`SKILLS.${id?.toLocaleUpperCase()}`)}
-              </span>,
-              index === skillArray.length - 1 ? '.' : ',  ',
-            ]),
-          )}
+          {skillArray?.flatMap((id, index) => [
+            <span
+              key={id}
+              className="gradient-a cursor-default whitespace-nowrap bg-clip-text leading-8 tracking-normal transition-all ease-in-out hover:text-xl hover:leading-4 hover:text-transparent"
+            >
+              {t(`SKILLS.${id?.toLocaleUpperCase()}`)}
+            </span>,
+            index === skillArray.length - 1 ? '.' : ',  ',
+          ])}
         </p>
       </div>
     </div>

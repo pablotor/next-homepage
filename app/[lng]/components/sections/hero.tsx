@@ -14,7 +14,8 @@ const socialMedia = [
     Icon: LinkedIn,
     label: 'LinkedIn',
     link: 'https://www.linkedin.com/in/pablotor',
-  }, {
+  },
+  {
     Icon: Github,
     label: 'Github',
     link: 'https://github.com/pablotor',
@@ -22,6 +23,7 @@ const socialMedia = [
 ];
 
 const Hero: FC<WithLanguage> = async ({ lng }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng, ['hero', 'common']);
   return (
     <>

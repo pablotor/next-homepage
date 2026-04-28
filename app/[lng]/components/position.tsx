@@ -22,14 +22,26 @@ type PositionProps = {
 } & WithLanguage;
 
 const Position: FC<PositionProps> = async ({
-  i18nKey, namespace, sections, includeSecondary, highlight = 'a', lng, interpolationComponents,
+  i18nKey,
+  namespace,
+  sections,
+  includeSecondary,
+  highlight = 'a',
+  lng,
+  interpolationComponents,
 }) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng, namespace);
   const formatKey = (key: string) => `${i18nKey.toLocaleUpperCase()}.${key}`;
   return (
     <div className="py-4">
       {/* Main title (highlighted) */}
-      <h3 className={classNames(`highlight-${highlight}`, 'bg-clip-text text-xl font-medium')}>
+      <h3
+        className={classNames(
+          `highlight-${highlight}`,
+          'bg-clip-text text-xl font-medium',
+        )}
+      >
         <Trans
           t={t}
           i18nKey={formatKey('HIGHLIGHTED')}
@@ -38,18 +50,14 @@ const Position: FC<PositionProps> = async ({
       </h3>
       {/* Subtitle (black) */}
       <div className="flex flex-col-reverse sm:w-full sm:flex-row sm:justify-between">
-        <p className="text-xl">
-          {t(formatKey('TITLE'))}
-        </p>
+        <p className="text-xl">{t(formatKey('TITLE'))}</p>
         <p className="text-lg font-light text-gray-700 sm:text-xl">
           {t(formatKey('DATE'))}
         </p>
       </div>
       {/* Subtitle (grey) */}
       {includeSecondary && (
-        <p className="text-lg text-gray-700">
-          {t(formatKey('SECONDARY'))}
-        </p>
+        <p className="text-lg text-gray-700">{t(formatKey('SECONDARY'))}</p>
       )}
       {sections.map((section) => {
         const sectionI18nKey = section.id.toLocaleUpperCase();
@@ -62,16 +70,18 @@ const Position: FC<PositionProps> = async ({
             )}
             {section.contentType === 'list' ? (
               <ul>
-                {(t(formatKey(sectionI18nKey), { returnObjects: true }) as string[]).map(
-                  (element) => (
-                    <li key={element}>
-                      <Trans
-                        i18nKey={element}
-                        components={interpolationComponents}
-                      />
-                    </li>
-                  ),
-                )}
+                {(
+                  t(formatKey(sectionI18nKey), {
+                    returnObjects: true,
+                  }) as string[]
+                ).map((element) => (
+                  <li key={element}>
+                    <Trans
+                      i18nKey={element}
+                      components={interpolationComponents}
+                    />
+                  </li>
+                ))}
               </ul>
             ) : (
               <p>
