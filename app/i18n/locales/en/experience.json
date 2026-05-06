@@ -1,39 +1,107 @@
 {
   "COMMENT": "Let's go over my work...",
-  "SECTIONS": {
-    "RESPONSIBILITIES": "Responsibilities",
-    "PROJECTS": "Main projects"
-  },
-  "WYE": {
-    "HIGHLIGHTED": "WyeWorks",
-    "TITLE": "Sr Software Engineer",
-    "SECONDARY": "React & NodeJS | TypeScript",
-    "DATE": "May 2022 - Jun 2023",
-    "RESPONSIBILITIES": ["Software architecture and fullstack development for WyeWorks clients."],
-    "PROJECTS": ["ClearSession platform - Health startup based in the US"]
-  },
-  "WIBSON": {
-    "HIGHLIGHTED": "Wibson (now illow)",
-    "TITLE": "Sr Software Engineer",
-    "SECONDARY": "React Native, React & NodeJS | JavaScript & TypeScript",
-    "DATE": "Ago 2020 - Abr 2022",
-    "RESPONSIBILITIES": ["Software architecture, fullstack development and infrastructure support for Wibson products."],
-    "PROJECTS": ["Wibson Privacy Platform (now illow platform) - <ai>illow.io</ai>", "Wibson App (deprecated)"]
-  },
-  "FIRST_DATA": {
-    "HIGHLIGHTED": "First Data",
-    "TITLE": "Sr BASE24 Classic Analyst",
-    "SECONDARY": "BASE24 Classic - First Vision Platform | TAL & COBOL",
-    "DATE": "Ago 2014 - Mar 2019",
-    "RESPONSIBILITIES": ["Platform leader for credit issuing projects.", "Client contact point for Bancolombia, Grupo Aval and Grupo Éxito, Colombia.","e2e solutions, including design, development, testing, certification, deployment and monitoring."],
-    "PROJECTS": ["Visa Contactless certification for Banco de Bogotá - Project leader", "TUYA credit portfolio migration - Project Leader", "Bancolombia prepaid launch - Project Leader", "Bancolombia credit portfolio migration - Platform analyst"]
-  },
-  "CONEXIA": {
-    "HIGHLIGHTED": "Conexia",
-    "TITLE": "IT Analyst",
-    "SECONDARY": "Ubuntu Server, Windows Server, Networking & Telecommunications",
-    "DATE": "Sep 2012 - Dic 2013",
-    "RESPONSIBILITIES": ["Level I and II IT support."],
-    "PROJECTS": ["Standardization of desktop computers", "Back-up and recovery of critical servers"]
-  }
+  "SECTIONS": [
+    {
+      "KEY": "RESPONSIBILITIES",
+      "LABEL": "Responsibilities"
+    },
+    { "KEY": "PROJECTS", "LABEL": "Main projects" }
+  ],
+  "ITEMS": [
+    {
+      "KEY": "ptp",
+      "HIGHLIGHTED": "PabloTor Platform",
+      "TITLE": "Founder",
+      "SECONDARY": "NextJS & NestJS | React & NodeJS | TypeScript",
+      "DATE": "Nov 2025 - Present",
+      "RESPONSIBILITIES": [
+        "Engineered a platform that provides start-ups with a solid base and allows them to jump directly into building features, saving engineering time and money without sacrificing security and best practices. Key features include:",
+        "- Modular system that allows a high level of personalization. Options include different auth solutions, SQL and NoSQL databases, and much more!",
+        "- Well documented processes, allowing both developers and AI agents to expand it ensuring consistency and scalability",
+        "- Security first approach. Best practices including an authenticated by default API, CORS imlpemented by default",
+        "- AI first platform. Engineered to be expanded using AI agents"
+      ]
+    },
+    {
+      "KEY": "mhp",
+      "HIGHLIGHTED": "My Home Pathway",
+      "TITLE": "Tech Lead",
+      "SECONDARY": "Banking (US) - NextJS, NestJS & Prisma | React, NodeJS & Postgres | TypeScript",
+      "DATE": "Mar 2025 - Oct 2025",
+      "RESPONSIBILITIES": [
+        "Directed a comprehensive platform overhaul to improve quality, scalability and maintainability. Key initiatives included:",
+        "- Migrating our info provider, which improved our update rate by 4",
+        "- Consolidating business logic by unifying multiple calculation sources into a single, well-documented core process",
+        "- Strengthening the platform security by implementing the secure by default strategy",
+        "- Optimizing database performance through query refactoring, duplicate elimination, and strategic batching",
+        "- Establishing a consistent UI by standardizing components and styles"
+      ],
+      "PROJECTS": [
+        "My Home Pathway: a platform aimed to help people from marginalized communities to access more and better loans, by helping them to build their credit score"
+      ]
+    },
+    {
+      "KEY": "ds",
+      "HIGHLIGHTED": "Digital Shores | Digital Marketing",
+      "TITLE": "Co-Founder",
+      "SECONDARY": "WordPress",
+      "DATE": "Jul 2023 - Mar 2025",
+      "RESPONSIBILITIES": [
+        "Started a family-run start-up that offers web design, web development, and strategy for self-employed people and entrepreneurs"
+      ]
+    },
+    {
+      "KEY": "cs",
+      "HIGHLIGHTED": "WyeWorks | Clear Session Health",
+      "TITLE": "Team Leader",
+      "SECONDARY": "Software Factory (UY) | Healthcare (US) - React (NextJS), NodeJS (NestJS) & Postgres (TypeORM) | TypeScript",
+      "DATE": "May 2022 - Jun 2023",
+      "RESPONSIBILITIES": [
+        "Growed the Clear Session platform from scratch into a viable product. Key initiatives included:",
+        "- Consolidating the engineering team, improving its efficiency and communication towards the client",
+        "- Designing and developing new features like the Treatment Roadmap",
+        "- Introducing real time Speech to Text and Natural Language recognition by integrating the Google Cloud platform",
+        "- Standardizing the database, allowing us to take fully advantage or TypeORM"
+      ],
+      "PROJECTS": [
+        "ClearSession Health: a platform aimed to asist patients undergoing a medical treatment by summarizing their doctor's instructions into a graphical and interactive experience"
+      ]
+    },
+    {
+      "KEY": "wibson",
+      "HIGHLIGHTED": "Illow",
+      "TITLE": "Founding Engineer",
+      "SECONDARY": "React Native, React, NodeJS (express) & DynamoDB | JavaScript & TypeScript",
+      "DATE": "Ago 2020 - Abr 2022",
+      "RESPONSIBILITIES": [
+        "Expanded Wibson App features, and growed the Illow Cookie Banner from scratch. Key responsibilities included:",
+        "- Designing and developing new features like the Private Policy Creator",
+        "- Translating the cookie banner to vanilla HTML and CSS, reducing its size by 8 times",
+        "- Designing and implementing the first version of the Cookie Banner API"
+      ],
+      "PROJECTS": [
+        "Illow Cookie Banner - <ai>illow.io</ai>: an all in one tool for companies to comply with data regulations like GDPR",
+        "Wibson App (deprecated): a platform that seeks to empower their users regain control of their digital footprint, by discovering which companies have their data and automatizing the requests for data deletion"
+      ]
+    },
+    {
+      "KEY": "fd",
+      "HIGHLIGHTED": "Fiserv",
+      "TITLE": "Tech Lead",
+      "SECONDARY": "Core Banking | BASE24 Classic | First Vision platform",
+      "DATE": "Ago 2014 - Mar 2019",
+      "RESPONSIBILITIES": [
+        "My first professional gig in development saw me grow from Jr Analyst to Project Lead in less than three years, securing three high impact projects and several minor ones. For my performance in two of them, I was awarded the employee of the quarter recognition in 2017. Key responsibilities included:",
+        "- e2e solution design for credit issuing projects, including development, testing, certification, deployment and monitoring.",
+        "- Client contact point for Colombia, which included 3 of the 5 biggest banks in the country",
+        "- Support and certifications for client and third parties developments"
+      ],
+      "PROJECTS": [
+        "Tech certifications - Tech Lead: development and certification of new technologies like contactless, MCard SecureCode/Visa 3DS and tokenization for several finantial institutions",
+        "TUYA Credit Portfolio migration - Tech Lead: migration of Tuya card authorization from a local network to the First Vision platform. The project involved the Tuya team, two card schemes and two regional networks. The migration added 2M new cardholders to our platform",
+        "Bancolombia Prepaid launch - Project Leader: launch of a new product line for Bancolombia. Required development for prepaid cards, plus the certification for this new type of product of all involved channels",
+        "Bancolombia Credit Portfolio migration - Platform Analyst: migration of Bancolombia credit authorization from a local network to the First Vision platform. This was a two years long project finished on schedule with no outstanding issue, involving the biggest bank in Colombia, three card schemes and two regional networks. The addition of the bank's 4M cardholders multiplied our reach in the region by 4"
+      ]
+    }
+  ]
 }
