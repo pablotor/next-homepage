@@ -30,10 +30,46 @@ const Experience: FC<WithLanguage> = async ({ lng }) => {
             sections={experienceSections}
             includeSecondary
             interpolationComponents={{
-              ai: (
+              ptp: (
+                <Link
+                  href="https://ptp.pablotor.dev"
+                  className="gradient-a hover:gradient-b bg-clip-text text-transparent transition-colors"
+                />
+              ),
+              mhp: (
+                <Link
+                  href="https://myhomepathway.com"
+                  className="gradient-a hover:gradient-b bg-clip-text text-transparent transition-colors"
+                />
+              ),
+              illow: (
                 <Link
                   href="https://illow.io"
-                  className="gradient-b bg-clip-text transition-colors hover:text-transparent"
+                  className="gradient-a hover:gradient-b bg-clip-text text-transparent transition-colors"
+                />
+              ),
+              delicate: (
+                <Link
+                  href="https://delicate-music.de"
+                  className="gradient-a hover:gradient-b bg-clip-text text-transparent transition-colors"
+                />
+              ),
+              flo: (
+                <Link
+                  href="https://florianfederl.de"
+                  className="gradient-a hover:gradient-b bg-clip-text text-transparent transition-colors"
+                />
+              ),
+              elektro: (
+                <Link
+                  href="https://schuller-elektro.com"
+                  className="gradient-a hover:gradient-b bg-clip-text text-transparent transition-colors"
+                />
+              ),
+              cs: (
+                <Link
+                  href="https://clearsessionhealth.com"
+                  className="gradient-a hover:gradient-b bg-clip-text text-transparent transition-colors"
                 />
               ),
               ad: (

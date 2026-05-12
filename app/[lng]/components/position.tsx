@@ -85,7 +85,10 @@ const Position: FC<PositionProps> = async ({
           {section.LABEL && (
             <h4 className="mt-1 font-medium">{section.LABEL}</h4>
           )}
-          <PositionItemContent content={content} />
+          <PositionItemContent
+            content={content}
+            interpolationComponents={interpolationComponents}
+          />
         </div>
       );
     })}

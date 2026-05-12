@@ -1,4 +1,4 @@
-/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -35,10 +35,12 @@ const config: Config = {
             color: 'transparent',
           },
           '0%, 37%': {
-            'background-image': 'linear-gradient(to right, #3b82f6  0%, #4338ca 100%)',
+            'background-image':
+              'linear-gradient(to right, #3b82f6  0%, #4338ca 100%)',
           },
           '50%, 87%': {
-            'background-image': 'linear-gradient(to right, #a855f7  0%, #be185d 100%)',
+            'background-image':
+              'linear-gradient(to right, #a855f7  0%, #be185d 100%)',
           },
         },
         'section-title': {
@@ -72,8 +74,6 @@ const config: Config = {
       opacity: ['disabled'],
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
+  plugins: [require('@tailwindcss/forms')],
 };
 export default config;
