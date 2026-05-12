@@ -4,7 +4,7 @@ import { Trans } from 'react-i18next/TransWithoutContext';
 
 import type { WithLanguage } from '../../../i18n';
 
-import { useTranslation } from '../../../i18n';
+import { getServerSideTranslations } from '../../../i18n';
 import LinkedIn from '../icons/linkedIn';
 import Github from '../icons/github';
 import EmailLink from '../emailLink';
@@ -23,8 +23,7 @@ const socialMedia = [
 ];
 
 const Hero: FC<WithLanguage> = async ({ lng }) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation(lng, ['hero', 'common']);
+  const { t } = await getServerSideTranslations(lng, ['hero', 'common']);
   return (
     <>
       <div className="mb-8 sm:mb-6">

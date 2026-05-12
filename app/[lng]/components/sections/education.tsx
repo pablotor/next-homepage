@@ -1,35 +1,26 @@
 import { FC } from 'react';
 
 import type { WithLanguage } from '../../../i18n';
-import type { SectionData } from '../position';
+import type { PositionItem } from '../position';
 
-import { useTranslation } from '../../../i18n';
+import { getServerSideTranslations } from '../../../i18n';
 import Position from '../position';
 
-const studies = ['fiuba', 'cbc', 'enspa', 'fuce'];
-
-const sections: SectionData[] = [
-  {
-    id: 'description',
-    contentType: 'text',
-    showTitle: false,
-  },
-];
-
 const Education: FC<WithLanguage> = async ({ lng }) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation(lng, ['common', 'education']);
+  const { t } = await getServerSideTranslations(lng, ['common', 'education']);
+  const educationItems = t('ITEMS', {
+    returnObjects: true,
+    ns: 'education',
+  }) as PositionItem[];
   return (
     <>
       <h2 className="section-title gradient-a">{t('SECTIONS.EDUCATION')}</h2>
-      {studies.map((study) => (
+      {educationItems.map((item) => (
         <Position
-          i18nKey={study}
-          namespace="education"
-          key={study}
-          sections={sections}
+          key={item.TITLE}
+          position={item}
+          includeSecondary
           highlight="a"
-          lng={lng}
         />
       ))}
     </>

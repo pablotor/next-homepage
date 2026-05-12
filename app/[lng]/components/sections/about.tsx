@@ -4,12 +4,11 @@ import { Trans } from 'react-i18next/TransWithoutContext';
 
 import type { WithLanguage } from '../../../i18n';
 
-import { useTranslation } from '../../../i18n';
+import { getServerSideTranslations } from '../../../i18n';
 import EmailLink from '../emailLink';
 
 const About: FC<WithLanguage> = async ({ lng }) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation(lng, ['about', 'common']);
+  const { t } = await getServerSideTranslations(lng, ['about', 'common']);
   return (
     <div className="relative">
       <div className="lg:absolute lg:inset-0">

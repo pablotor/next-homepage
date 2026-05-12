@@ -1,18 +1,32 @@
 {
-  "FIUBA.HIGHLIGHTED": "Facultad de Ingeniería | UBA",
-  "FIUBA.TITLE": "Ingeniería en informática",
-  "FIUBA.DATE": "2009 - 2016",
-  "FIUBA.DESCRIPTION": "Incompleto",
-  "CBC.HIGHLIGHTED": "Ciclo Básico Común",
-  "CBC.TITLE": "Ingreso a ingeniería",
-  "CBC.DATE": "2008",
-  "CBC.DESCRIPTION": "",
-  "ENSPA.HIGHLIGHTED": "EEM N°18 - ENSPA",
-  "ENSPA.TITLE": "Bachiller en Cs Exactas y Naturales",
-  "ENSPA.DATE": "2005 - 2008",
-  "ENSPA.DESCRIPTION": "",
-  "FUCE.HIGHLIGHTED": "Fundación FUCE",
-  "FUCE.TITLE": "Armado, mantenimiento y reparación de Computadoras y Redes",
-  "FUCE.DATE": "2006",
-  "FUCE.DESCRIPTION": ""
+  "ITEMS": [
+    {
+      "KEY": "fiuba",
+      "HIGHLIGHTED": "Facultad de Ingeniería | UBA",
+      "TITLE": "Ingeniería en informática",
+      "DATE": "2009 - 2016",
+      "DESCRIPTION": "Incompleto"
+    },
+    {
+      "KEY": "cbc",
+      "HIGHLIGHTED": "Ciclo Básico Común",
+      "TITLE": "Ingreso a ingeniería",
+      "DATE": "2008",
+      "DESCRIPTION": ""
+    },
+    {
+      "KEY": "enspa",
+      "HIGHLIGHTED": "EEM N°18 - ENSPA",
+      "TITLE": "Bachiller en Cs Exactas y Naturales",
+      "DATE": "2005 - 2008",
+      "DESCRIPTION": ""
+    },
+    {
+      "KEY": "fuce",
+      "HIGHLIGHTED": "Fundación FUCE",
+      "TITLE": "Armado, mantenimiento y reparación de Computadoras y Redes",
+      "DATE": "2006",
+      "DESCRIPTION": ""
+    }
+  ]
 }

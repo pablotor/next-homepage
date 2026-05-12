@@ -21,7 +21,7 @@ const initI18next = async (lng: string, ns: Namespace) => {
   return i18nInstance;
 };
 
-export const useTranslation = async (
+export const getServerSideTranslations = async (
   lng: string,
   ns: Namespace,
   options: ReactOptions = {},

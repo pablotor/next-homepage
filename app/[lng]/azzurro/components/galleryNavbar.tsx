@@ -3,12 +3,11 @@ import { FC } from 'react';
 
 import type { WithLanguage } from '../../../i18n';
 
-import { useTranslation } from '../../../i18n';
+import { getServerSideTranslations } from '../../../i18n';
 import ChevronDownIcon from '../../components/icons/chevronDown';
 
 const GalleryNavbar: FC<WithLanguage> = async ({ lng }) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation(lng, 'common');
+  const { t } = await getServerSideTranslations(lng, 'common');
 
   return (
     <nav className="lg:fixed">

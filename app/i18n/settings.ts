@@ -9,6 +9,9 @@ export const getOptions = (lng = fallbackLng, ns: Namespace = defaultNS) => ({
   // debug: true,
   supportedLngs: languages,
   fallbackLng,
+  interpolation: {
+    alwaysFormat: true, // set alwaysFormat to true
+  },
   lng,
   fallbackNS: defaultNS,
   defaultNS,

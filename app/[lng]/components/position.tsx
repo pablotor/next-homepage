@@ -1,102 +1,98 @@
 import { FC, ReactElement } from 'react';
 import { Trans } from 'react-i18next/TransWithoutContext';
 
-import type { WithLanguage } from '../../i18n';
-
-import { useTranslation } from '../../i18n';
 import classNames from '../utils/classNames';
 
-export type SectionData = {
-  id: string;
-  contentType: 'text' | 'list';
-  showTitle?: boolean;
+export type PositionItem = {
+  KEY: string;
+  HIGHLIGHTED: string;
+  TITLE: string;
+  SECONDARY: string;
+  DATE: string;
+  [SECTIONS: string]: string | string[];
+};
+
+type PositionItemContentProps = {
+  content: string | string[];
+  interpolationComponents?: Record<string, ReactElement>;
+};
+
+const PositionItemContent: FC<PositionItemContentProps> = ({
+  content,
+  interpolationComponents,
+}) => {
+  const isList = Array.isArray(content);
+  return isList ? (
+    <ul>
+      {content.map((listItem) => (
+        <li key={listItem}>
+          <Trans i18nKey={listItem} components={interpolationComponents} />
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p>
+      <Trans i18nKey={content} components={interpolationComponents} />
+    </p>
+  );
 };
 
 type PositionProps = {
-  i18nKey: string;
-  namespace: string;
-  sections: SectionData[];
+  position: PositionItem;
+  sections?: { KEY: keyof PositionItem; LABEL?: string }[];
   includeSecondary?: boolean;
   highlight?: 'a' | 'b';
   interpolationComponents?: Record<string, ReactElement>;
-} & WithLanguage;
+};
 
 const Position: FC<PositionProps> = async ({
-  i18nKey,
-  namespace,
-  sections,
+  position,
+  sections = [{ KEY: 'DESCRIPTION' }],
   includeSecondary,
   highlight = 'a',
-  lng,
   interpolationComponents,
-}) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation(lng, namespace);
-  const formatKey = (key: string) => `${i18nKey.toLocaleUpperCase()}.${key}`;
-  return (
-    <div className="py-4">
-      {/* Main title (highlighted) */}
-      <h3
-        className={classNames(
-          `highlight-${highlight}`,
-          'bg-clip-text text-xl font-medium',
-        )}
-      >
-        <Trans
-          t={t}
-          i18nKey={formatKey('HIGHLIGHTED')}
-          components={interpolationComponents}
-        />
-      </h3>
-      {/* Subtitle (black) */}
-      <div className="flex flex-col-reverse sm:w-full sm:flex-row sm:justify-between">
-        <p className="text-xl">{t(formatKey('TITLE'))}</p>
-        <p className="text-lg font-light text-gray-700 sm:text-xl">
-          {t(formatKey('DATE'))}
-        </p>
-      </div>
-      {/* Subtitle (grey) */}
-      {includeSecondary && (
-        <p className="text-lg text-gray-700">{t(formatKey('SECONDARY'))}</p>
+}) => (
+  <div className="py-4">
+    {/* Main title (highlighted) */}
+    <h3
+      className={classNames(
+        `highlight-${highlight}`,
+        'bg-clip-text text-xl font-medium',
       )}
-      {sections.map((section) => {
-        const sectionI18nKey = section.id.toLocaleUpperCase();
-        return (
-          <div key={section.id}>
-            {section.showTitle && (
-              <h4 className="mt-1 font-medium">
-                {t(`SECTIONS.${sectionI18nKey}`)}
-              </h4>
-            )}
-            {section.contentType === 'list' ? (
-              <ul>
-                {(
-                  t(formatKey(sectionI18nKey), {
-                    returnObjects: true,
-                  }) as string[]
-                ).map((element) => (
-                  <li key={element}>
-                    <Trans
-                      i18nKey={element}
-                      components={interpolationComponents}
-                    />
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>
-                <Trans
-                  t={t}
-                  i18nKey={formatKey(sectionI18nKey)}
-                  components={interpolationComponents}
-                />
-              </p>
-            )}
-          </div>
-        );
-      })}
+    >
+      <Trans
+        i18nKey={position.HIGHLIGHTED}
+        components={interpolationComponents}
+      />
+    </h3>
+    {/* Subtitle (black) */}
+    <div className="flex flex-col-reverse sm:w-full sm:flex-row sm:justify-between">
+      <p className="text-xl">{position.TITLE}</p>
+      <p className="text-lg font-light text-gray-700 sm:text-xl">
+        {position?.DATE}
+      </p>
     </div>
-  );
-};
+    {/* Subtitle (grey) */}
+    {includeSecondary && (
+      <p className="text-lg text-gray-700">{position.SECONDARY}</p>
+    )}
+    {/* Sections - Maps to DESCRIPTION key if no sections are provided */}
+    {sections.map((section) => {
+      const content = position[section.KEY];
+      if (!content) return;
+      return (
+        <div key={`${position.KEY}-${section.KEY}`}>
+          {section.LABEL && (
+            <h4 className="mt-1 font-medium">{section.LABEL}</h4>
+          )}
+          <PositionItemContent
+            content={content}
+            interpolationComponents={interpolationComponents}
+          />
+        </div>
+      );
+    })}
+  </div>
+);
 
 export default Position;
