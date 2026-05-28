@@ -2,48 +2,31 @@ import { FC } from 'react';
 import Link from 'next/link';
 
 import type { WithLanguage } from '../../../i18n';
-import type { SectionData } from '../position';
 
-import { useTranslation } from '../../../i18n';
-import Position from '../position';
-
-const projects = ['azzurro', 'digital_shores', 'iib', 'bichito', 'abandon'];
-
-const sections: SectionData[] = [
-  {
-    id: 'description',
-    contentType: 'text',
-    showTitle: false,
-  },
-];
+import { getServerSideTranslations } from '../../../i18n';
+import Position, { PositionItem } from '../position';
 
 const Projects: FC<WithLanguage> = async ({ lng }) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation(lng, ['common', 'projects']);
+  const { t } = await getServerSideTranslations(lng, ['common', 'projects']);
+  const projectItems = t('ITEMS', {
+    returnObjects: true,
+    ns: 'projects',
+  }) as PositionItem[];
   return (
     <>
       <h2 className="section-title gradient-b">{t('SECTIONS.PROJECTS')}</h2>
       <p className="subtitle">{t('COMMENT', { ns: 'projects' })}</p>
-      {projects.map((project) => (
+      {projectItems.map((item) => (
         <Position
-          i18nKey={project}
-          namespace="projects"
-          key={project}
-          sections={sections}
-          highlight="a"
+          key={item.TITLE}
+          position={item}
           includeSecondary
-          lng={lng}
+          highlight="a"
           interpolationComponents={{
             aa: (
               <Link
                 href={`/${lng}/azzurro`}
                 className="gradient-a hover:gradient-b bg-clip-text text-transparent"
-              />
-            ),
-            ad: (
-              <Link
-                href="https://www.digital-shores.com"
-                className="gradient-b  bg-clip-text transition-all hover:text-transparent"
               />
             ),
           }}

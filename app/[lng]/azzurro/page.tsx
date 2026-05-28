@@ -1,6 +1,6 @@
 import type { NextPage } from 'next/types';
 
-import { useTranslation, type WithLanguage } from '../../i18n';
+import { getServerSideTranslations, type WithLanguage } from '../../i18n';
 import photos from './assets/photos';
 import SectionContainer from '../components/sectionContainer';
 import GenericPhotoGallery from './components/genericPhotoGallery';
@@ -8,8 +8,7 @@ import GenericPhotoGallery from './components/genericPhotoGallery';
 const Azzurro: NextPage<{ params: Promise<WithLanguage> }> = async ({
   params,
 }) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation((await params).lng, 'azzurro');
+  const { t } = await getServerSideTranslations((await params).lng, 'azzurro');
   return (
     <SectionContainer id="azzurro" verticalAllignment="start">
       <h2 className="section-title gradient-a">{t('TITLE')}</h2>

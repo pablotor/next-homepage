@@ -1,39 +1,118 @@
 {
   "COMMENT": "Let's go over my work...",
-  "SECTIONS": {
-    "RESPONSIBILITIES": "Responsibilities",
-    "PROJECTS": "Main projects"
-  },
-  "WYE": {
-    "HIGHLIGHTED": "WyeWorks",
-    "TITLE": "Sr Software Engineer",
-    "SECONDARY": "React & NodeJS | TypeScript",
-    "DATE": "May 2022 - Jun 2023",
-    "RESPONSIBILITIES": ["Software architecture and fullstack development for WyeWorks clients."],
-    "PROJECTS": ["ClearSession platform - Health startup based in the US"]
-  },
-  "WIBSON": {
-    "HIGHLIGHTED": "Wibson (now illow)",
-    "TITLE": "Sr Software Engineer",
-    "SECONDARY": "React Native, React & NodeJS | JavaScript & TypeScript",
-    "DATE": "Ago 2020 - Abr 2022",
-    "RESPONSIBILITIES": ["Software architecture, fullstack development and infrastructure support for Wibson products."],
-    "PROJECTS": ["Wibson Privacy Platform (now illow platform) - <ai>illow.io</ai>", "Wibson App (deprecated)"]
-  },
-  "FIRST_DATA": {
-    "HIGHLIGHTED": "First Data",
-    "TITLE": "Sr BASE24 Classic Analyst",
-    "SECONDARY": "BASE24 Classic - First Vision Platform | TAL & COBOL",
-    "DATE": "Ago 2014 - Mar 2019",
-    "RESPONSIBILITIES": ["Platform leader for credit issuing projects.", "Client contact point for Bancolombia, Grupo Aval and Grupo Éxito, Colombia.","e2e solutions, including design, development, testing, certification, deployment and monitoring."],
-    "PROJECTS": ["Visa Contactless certification for Banco de Bogotá - Project leader", "TUYA credit portfolio migration - Project Leader", "Bancolombia prepaid launch - Project Leader", "Bancolombia credit portfolio migration - Platform analyst"]
-  },
-  "CONEXIA": {
-    "HIGHLIGHTED": "Conexia",
-    "TITLE": "IT Analyst",
-    "SECONDARY": "Ubuntu Server, Windows Server, Networking & Telecommunications",
-    "DATE": "Sep 2012 - Dic 2013",
-    "RESPONSIBILITIES": ["Level I and II IT support."],
-    "PROJECTS": ["Standardization of desktop computers", "Back-up and recovery of critical servers"]
-  }
+  "SECTIONS": [
+    {
+      "KEY": "RESPONSIBILITIES",
+      "LABEL": "Responsibilities"
+    },
+    {
+      "KEY": "PROJECTS",
+      "LABEL": "Main projects"
+    }
+  ],
+  "ITEMS": [
+    {
+      "KEY": "ptp",
+      "HIGHLIGHTED": "<ptp>PabloTor Platform</ptp>",
+      "TITLE": "Founder",
+      "SECONDARY": "NextJS & NestJS | React & NodeJS | TypeScript",
+      "DATE": "Nov 2025 - Present",
+      "RESPONSIBILITIES": [
+        "Engineered a platform that provides startups with a ready-to-use foundation, enabling them to focus on building features instead of core infrastructure. This reduces development time and cost while maintaining security and best practices. Key features include:",
+        "• A modular architecture designed to provide a practical foundation for new projects, while remaining flexible to scale as needed",
+        "• Extensive customization support, including multiple authentication strategies and compatibility with both SQL and NoSQL databases",
+        "• Well-documented processes that enable developers and AI agents to extend the platform while maintaining consistency and scalability",
+        "• A security-first design, featuring a fully authenticated API and built-in CORS handling",
+        "• An AI-first architecture designed for seamless integration and expansion using AI agents"
+      ]
+    },
+    {
+      "KEY": "mhp",
+      "HIGHLIGHTED": "My Home Pathway",
+      "TITLE": "Tech Lead",
+      "SECONDARY": "Banking (US) | NextJS, NestJS & Prisma | React, NodeJS & Postgres | TypeScript",
+      "DATE": "Mar 2025 - Oct 2025",
+      "RESPONSIBILITIES": [
+        "Led a comprehensive platform overhaul to improve quality, scalability, and maintainability. Key initiatives included:",
+        "• Migrated the core data provider, increasing update frequency by 4x",
+        "• Consolidated business logic by unifying multiple calculation sources into a single, well-documented core process",
+        "• Strengthened platform security by adopting a secure-by-default architecture",
+        "• Reduced query load by 30% through query optimization, duplicate elimination, and strategic batching",
+        "• Established a consistent UI by standardizing components and styling"
+      ],
+      "PROJECTS": [
+        "<mhp>My Home Pathway:</mhp> A platform that helps people from marginalized communities access better loan opportunities by improving their credit scores"
+      ]
+    },
+    {
+      "KEY": "ds",
+      "HIGHLIGHTED": "Digital Shores - Digital Marketing",
+      "TITLE": "Co-Founder",
+      "SECONDARY": "WordPress",
+      "DATE": "Jul 2023 - Mar 2025",
+      "RESPONSIBILITIES": [
+        "Co-founded a family-run studio focused on web design, development, and digital strategy for self-employed professionals and entrepreneurs. Key initiatives included:",
+        "• Fostering a self-sufficient approach, enabling clients to manage and evolve their digital products independently",
+        "• Applying agile methodologies to deliver value early and iteratively across all client projects"
+      ],
+      "PROJECTS": [
+        "<delicate>delicate-music.de:</delicate> Sarah and Vivien are musicians based in Nuremberg, Germany, offering exclusive performances for private and corporate events. The website serves as a refined homage to their artistic identity and work.",
+        "<flo>florianfederl.de:</flo> Florian is an intimacy coordinator and combat choreographer based in Berlin, Germany. He has worked on productions for companies such as Netflix, Disney, and ZDF. The website reflects his bold yet grounded professional presence.",
+        "<elektro>schuller-elektro.com:</elektro> Daniel is an electrical engineer based in Munich, Germany, specializing in tailored solutions across electrical engineering, photovoltaics, smart home systems, and lighting technology. The website is designed with a clean, functional, and engineering-driven aesthetic."
+      ]
+    },
+    {
+      "KEY": "cs",
+      "HIGHLIGHTED": "WyeWorks | Clear Session Health",
+      "TITLE": "Team Leader",
+      "SECONDARY": "Healthcare (US) | NextJS, NestJS & Prisma | React, NodeJS & Postgres | TypeScript",
+      "DATE": "May 2022 - Jun 2023",
+      "RESPONSIBILITIES": [
+        "Grew the Clear Session platform from scratch into a viable product. Key initiatives included:",
+        "• Consolidating the engineering team, improving efficiency and communication with the client",
+        "• Designing and developing new features such as the Treatment Roadmap",
+        "• Introducing real-time speech-to-text and natural language recognition by integrating Google Cloud Platform",
+        "• Standardizing the database, allowing us to take full advantage of TypeORM"
+      ],
+      "PROJECTS": [
+        "<cs>ClearSession Health:</cs> a platform aimed at assisting patients undergoing medical treatment by summarizing doctors' instructions into a graphical and interactive experience"
+      ]
+    },
+    {
+      "KEY": "wibson",
+      "HIGHLIGHTED": "Illow",
+      "TITLE": "Founding Engineer",
+      "SECONDARY": "React Native, React, NodeJS (Express) & DynamoDB | JavaScript & TypeScript",
+      "DATE": "Aug 2020 - Apr 2022",
+      "RESPONSIBILITIES": [
+        "Expanded the Wibson App ecosystem and scaled the Illow Cookie Banner from an early-stage product into a production-ready solution. Key initiatives included:",
+        "• Designing and developing core features such as the Privacy Policy Creator",
+        "• Rebuilding the cookie banner in vanilla HTML and CSS, reducing bundle size by 8x and improving performance",
+        "• Designing and implementing the first version of the Cookie Banner API"
+      ],
+      "PROJECTS": [
+        "<illow>Illow Cookie Banner</illow>: an all-in-one platform that helps companies comply with data privacy regulations such as GDPR",
+        "Wibson App (deprecated): a mobile platform (Androind & iOS) designed to help users regain control of their digital footprint by identifying which companies hold their data and automating data deletion requests"
+      ]
+    },
+    {
+      "KEY": "fd",
+      "HIGHLIGHTED": "Fiserv",
+      "TITLE": "Tech Lead",
+      "SECONDARY": "Core Banking | BASE24 Classic | First Vision platform",
+      "DATE": "Aug 2014 - Mar 2019",
+      "RESPONSIBILITIES": [
+        "Early in my career, I progressed from Junior Analyst to Project Lead in under three years, delivering three high-impact projects alongside several smaller initiatives. I was recognized as Employee of the Quarter in 2017 for my contributions to two of these projects. Key responsibilities included:",
+        "• Leading end-to-end solution design for credit issuing systems, covering development, testing, certification, deployment, and production monitoring",
+        "• Serving as the primary client liaison for Colombia, supporting three of the five largest banks in the country",
+        "• Supporting and certifying client and third-party implementations across multiple financial systems"
+      ],
+      "PROJECTS": [
+        "Tech Certifications <i>as Tech Lead:</i> led the development and certification of technologies including contactless payments, Mastercard SecureCode/Visa 3DS, and tokenization for multiple financial institutions",
+        "TUYA Credit Portfolio Migration <i>as Tech Lead:</i> led the migration of Tuya card authorization from a local network to the First Vision platform, coordinating multiple stakeholders and onboarding 2M new cardholders",
+        "Bancolombia Prepaid Launch <i>as Project Leader:</i> led the launch of a new prepaid product line, including development and certification across all channels",
+        "Bancolombia Credit Portfolio Migration <i>as Platform Analyst:</i> contributed to a two-year migration project delivered on schedule with zero outstanding issues, involving Colombia's largest bank and expanding platform reach by 4x"
+      ]
+    }
+  ]
 }

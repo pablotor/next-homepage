@@ -1,39 +1,117 @@
 {
-  "COMMENT": "Repasemos los lugares donde trabajé...",
-  "SECTIONS": {
-    "RESPONSIBILITIES": "Responsabilidades",
-    "PROJECTS": "Proyectos principales"
-  },
-  "WYE": {
-    "HIGHLIGHTED": "WyeWorks",
-    "TITLE": "Ingeniero de Software sr",
-    "SECONDARY": "React & NodeJS | TypeScript",
-    "DATE": "May 2022 - Jun 2023",
-    "RESPONSIBILITIES": ["Arquitectura de software y desarrollo fullstack para los clientes de WyeWorks."],
-    "PROJECTS": ["Plataforma ClearSession - startup estadounidense con fines médicos"]
-  },
-  "WIBSON": {
-    "HIGHLIGHTED": "Wibson (ahora illow)",
-    "TITLE": "Ingeniero de Software sr",
-    "SECONDARY": "React Native, React & NodeJS | JavaScript & TypeScript",
-    "DATE": "Ago 2020 - April 2022",
-    "RESPONSIBILITIES": ["Arquitectura de software, desarrollo fullstack e infraestructura para los productos de Wibson."],
-    "PROJECTS": ["Wibson Privacy Platform (actualmente illow platform) - <ai>illow.io</ai>", "Wibson App para Android e iOS (obsoleta)"]
-  },
-  "FIRST_DATA": {
-    "HIGHLIGHTED": "First Data",
-    "TITLE": "Analista BASE24 Classic sr",
-    "SECONDARY": "BASE24 Classic - Plataforma First Vision  | TAL & COBOL ",
-    "DATE": "Ago 2014 - Nov 2018 ",
-    "RESPONSIBILITIES": ["Líder de plataforma para proyectos de emisión.", "Persona de contacto para los proyectos de emisión de Bancolombia, Grupo Aval y Grupo Éxito, Colombia.", "Soluciones e2e, incluyendo diseño, desarrollo, testeo, certificación, puesta en producción y monitoreo."],
-    "PROJECTS": ["Certificación Visa Contactless Banco de Bogotá - Líder de proyecto", "Migración de la catera TUYA crédito - Líder de proyecto", "Lanzamientos de tarjetas prepagas Bancolombia - Líder de proyecto", "Migración de la catera Bancolombia crédito - analista de plataforma"]
-  },
-  "CONEXIA": {
-    "HIGHLIGHTED": "Conexia",
-    "TITLE": "Analista de Infraestructura jr",
-    "SECONDARY": "Administración de servidores, Redes & Telecomunicaciones",
-    "DATE": "Sep 2012 - Dic 2013",
-    "RESPONSIBILITIES": ["Soporte de infraestructura niveles I y II."],
-    "PROJECTS": ["Estandarización de los equipos de trabajo", "Back-up y recuperación de servidores críticos"]
-  }
+  "COMMENT": "Repasemos mi experiencia...",
+  "SECTIONS": [
+    {
+      "KEY": "RESPONSIBILITIES",
+      "LABEL": "Responsabilidades"
+    },
+    {
+      "KEY": "PROJECTS",
+      "LABEL": "Proyectos principales"
+    }
+  ],
+  "ITEMS": [
+    {
+      "KEY": "ptp",
+      "HIGHLIGHTED": "PabloTor Platform",
+      "TITLE": "Fundador",
+      "SECONDARY": "NextJS & NestJS | React & NodeJS | TypeScript",
+      "DATE": "Nov 2025 - Presente",
+      "RESPONSIBILITIES": [
+        "Desarrollé una plataforma que proporciona a las startups una base lista para usar, permitiéndoles centrarse en la creación de funcionalidades en lugar de la infraestructura core. Esto reduce el tiempo y coste de desarrollo manteniendo seguridad y buenas prácticas. Características principales:",
+        "• Arquitectura modular que soporta una alta personalización, incluyendo múltiples métodos de autenticación y bases de datos SQL y NoSQL",
+        "• Procesos bien documentados que permiten a desarrolladores y agentes de IA extender la plataforma manteniendo consistencia y escalabilidad",
+        "• Diseño security-first, con una API completamente autenticada y gestión de CORS integrada",
+        "• Arquitectura AI-first diseñada para integración y expansión fluida mediante agentes de IA"
+      ]
+    },
+    {
+      "KEY": "mhp",
+      "HIGHLIGHTED": "My Home Pathway",
+      "TITLE": "Tech Lead",
+      "SECONDARY": "Banking (US) | NextJS, NestJS & Prisma | React, NodeJS & Postgres | TypeScript",
+      "DATE": "Mar 2025 - Oct 2025",
+      "RESPONSIBILITIES": [
+        "Lideré una reestructuración integral de la plataforma para mejorar calidad, escalabilidad y mantenibilidad. Iniciativas clave:",
+        "• Migración del proveedor de datos principal, aumentando la frecuencia de actualización en 4x",
+        "• Consolidación de la lógica de negocio unificando múltiples fuentes de cálculo en un único proceso core documentado",
+        "• Refuerzo de la seguridad de la plataforma mediante una arquitectura secure-by-default",
+        "• Reducción del 30% en carga de consultas mediante optimización, eliminación de duplicados y batching estratégico",
+        "• Estandarización de la UI mediante componentes y estilos consistentes"
+      ],
+      "PROJECTS": [
+        "<mhp>My Home Pathway:</mhp> Plataforma que ayuda a personas de comunidades marginadas a acceder a mejores oportunidades de crédito mediante la mejora de su historial crediticio"
+      ]
+    },
+    {
+      "KEY": "ds",
+      "HIGHLIGHTED": "Digital Shores | Digital Marketing",
+      "TITLE": "Co-Fundador",
+      "SECONDARY": "WordPress",
+      "DATE": "Jul 2023 - Mar 2025",
+      "RESPONSIBILITIES": [
+        "Co-fundé un estudio familiar enfocado en diseño web, desarrollo y estrategia digital para autónomos y emprendedores. Iniciativas clave:",
+        "• Fomento de una cultura autosuficiente, permitiendo a los clientes gestionar y evolucionar sus productos digitales de forma independiente",
+        "• Aplicación de metodologías ágiles para entregar valor de forma temprana e iterativa en todos los proyectos"
+      ],
+      "PROJECTS": [
+        "<delicate>delicate-music.de:</delicate> Sarah y Vivien son músicas con base en Núremberg, Alemania, que ofrecen conciertos exclusivos para eventos privados y corporativos. El sitio web es un homenaje refinado a su identidad artística y obra.",
+        "<flo>florianfederl.de:</flo> Florian es coordinador de intimidad y coreógrafo de combate con base en Berlín, Alemania. Ha trabajado en producciones para compañías como Netflix, Disney y ZDF. El sitio refleja su personalidad profesional, audaz y equilibrada.",
+        "<elektro>schuller-elektro.com:</elektro> Daniel es ingeniero eléctrico con base en Múnich, Alemania, especializado en soluciones a medida en ingeniería eléctrica, fotovoltaica, smart home y tecnología de iluminación. El sitio está diseñado con una estética limpia, funcional y orientada a la ingeniería."
+      ]
+    },
+    {
+      "KEY": "cs",
+      "HIGHLIGHTED": "WyeWorks | Clear Session Health",
+      "TITLE": "Team Leader",
+      "SECONDARY": "Healthcare (US) | NextJS, NestJS & Prisma | React, NodeJS & Postgres | TypeScript",
+      "DATE": "May 2022 - Jun 2023",
+      "RESPONSIBILITIES": [
+        "Crecí la plataforma Clear Session desde cero hasta convertirla en un producto viable. Iniciativas clave:",
+        "• Consolidación del equipo de ingeniería, mejorando eficiencia y comunicación con el cliente",
+        "• Diseño y desarrollo de nuevas funcionalidades como el Treatment Roadmap",
+        "• Introducción de speech-to-text en tiempo real y procesamiento de lenguaje natural mediante integración con Google Cloud Platform",
+        "• Estandarización de la base de datos, permitiendo aprovechar TypeORM al máximo"
+      ],
+      "PROJECTS": [
+        "<cs>ClearSession Health:</cs> plataforma diseñada para asistir a pacientes en tratamiento médico, transformando las instrucciones médicas en una experiencia visual e interactiva"
+      ]
+    },
+    {
+      "KEY": "wibson",
+      "HIGHLIGHTED": "Illow",
+      "TITLE": "Founding Engineer",
+      "SECONDARY": "React Native, React, NodeJS (Express) & DynamoDB | JavaScript & TypeScript",
+      "DATE": "Ago 2020 - Abr 2022",
+      "RESPONSIBILITIES": [
+        "Expandí la Wibson App y escalé Illow Cookie Banner desde un producto en etapa inicial hasta una solución lista para producción. Iniciativas clave:",
+        "• Diseño y desarrollo de funcionalidades core como el Privacy Policy Creator",
+        "• Reconstrucción del cookie banner utilizando HTML y CSS vanilla, reduciendo el tamaño del bundle en 8x y mejorando el rendimiento",
+        "• Diseño e implementación de la primera versión de la Cookie Banner API"
+      ],
+      "PROJECTS": [
+        "<illow>Illow Cookie Banner</illow>: plataforma all-in-one que ayuda a empresas a cumplir con regulaciones de privacidad de datos como GDPR",
+        "Wibson App (deprecated): plataforma móvil (Android & iOS) diseñada para ayudar a los usuarios a recuperar el control de su huella digital, identificando qué empresas poseen sus datos y automatizando solicitudes de eliminación de datos"
+      ]
+    },
+    {
+      "KEY": "fd",
+      "HIGHLIGHTED": "Fiserv",
+      "TITLE": "Tech Lead",
+      "SECONDARY": "Core Banking | BASE24 Classic | First Vision platform",
+      "DATE": "Ago 2014 - Mar 2019",
+      "RESPONSIBILITIES": [
+        "Al inicio de mi carrera, pasé de Junior Analyst a Project Lead en menos de tres años, entregando tres proyectos de alto impacto junto con varias iniciativas menores. Fui reconocido como Employee of the Quarter en 2017 por mi contribución en dos de estos proyectos. Responsabilidades clave:",
+        "• Diseño de soluciones end-to-end para sistemas de emisión de crédito, incluyendo desarrollo, testing, certificación, despliegue y monitoreo en producción",
+        "• Punto principal de contacto con clientes en Colombia, incluyendo tres de los cinco bancos más grandes del país",
+        "• Soporte y certificación de desarrollos de clientes y terceros en múltiples sistemas financieros"
+      ],
+      "PROJECTS": [
+        "Certificaciones técnicas <i>como Tech Lead:</i> desarrollo y certificación de tecnologías como pagos contactless, Mastercard SecureCode/Visa 3DS y tokenización para múltiples instituciones financieras",
+        "Migración del portafolio de crédito TUYA <i>como Tech Lead:</i> migración de autorización de tarjetas TUYA desde una red local a la plataforma First Vision, coordinando múltiples stakeholders e incorporando 2M de nuevos tarjetahabientes",
+        "Lanzamiento de tarjetas prepago Bancolombia <i>como Project Leader:</i> lanzamiento de una nueva línea de producto prepago, incluyendo desarrollo y certificación en todos los canales",
+        "Migración del portafolio de crédito Bancolombia <i>como Platform Analyst:</i> contribución a una migración de dos años entregada a tiempo y sin incidencias pendientes, involucrando al banco más grande de Colombia y expandiendo el alcance de la plataforma en 4x"
+      ]
+    }
+  ]
 }
